@@ -1,0 +1,32 @@
+{
+    "name": "@d3p1/dockgento",
+    "version": "0.0.0",
+    "description": "A Docker environment generator for Magento 2",
+    "author": "C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)",
+    "homepage": "https://github.com/d3p1/dockgento#readme",
+    "bugs": {
+        "url": "https://github.com/d3p1/dockgento/issues"
+    },
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/d3p1/dockgento.git"
+    },
+    "keywords": [
+        "docker",
+        "docker-compose",
+        "magento",
+        "magento-2",
+        "magento2",
+        "docker-magento"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "@commitlint/cli": "^19.2.1",
+        "@d3p1/commitlint-config": "^1.0.1",
+        "husky": "^9.0.11"
+    },
+    "scripts": {
+        "prepare": "husky"
+    }
+}
