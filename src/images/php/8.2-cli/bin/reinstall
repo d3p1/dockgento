@@ -1,0 +1,137 @@
+#!/bin/sh
+
+##
+# @description Reinstall Magento 2 platform
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+# @note        A Magento reinstall differs from a Magento install in that 
+#              a Magento install installs the Magento platform, 
+#              while a reinstallation only reconfigures the 
+#              already installed Magento platform
+##
+
+##
+# @note Add flag to exit script if there is an error related to a command
+#       or if it is used an undefined variable
+##
+set -eu
+
+##
+# Main
+#
+# @return void
+##
+main() {
+    ##
+    # @note Configure web
+    ##
+    _configure_web
+
+    ##
+    # @note Configure session
+    ##
+    _configure_session
+
+    ##
+    # @note Configure cache
+    ##
+    _configure_cache
+
+    ##
+    # @note Configure AMQP 
+    ##
+    _configure_amqp
+
+    ##
+    # @note Configure search engine
+    ##
+    _configure_search_engine
+
+    ##
+    # @note Return with success
+    ##
+    return 0;
+}
+
+##
+# Configure web
+#
+# @return void
+##
+_configure_web() {
+    $MAGENTO_COMMAND_PATH config:set \
+    web/unsecure/base_url \
+    "$MAGENTO_BASE_URL"
+
+    $MAGENTO_COMMAND_PATH config:set \
+    web/secure/base_url \
+    "$MAGENTO_BASE_URL_SECURE"
+}
+
+##
+# Configure session
+#
+# @return void
+##
+_configure_session() {
+    $MAGENTO_COMMAND_PATH setup:config:set \
+    --session-save="$MAGENTO_SESSION_SAVE" \
+    --session-save-redis-host="$MAGENTO_SESSION_SAVE_REDIS_HOST" \
+    --session-save-redis-log-level="$MAGENTO_SESSION_SAVE_REDIS_LOG_LEVEL" \
+    --session-save-redis-db="$MAGENTO_SESSION_SAVE_REDIS_DB"
+}
+
+##
+# Configure cache
+#
+# @return void
+# @note   Setup Varnish using cache custom script
+##
+_configure_cache() {
+    $MAGENTO_COMMAND_PATH setup:config:set \
+    --cache-backend="$MAGENTO_CACHE_BACKEND" \
+    --cache-backend-redis-server="$MAGENTO_CACHE_BACKEND_REDIS_SERVER" \
+    --cache-backend-redis-db="$MAGENTO_CACHE_BACKEND_REDIS_DB" \
+    --page-cache="$MAGENTO_PAGE_CACHE" \
+    --page-cache-redis-server="$MAGENTO_PAGE_CACHE_REDIS_SERVER" \
+    --page-cache-redis-db="$MAGENTO_PAGE_CACHE_REDIS_DB"
+
+    configure-cache
+}
+
+##
+# Configure AMQP
+#
+# @return void
+##
+_configure_amqp() {
+    $MAGENTO_COMMAND_PATH setup:config:set \
+    --amqp-host="$MAGENTO_AMQP_HOST" \
+    --amqp-port="$MAGENTO_AMQP_PORT" \
+    --amqp-user="$MAGENTO_AMQP_USER" \
+    --amqp-password="$MAGENTO_AMQP_PASSWORD" \
+    --amqp-virtualhost="$MAGENTO_AMQP_VIRTUALHOST"   
+}
+
+##
+# Configure search engine
+#
+# @return void
+##
+_configure_search_engine() {
+    $MAGENTO_COMMAND_PATH config:set \
+    catalog/search/engine \
+    "$MAGENTO_SEARCH_ENGINE"
+
+    $MAGENTO_COMMAND_PATH config:set \
+    catalog/search/"$MAGENTO_SEARCH_ENGINE"_server_hostname \
+    "$MAGENTO_SEARCH_ENGINE_HOST"
+
+    $MAGENTO_COMMAND_PATH config:set \
+    catalog/search/"$MAGENTO_SEARCH_ENGINE"_server_port \
+    "$MAGENTO_SEARCH_ENGINE_PORT"
+}
+
+##
+# @note Reinstall Magento
+##
+main "$@"

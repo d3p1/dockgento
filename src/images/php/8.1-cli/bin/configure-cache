@@ -1,0 +1,30 @@
+#!/bin/sh
+
+##
+# @description Configure Magento 2 Varnish cache
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+##
+
+##
+# @note Add flag to exit script if there is an error related to a command
+#       or if it is used an undefined variable
+##
+set -eu
+
+##
+# Main
+#
+# @return void
+##
+main() {
+    $MAGENTO_COMMAND_PATH setup:config:set \
+    --http-cache-hosts="$MAGENTO_VARNISH_HOST"
+
+    $MAGENTO_COMMAND_PATH config:set \
+    system/full_page_cache/caching_application 2 --lock-env
+}
+
+##
+# @note Call main
+##
+main "$@"

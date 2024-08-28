@@ -1,0 +1,62 @@
+#!/bin/sh
+
+##
+# @description Init a Magento 2 platform
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+##
+
+##
+# @note Add flag to exit script if there is an error related to a command
+#       or if it is used an undefined variable
+##
+set -eu
+
+##
+# Main
+#
+# @param  bool $1 Is reinstall flag
+# @return void
+##
+main() {
+    ##
+    # @note Check if it is a reinstall
+    # @note A Magento reinstall differs from a Magento install in that 
+    #       a Magento install installs the Magento platform, 
+    #       while a reinstallation only reconfigures the 
+    #       already installed Magento platform
+    ##
+    if [ "$1" -eq 1 ]; then
+        ##
+        # @note Reinstall Magento
+        ##
+        reinstall
+    else
+        ##
+        # @note Install Magento
+        ##
+        install
+    fi
+    
+    ##
+    # @note Deploy Magento
+    ##
+    deploy
+
+    ##
+    # @note Change ownership to 1000:1000 account to be able to work 
+    #       with source code on the host
+    # @link https://github.com/magento/magento-cloud-docker/blob/develop/images/php/cli/Dockerfile#L75
+    # @link https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
+    ##
+    chown -R www:www .
+
+    ##
+    # @note Return with success
+    ##
+    return 0;
+}
+
+##
+# @note Install/Reinstall and deploy Magento
+##
+main "$@"
