@@ -38,7 +38,7 @@
 -- *Explain that the deploy scripts must be run using a user with `sudo` privileges*
 -- *Advice that for now all scripts to init environment were tested and work in Linux (Debian 12)*
 -- *Advice that to execute init scripts is required `bash`*
--- *Advice that the init scripts should be executed in the same folder where the `docker-compose.yml` files are located to avoid `stat /var/www/docker-magento/src/setup/bin/docker-compose.yml: no such file or directory` error
+-- *Advice that the init scripts should be executed in the same folder where the `docker-compose.yml` files are located to avoid `stat /var/www/dockgento/src/setup/bin/docker-compose.yml: no such file or directory` error
 -- *Advice to execute init script using `. bin/bootstrap.sh` to be able to set environment variables in current shell (https://stackoverflow.com/questions/496702/can-a-shell-script-set-environment-variables-of-the-calling-shell)*
 -- *Advice that CLI script will require `bash`*
 -- *Advice it is required a user with sudo privileges to execute bootstrap script commands*
