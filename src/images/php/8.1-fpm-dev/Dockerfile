@@ -40,6 +40,20 @@ FROM d3p1/magento-php:8.1-fpm
      RUN chown -R www:www ${COMPOSER_HOME}
 
      ##
+     # @note Install extra/required development tools
+     ##
+     RUN apt-get update && \
+         apt-get upgrade -y && \
+         apt-get install -y --no-install-recommends \
+            git \
+            mariadb-client \
+            nodejs \
+            python3 \
+            python3-pip \
+            redis-tools && \
+         rm -rf /var/lib/apt/lists/*
+
+     ##
      # @note Install Magento cache watcher globally to be able to use it
      #       as a development tool
      # @link https://github.com/mage2tv/magento-cache-clean
