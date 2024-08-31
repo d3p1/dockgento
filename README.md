@@ -29,6 +29,7 @@
 -- *How to download it and use it*
 -- *How to use `BASE_` host environment variables to update container environment variables*
 -- *Document `SCRIPT_` environment variables used to generate env files*
+-- *Difference between `BASE_`, `SCRIPT_` and `MAGENTO_` environment variables* 
 -- *How PHP CLI init Magento platform script works*
 -- *How PHP CLI cron Magento platform script works*
 -- *How to use Dev Containers and Xdebug in development environment*
