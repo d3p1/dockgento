@@ -1,5 +1,5 @@
 ##
-# @description PHP-FPM (v8.2) image for a Magento 2 environment
+# @description PHP FPM (v8.2) image for a Magento 2 environment
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
 # @link        https://github.com/d3p1/dockgento
 ##
@@ -8,6 +8,7 @@
 # @note Use official Magento Cloud image
 # @note Improve Magento Cloud image permissions of the working directory
 # @note Add healthcheck
+# @note Improve Xdebug usage
 # @link https://hub.docker.com/r/magento/magento-cloud-docker-php
 # @link https://github.com/magento/magento-cloud-docker/blob/develop/images/php/fpm/Dockerfile
 # @link https://github.com/renatomefi/php-fpm-healthcheck
@@ -29,6 +30,16 @@ FROM magento/magento-cloud-docker-php:8.2-fpm-1.3.7
     RUN chmod g+s ${MAGENTO_ROOT}
 
     ##
+    # @note Add custom Xdebug configuration to connect it to our local IDE
+    # @note Although this instruction is already present in the base image,
+    #       it is necessary to repeat it. Otherwise, our new file
+    #       with the respective customization will not be copied,
+    #       and it will not overwrite the base image file
+    # @link https://github.com/magento/magento-cloud-docker/blob/36d595ca424dd73d104459f89a8c0d42617f601d/images/php/7.4-fpm/Dockerfile#L160
+    ##
+    COPY etc/php-xdebug.ini /usr/local/etc/php/conf.d/zz-xdebug-settings.ini
+
+    ##
     # @note It is installed the script that performs the healthckeck
     #       with its required dependency (`fcgi`)
     # @link https://github.com/renatomefi/php-fpm-healthcheck/tree/v0.5.0
@@ -41,7 +52,7 @@ FROM magento/magento-cloud-docker-php:8.2-fpm-1.3.7
         apt-get install -y libfcgi-bin
     
     ##
-    # @note It is required to enable the PHP-FPM status page
+    # @note It is required to enable the PHP FPM status page
     #       to be able to execute the healthcheck script
     # @link https://github.com/renatomefi/php-fpm-healthcheck/blob/v0.5.0/test/Dockerfile-buster
     ##
