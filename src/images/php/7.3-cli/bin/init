@@ -14,22 +14,18 @@ set -eu
 ##
 # Main
 #
-# @param  bool $1 Is reinstall flag
+# @param  bool $1 Is setup flag
 # @return void
 ##
 main() {
     ##
-    # @note Check if it is a reinstall
-    # @note A Magento reinstall differs from a Magento install in that 
-    #       a Magento install installs the Magento platform, 
-    #       while a reinstallation only reconfigures the 
-    #       already installed Magento platform
+    # @note Check if it is a setup
     ##
     if [ "$1" -eq 1 ]; then
         ##
-        # @note Reinstall Magento
+        # @note Setup Magento
         ##
-        reinstall
+        setup
     else
         ##
         # @note Install Magento
@@ -57,6 +53,6 @@ main() {
 }
 
 ##
-# @note Install/Reinstall and deploy Magento
+# @note Install/Setup and deploy Magento
 ##
 main "$@"

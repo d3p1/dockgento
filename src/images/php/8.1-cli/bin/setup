@@ -1,12 +1,8 @@
 #!/bin/sh
 
 ##
-# @description Reinstall Magento 2 platform
+# @description Setup Magento 2 platform
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
-# @note        A Magento reinstall differs from a Magento install in that 
-#              a Magento install installs the Magento platform, 
-#              while a reinstallation only reconfigures the 
-#              already installed Magento platform
 ##
 
 ##
@@ -47,6 +43,12 @@ main() {
     _configure_search_engine
 
     ##
+    # @note Configure SMTP
+    # @note Setup SMTP using custom script
+    ##
+    ./lib/configure-smtp
+
+    ##
     # @note Return with success
     ##
     return 0;
@@ -84,7 +86,7 @@ _configure_session() {
 # Configure cache
 #
 # @return void
-# @note   Setup Varnish using cache custom script
+# @note   Setup Varnish using custom script
 ##
 _configure_cache() {
     $MAGENTO_COMMAND_PATH setup:config:set \
@@ -95,7 +97,7 @@ _configure_cache() {
     --page-cache-redis-server="$MAGENTO_PAGE_CACHE_REDIS_SERVER" \
     --page-cache-redis-db="$MAGENTO_PAGE_CACHE_REDIS_DB"
 
-    configure-cache
+    ./lib/configure-varnish
 }
 
 ##
@@ -132,6 +134,6 @@ _configure_search_engine() {
 }
 
 ##
-# @note Reinstall Magento
+# @note Setup Magento
 ##
 main "$@"

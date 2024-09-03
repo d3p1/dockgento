@@ -17,11 +17,13 @@ set -eu
 # @return void
 ##
 main() {
-    $MAGENTO_COMMAND_PATH setup:config:set \
-    --http-cache-hosts="$MAGENTO_VARNISH_HOST"
+    if [ -n "$MAGENTO_VARNISH_HOST" ]; then
+        $MAGENTO_COMMAND_PATH setup:config:set \
+        --http-cache-hosts="$MAGENTO_VARNISH_HOST"
 
-    $MAGENTO_COMMAND_PATH config:set \
-    system/full_page_cache/caching_application 2 --lock-env
+        $MAGENTO_COMMAND_PATH config:set \
+        system/full_page_cache/caching_application 2 --lock-env
+    fi
 }
 
 ##

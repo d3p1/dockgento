@@ -6,10 +6,6 @@
 # @note        The Magento Cloud PHP CLI image already includes a script to 
 #              install Magento, but it is believed that it may not work properly 
 #              for this project
-# @note        A Magento reinstall differs from a Magento install in that 
-#              a Magento install installs the Magento platform, 
-#              while a reinstallation only reconfigures the 
-#              already installed Magento platform
 # @link        https://github.com/magento/magento-cloud-docker/blob/develop/images/php/cli/bin/magento-installer
 # @link        https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/composer
 # @link        https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/advanced
@@ -40,9 +36,15 @@ main() {
 
     ##
     # @note Setup Varnish
-    # @note Use configure Varnish cache custom script
+    # @note Use custom script
     ##
-    configure-cache
+    ./lib/configure-varnish
+
+    ##
+    # @note Setup SMTP server
+    # @note Use custom script
+    ##
+    ./lib/configure-smtp
 
     ##
     # @note Return with success
@@ -69,10 +71,6 @@ _create() {
 ##
 _install() {
     $MAGENTO_COMMAND_PATH setup:install \
-    --db-host="$MAGENTO_DB_HOST" \
-    --db-name="$MAGENTO_DB_NAME" \
-    --db-user="$MAGENTO_DB_USER" \
-    --db-password="$MAGENTO_DB_PASSWORD" \
     --base-url="$MAGENTO_BASE_URL" \
     --base-url-secure="$MAGENTO_BASE_URL_SECURE" \
     --backend-frontname="$MAGENTO_BACKEND_FRONTNAME" \
@@ -84,6 +82,10 @@ _install() {
     --language="$MAGENTO_LANGUAGE" \
     --currency="$MAGENTO_CURRENCY" \
     --timezone="$MAGENTO_TIMEZONE" \
+    --db-host="$MAGENTO_DB_HOST" \
+    --db-name="$MAGENTO_DB_NAME" \
+    --db-user="$MAGENTO_DB_USER" \
+    --db-password="$MAGENTO_DB_PASSWORD" \
     --amqp-host="$MAGENTO_AMQP_HOST" \
     --amqp-port="$MAGENTO_AMQP_PORT" \
     --amqp-user="$MAGENTO_AMQP_USER" \

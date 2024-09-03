@@ -14,36 +14,32 @@ set -eu
 ##
 # Main
 #
-# @param  bool $1 Is reinstall flag
+# @param  bool $1 Is setup flag
 # @return void
 ##
 main() {
     ##
-    # @note Check if it is a reinstall
-    # @note A Magento reinstall differs from a Magento install in that 
-    #       a Magento install installs the Magento platform, 
-    #       while a reinstallation only reconfigures the 
-    #       already installed Magento platform
+    # @note Check if it is a setup
     ##
     if [ "$1" -eq 1 ]; then
         ##
-        # @note Reinstall Magento
+        # @note Setup Magento
         ##
-        reinstall
+        setup
     else
         ##
         # @note Install Magento
         ##
         install
     fi
-    
+
     ##
     # @note Deploy Magento
     ##
     deploy
 
     ##
-    # @note Change ownership to 1000:1000 account to be able to work 
+    # @note Change ownership to 1000:1000 account to be able to work
     #       with source code on the host
     # @link https://github.com/magento/magento-cloud-docker/blob/develop/images/php/cli/Dockerfile#L75
     # @link https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
@@ -57,6 +53,6 @@ main() {
 }
 
 ##
-# @note Install/Reinstall and deploy Magento
+# @note Install/Setup and deploy Magento
 ##
 main "$@"

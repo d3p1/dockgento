@@ -7,9 +7,8 @@
 ##
 # @note Use official Magento Cloud image
 # @note Improve Magento Cloud image permissions of the working directory
-# @note Add custom scripts to init, install/reinstall
-#       and deploy a Magento platform
-# @note Add custom script to run Magento cron
+# @note Add custom scripts to init, install, setup and deploy
+#       a Magento platform
 # @link https://hub.docker.com/r/magento/magento-cloud-docker-php
 # @link https://github.com/magento/magento-cloud-docker/blob/develop/images/php/cli/Dockerfile
 ##
@@ -29,10 +28,6 @@ FROM magento/magento-cloud-docker-php:8.1-cli-1.3.7
     #       to Magento installation/configuration
     ##
     ENV MAGENTO_VERSION="2.4.6"
-    ENV MAGENTO_DB_HOST="db"
-    ENV MAGENTO_DB_NAME="magento"
-    ENV MAGENTO_DB_USER="magento"
-    ENV MAGENTO_DB_PASSWORD="magento"
     ENV MAGENTO_BASE_URL="http://magento.test/"
     ENV MAGENTO_BASE_URL_SECURE="https://magento.test/"
     ENV MAGENTO_BACKEND_FRONTNAME="admin"
@@ -44,6 +39,10 @@ FROM magento/magento-cloud-docker-php:8.1-cli-1.3.7
     ENV MAGENTO_LANGUAGE="en_US"
     ENV MAGENTO_CURRENCY="USD"
     ENV MAGENTO_TIMEZONE="America/New_York"
+    ENV MAGENTO_DB_HOST="db"
+    ENV MAGENTO_DB_NAME="magento"
+    ENV MAGENTO_DB_USER="magento"
+    ENV MAGENTO_DB_PASSWORD="magento"
     ENV MAGENTO_AMQP_HOST="rabbitmq"
     ENV MAGENTO_AMQP_PORT="5672"
     ENV MAGENTO_AMQP_USER="magento"
@@ -59,14 +58,9 @@ FROM magento/magento-cloud-docker-php:8.1-cli-1.3.7
     ENV MAGENTO_SESSION_SAVE_REDIS_HOST="redis"
     ENV MAGENTO_SESSION_SAVE_REDIS_LOG_LEVEL="4"
     ENV MAGENTO_SESSION_SAVE_REDIS_DB="2"
-    ENV MAGENTO_OPENSEARCH_HOST="opensearch"
-    ENV MAGENTO_OPENSEARCH_PORT="9200"
-    ENV MAGENTO_ELASTICSEARCH_HOST="elasticsearch"
-    ENV MAGENTO_ELASTICSEARCH_PORT="9200"
-    ENV MAGENTO_SEARCH_ENGINE="elasticsearch7"
-    ENV MAGENTO_SEARCH_ENGINE_HOST=${MAGENTO_ELASTICSEARCH_HOST}
-    ENV MAGENTO_SEARCH_ENGINE_PORT=${MAGENTO_ELASTICSEARCH_PORT}
     ENV MAGENTO_VARNISH_HOST="varnish"
+    ENV MAGENTO_SMTP_HOST="mailhog"
+    ENV MAGENTO_SMTP_PORT="1025"
     ENV MAGENTO_STATIC_CONTENT_DEPLOY_MODE="quick"
     ENV MAGENTO_STATIC_CONTENT_DEPLOY_JOBS="2"
     ENV MAGENTO_COMMAND_PATH="${MAGENTO_ROOT}/bin/magento"
@@ -79,20 +73,23 @@ FROM magento/magento-cloud-docker-php:8.1-cli-1.3.7
     RUN chmod g+s ${MAGENTO_ROOT}
 
     ##
-    # @note Add custom scripts to install/reinstall and 
+    # @note Add custom scripts to install, setup and
     #       deploy a Magento platform
     # @note Add custom script to run Magento cron
-    # @note Add custom script to configure Varnish cache
+    # @note Add custom utility script to configure Varnish cache
+    # @note Add custom utility script to configure SMTP server
     ##
     COPY bin/init /usr/local/bin/
     COPY bin/install /usr/local/bin/
-    COPY bin/reinstall /usr/local/bin/
+    COPY bin/setup /usr/local/bin/
     COPY bin/deploy /usr/local/bin/
     COPY bin/run-cron /usr/local/bin/
-    COPY bin/configure-cache /usr/local/bin/
+    COPY bin/lib/configure-varnish /usr/local/bin/lib/
+    COPY bin/lib/configure-smtp /usr/local/bin/lib/
     RUN chmod +x /usr/local/bin/init
     RUN chmod +x /usr/local/bin/install
-    RUN chmod +x /usr/local/bin/reinstall
+    RUN chmod +x /usr/local/bin/setup
     RUN chmod +x /usr/local/bin/deploy
     RUN chmod +x /usr/local/bin/run-cron
-    RUN chmod +x /usr/local/bin/configure-cache
+    RUN chmod +x /usr/local/bin/lib/configure-varnish
+    RUN chmod +x /usr/local/bin/lib/configure-smtp
