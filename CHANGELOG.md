@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/d3p1/dockgento/compare/v1.1.0...v1.2.0) (2024-09-03)
+
+
+### Features
+
+* improve Magento scripts in PHP CLI images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([7d046ed](https://github.com/d3p1/dockgento/commit/7d046edc2da98cc5fcb58c199fb924056dcf574f))
+* improve PHP FPM development images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([7070286](https://github.com/d3p1/dockgento/commit/7070286b42d9ad141afc47716cb3603994dd6e2a))
+* improve Xdebug usage in PHP FPM images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([5ef7534](https://github.com/d3p1/dockgento/commit/5ef75349e8b2a49c50f601e406d7bd1c768fec89))
+
 # [1.1.0](https://github.com/d3p1/dockgento/compare/v1.0.0...v1.1.0) (2024-08-28)
 
 
