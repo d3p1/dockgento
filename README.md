@@ -46,6 +46,7 @@
 -- *Document how `PHP` `CLI`, `FPM` and `FPM-DEV` images/services, differ. Document that the `CLI` image has all the scripts to install, manage and deploy the platform. The `FPM` is the responsible of attending `PHP` request, but the `FPM-DEV` image is particularly useful to work with `Dev Containers`, because when `Xdebug` cookie session is set, the `Nginx` will redirect requests to them (that is why it has `Composer`, `Node`, `Redis CLI` and `MariaDB CLI` installed), so it is possible to just connect to that container to debug and implement features inside it* 
 -- *Document how request flow works. `Traefik` works as an SSL termination that redirects requests to `Varnish`, and `Varnish` configures `web` services name as its backend origin server (check `vcl` config file), so `Nginx` service should have that name so it receives the request and redirect them to `FPM` service or `FPM-DEV` service (depending if `Xdebug` cookie is set)*
 -- *Document that is not required to add `extra_hosts` configuration to Docker Compose files to be able to map `host.docker.internal` hostname to host (to be able to use `Xdebug`), because image entrypoints already add respective host inside `/etc/hosts` file*
+-- *Document how environment files are structured. Explain that service env files inherits common environment variables from `.env` file. The `.env` file is the entrypoint and main point to define common environment variables and general environment variables.*
 
 ## Changelog
 
