@@ -1,0 +1,159 @@
+##
+# @description Services
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+# @note        This is a base Docker Compose file that will be extended 
+#              by other files related to the environment 
+#              (i.e., a Docker Compose file for the dev or prod environment)
+# @note        The service naming convention uses the 
+#              underlying technology name for easy identification within 
+#              the infrastructure stack. There is an exception for 
+#              the `web` service. This temporary naming is required for 
+#              `varnish` to correctly identify it as the origin server.
+#              Also, the `fpm`, `cli` and `cron` service names 
+#              were used to describe in a cleaner way the container purpose
+# @note        It is added a `cron` profile to the `cron` service, so it is
+#              easier to enable it using the `COMPOSE_PROFILES` environment 
+#              variable
+# @note        It is added a `cli` profile to create the related service/s
+#              on demand
+# @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/varnish/7.1.1/etc/default.vcl#L9 
+# @link        https://docs.docker.com/compose/profiles/
+##
+services:
+  traefik:
+    image:
+      d3p1/magento-traefik:2.10
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - web
+      - varnish
+    volumes:
+      - ${BASE_DOCKER_PATH}:/var/run/docker.sock
+    environment:
+      - TRAEFIK_ENTRYPOINTS_WEB_ADDRESS=:80 
+      - TRAEFIK_ENTRYPOINTS_WEBSECURE_ADDRESS=:443
+      - TRAEFIK_PING=true
+      - TRAEFIK_PROVIDERS_DOCKER=true
+    restart:
+      always
+
+  varnish:
+    image:
+      d3p1/magento-varnish:7.1.1
+    expose:
+      - 80
+    depends_on:
+      - web
+    labels:
+      - traefik.http.routers.https-magento.entrypoints=websecure
+      - traefik.http.routers.https-magento.tls=true
+      - traefik.http.routers.https-magento.rule=Host(`${BASE_URL}`) || Host(`www.${BASE_URL}`)
+      - traefik.http.routers.https-magento.service=https-magento
+      - traefik.http.services.https-magento.loadbalancer.server.port=80
+    restart:
+      always
+
+  web:
+    image:
+      d3p1/magento-nginx:1.24
+    expose:
+      - 8080
+    depends_on:
+      - fpm
+      - mariadb
+      - redis
+      - rabbitmq
+    volumes:
+      - docroot:/app
+    env_file:
+      - services/web/.env
+    labels:
+      - traefik.enable=false
+    restart:
+      always
+
+  fpm:
+    image:
+      d3p1/magento-php:${BASE_PHP_VERSION}-fpm
+    expose:
+      - 9000
+    volumes:
+      - docroot:/app
+    env_file:
+      - services/magento/.env
+    labels:
+      - traefik.enable=false
+    restart:
+      always
+
+  cli:
+    image:
+      d3p1/magento-php:${BASE_PHP_VERSION}-cli
+    volumes:
+      - docroot:/app
+      - ~/composer:${BASE_COMPOSER_HOME}
+    env_file:
+      - services/magento/.env
+    profiles:
+      - setup
+
+  cron:
+    image:
+      d3p1/magento-php:${BASE_PHP_VERSION}-cli
+    volumes:
+      - docroot:/app
+    env_file:
+      - services/magento/.env
+    profiles:
+      - cron
+    command:
+      run-cron
+
+  mariadb:
+    image:
+      d3p1/magento-mariadb:${BASE_MARIADB_VERSION}
+    command:
+      --max_allowed_packet=64M
+      --optimizer_use_condition_selectivity=1
+      --optimizer_switch="rowid_filter=off"
+    expose:
+      - 3306
+    volumes:
+      - dbdata:/var/lib/mysql
+    env_file:
+      - services/mariadb/.env
+    labels:
+      - traefik.enable=false
+    restart:
+      always
+
+  redis:
+    image:
+      d3p1/magento-redis:7.0
+    expose:
+      - 6379
+    labels:
+      - traefik.enable=false
+    restart:
+      always
+
+  rabbitmq:
+    image:
+      d3p1/magento-rabbitmq:3.12
+    expose:
+      - 5672
+    volumes:
+      - rabbitmqdata:/var/lib/rabbitmq
+    env_file:
+      - services/rabbitmq/.env
+    labels:
+      - traefik.enable=false
+    restart:
+      always
+    
+volumes:
+  docroot:
+  dbdata:
+  rabbitmqdata:
