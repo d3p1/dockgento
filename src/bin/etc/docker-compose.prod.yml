@@ -1,0 +1,28 @@
+##
+# @description Services (customizations for production)
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+# @note        This file is intended to be used as an extension of the 
+#              main/primary `docker-compose.yml`, i.e.:               
+#              `docker compose \ 
+#               -f docker-compose.yml \ 
+#               -f docker-compose.prod.yml \
+#               up -d`
+# @note        Add Traefik configuration to be able to generate platform 
+#              certificates using Let's Encrypt
+##
+services:
+  traefik:
+    volumes:
+      - ./services/traefik/etc/acme.json:/etc/traefik/acme.json
+    environment:
+      - TRAEFIK_CERTIFICATESRESOLVERS_LE-HTTP_ACME_EMAIL=${BASE_USER_EMAIL}
+      - TRAEFIK_CERTIFICATESRESOLVERS_LE-HTTP_ACME_STORAGE=/etc/traefik/acme.json
+      - TRAEFIK_CERTIFICATESRESOLVERS_LE-HTTP_ACME_HTTPCHALLENGE_ENTRYPOINT=web
+
+  varnish:
+    labels:
+      - traefik.http.routers.https-magento.tls.certresolver=le-http
+
+  web:
+    environment:
+      - WITH_XDEBUG=0
