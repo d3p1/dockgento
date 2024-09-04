@@ -73,4 +73,5 @@ services:
       - 1025
     labels:
       - traefik.enable=false
-      
+    restart:
+      always
