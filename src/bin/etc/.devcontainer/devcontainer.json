@@ -1,0 +1,50 @@
+/**
+ * @description Dev Container configuration
+ * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+ */
+{
+    "name": "Magento",
+    "dockerComposeFile": [
+        "../docker-compose.yml",
+        "../docker-compose.dev.yml",
+        "../docker-compose.devcontainer.yml",
+        "../services/search/${localEnv:BASE_SEARCH_SERVICE}/docker-compose.yml"
+    ],
+    "shutdownAction": "stopCompose",
+    "service": "fpm_dev",
+    "workspaceFolder": "/app",
+    "remoteUser": "www",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "formulahendry.auto-close-tag",
+                "formulahendry.auto-rename-tag",
+                "ms-vscode-remote.remote-containers",
+                "streetsidesoftware.code-spell-checker",
+                "DEVSENSE.composer-php-vscode",
+                "ms-azuretools.vscode-docker",
+                "dbaeumer.vscode-eslint",
+                "github.vscode-github-actions",
+                "eamodio.gitlens",
+                "DEVSENSE.intelli-php-vscode",
+                "viperet.vscode-magento-wizard",
+                "DEVSENSE.phptools-vscode",
+                "xdebug.php-debug",
+                "ecodes.vscode-phpmd",
+                "DEVSENSE.profiler-php-vscode",
+                "obliviousharmony.vscode-php-codesniffer",
+                "mechatroner.rainbow-csv",
+                "timonwong.shellcheck",
+                "redhat.vscode-xml"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash"
+                    }
+                }
+            }
+        }
+    }
+}
