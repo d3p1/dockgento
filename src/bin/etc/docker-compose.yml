@@ -11,11 +11,10 @@
 #              `varnish` to correctly identify it as the origin server.
 #              Also, the `fpm`, `cli` and `cron` service names 
 #              were used to describe in a cleaner way the container purpose
-# @note        It is added a `cron` profile to the `cron` service, so it is
-#              easier to enable it using the `COMPOSE_PROFILES` environment 
-#              variable
-# @note        It is added a `cli` profile to create the related service/s
-#              on demand
+# @note        It is added a `setup` profile to create the related service/s
+#              on demand (so they are not created when `docker compose up`
+#              is executed). In this way, the user can manage
+#              when it is required to execute them
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/varnish/7.1.1/etc/default.vcl#L9 
 # @link        https://docs.docker.com/compose/profiles/
 ##
@@ -107,7 +106,7 @@ services:
     env_file:
       - services/magento/.env
     profiles:
-      - cron
+      - setup
     command:
       run-cron
     restart:
