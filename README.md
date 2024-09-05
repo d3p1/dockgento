@@ -47,6 +47,39 @@
 -- *Document how request flow works. `Traefik` works as an SSL termination that redirects requests to `Varnish`, and `Varnish` configures `web` services name as its backend origin server (check `vcl` config file), so `Nginx` service should have that name so it receives the request and redirect them to `FPM` service or `FPM-DEV` service (depending if `Xdebug` cookie is set)*
 -- *Document that is not required to add `extra_hosts` configuration to Docker Compose files to be able to map `host.docker.internal` hostname to host (to be able to use `Xdebug`), because image entrypoints already add respective host inside `/etc/hosts` file*
 -- *Document how environment files are structured. Explain that service env files inherits common environment variables from `.env` file. The `.env` file is the entrypoint and main point to define common environment variables and general environment variables.*
+-- *Explain the `.dockgento_profile` file and what each environment variable does (and when it is used - when it is required for certain environment):*
+--- BASE_DOCKER_PATH="${SCRIPT_DOCKER_PATH}"
+--- BASE_USER_EMAIL="${SCRIPT_BASE_USER_EMAIL}"
+--- BASE_URL="${SCRIPT_BASE_URL}"
+--- BASE_MARIADB_DB_NAME="${SCRIPT_MARIADB_DB_NAME}"
+--- BASE_MARIADB_DB_USER="${SCRIPT_MARIADB_USER}"
+--- BASE_MARIADB_DB_PASSWORD="${SCRIPT_MARIADB_PASSWORD}"
+--- BASE_MARIADB_VERSION="${SCRIPT_MARIADB_VERSION}"
+--- BASE_RABBITMQ_DEFAULT_USER="${SCRIPT_RABBITMQ_DEFAULT_USER}"
+--- BASE_RABBITMQ_DEFAULT_PASS="${SCRIPT_RABBITMQ_DEFAULT_PASS}"
+--- BASE_SMTP_HOST="${SCRIPT_SMTP_HOST}"
+--- BASE_SMTP_PORT="${SCRIPT_SMTP_PORT}"
+--- BASE_DEV_DOC_ROOT_DIR="${SCRIPT_DEV_DOC_ROOT_DIR}"
+--- BASE_PHP_VERSION="${SCRIPT_PHP_VERSION}"
+--- BASE_SEARCH_SERVICE="${SCRIPT_SEARCH_SERVICE}"
+--- BASE_SEARCH_JAVA_OPTS="${SCRIPT_SEARCH_JAVA_OPTS}"
+--- COMPOSE_FILE="${SCRIPT_COMPOSE_FILE}"
+--- COMPOSER_MAGENTO_USERNAME="${SCRIPT_COMPOSER_MAGENTO_USERNAME}"
+--- COMPOSER_MAGENTO_PASSWORD="${SCRIPT_COMPOSER_MAGENTO_PASSWORD}"
+--- MAGENTO_VERSION="${SCRIPT_MAGENTO_VERSION}"
+--- MAGENTO_RUN_MODE="${SCRIPT_MAGENTO_RUN_MODE}"
+--- MAGENTO_STATIC_CONTENT_DEPLOY_JOBS="${SCRIPT_MAGENTO_STATIC_CONTENT_DEPLOY_JOBS}"
+--- MAGENTO_ADMIN_FIRSTNAME="${SCRIPT_MAGENTO_ADMIN_FIRSTNAME}"
+--- MAGENTO_ADMIN_LASTNAME="${SCRIPT_MAGENTO_ADMIN_LASTNAME}"
+--- MAGENTO_ADMIN_USER="${SCRIPT_MAGENTO_ADMIN_USER}"
+--- MAGENTO_ADMIN_PASSWORD="${SCRIPT_MAGENTO_ADMIN_PASSWORD}"
+--- MAGENTO_SEARCH_ENGINE="${SCRIPT_MAGENTO_SEARCH_ENGINE}"
+--- MAGENTO_SEARCH_ENGINE_HOST="${SCRIPT_MAGENTO_SEARCH_ENGINE_HOST}"
+--- MAGENTO_SEARCH_ENGINE_PORT="${SCRIPT_MAGENTO_SEARCH_ENGINE_PORT}"
+--- MYSQL_ROOT_PASSWORD="${SCRIPT_MYSQL_ROOT_PASSWORD}"
+--- NGINX_WORKER_PROCESSES="${SCRIPT_NGINX_WORKER_PROCESSES}"
+--- NGINX_WORKER_CONNECTIONS="${SCRIPT_NGINX_WORKER_CONNECTIONS}" 
+
 
 ## Changelog
 
