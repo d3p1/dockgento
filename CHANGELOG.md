@@ -1,3 +1,24 @@
+# [1.3.0](https://github.com/d3p1/dockgento/compare/v1.2.0...v1.3.0) (2024-09-06)
+
+
+### Bug Fixes
+
+* add environment variables to setup SMTP service [[#1](https://github.com/d3p1/dockgento/issues/1)] ([0f40a37](https://github.com/d3p1/dockgento/commit/0f40a372cebeb465b87340b9e32d5aab32fa859f))
+* adjust Docker Compose profiles [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6c0795f](https://github.com/d3p1/dockgento/commit/6c0795f28dfebf85edf3f0a7b730360903ed4623))
+* adjust environment variables of PHP CLI images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([4f59ff1](https://github.com/d3p1/dockgento/commit/4f59ff1c63bbc1f3d843c0a4115d5e222a117ead))
+* adjust restart setting in Docker Compose files [[#1](https://github.com/d3p1/dockgento/issues/1)] ([0dd05ea](https://github.com/d3p1/dockgento/commit/0dd05ead9e0a673dc8bcffa082c8abf2d6c58726))
+* adjust SMTP environment variables in PHP CLI (v7.3) image [[#1](https://github.com/d3p1/dockgento/issues/1)] ([0abca03](https://github.com/d3p1/dockgento/commit/0abca031fba02452092e2fa2fc6292cd11672c5d))
+
+
+### Features
+
+* add configuration files for services [[#1](https://github.com/d3p1/dockgento/issues/1)] ([d86a528](https://github.com/d3p1/dockgento/commit/d86a52810d097815b6a924620fe75c25d9cabcbf))
+* add Docker Compose files for search engines [[#1](https://github.com/d3p1/dockgento/issues/1)] ([9031e94](https://github.com/d3p1/dockgento/commit/9031e94ad71e2d13a5e9407062c57182b1859f66))
+* init base Docker Compose file [[#1](https://github.com/d3p1/dockgento/issues/1)] ([4353877](https://github.com/d3p1/dockgento/commit/4353877d65575488c866ab420c57065f5b902312))
+* init Docker Compose file for dev environment [[#1](https://github.com/d3p1/dockgento/issues/1)] ([92e54a8](https://github.com/d3p1/dockgento/commit/92e54a8a30da7c793dddd20d4215a9f382e44a3d))
+* init Docker Compose file for prod environment [[#1](https://github.com/d3p1/dockgento/issues/1)] ([2904163](https://github.com/d3p1/dockgento/commit/290416393b04cb2fcda8360bee4515634af6e1ba))
+* init Docker environment for Dev Container [[#1](https://github.com/d3p1/dockgento/issues/1)] ([7002886](https://github.com/d3p1/dockgento/commit/7002886f98b76dea992966ac56c06d3075fdf700))
+
 # [1.2.0](https://github.com/d3p1/dockgento/compare/v1.1.0...v1.2.0) (2024-09-03)
 
 
