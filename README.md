@@ -47,7 +47,10 @@
 -- *Document how request flow works. `Traefik` works as an SSL termination that redirects requests to `Varnish`, and `Varnish` configures `web` services name as its backend origin server (check `vcl` config file), so `Nginx` service should have that name so it receives the request and redirect them to `FPM` service or `FPM-DEV` service (depending if `Xdebug` cookie is set)*
 -- *Document that is not required to add `extra_hosts` configuration to Docker Compose files to be able to map `host.docker.internal` hostname to host (to be able to use `Xdebug`), because image entrypoints already add respective host inside `/etc/hosts` file*
 -- *Document how environment files are structured. Explain that service env files inherits common environment variables from `.env` file. The `.env` file is the entrypoint and main point to define common environment variables and general environment variables.*
--- *Explain the `.dockgento_profile` file and what each environment variable does (and when it is used - when it is required for certain environment):*
+-- *Explain the idea of `dockgento` and `KISS`. The idea is to just setup the necessary `Docker Compose` environment and then any additional steps using `Docker Compose` commands and `services` scripts (like start the environment, installing a `Magento` platform, etc.) *
+-- *Explain the it is possible to use just `docker compose up -d` because it is used the environment variable `COMPOSE_FILE` inside the `.env` to the define the respective `Docker Compose` files to use taking into consideration the environment defined*
+-- *Mention how to work with credentials that are persisted inside the environment files in a production environment*
+-- *Explain the `.dockgento_profile` file (based in `.bash_profile`) and what each environment variable does (and when it is used - when it is required for certain environment):*
 --- BASE_DOCKER_PATH="${SCRIPT_DOCKER_PATH}"
 --- BASE_USER_EMAIL="${SCRIPT_BASE_USER_EMAIL}"
 --- BASE_URL="${SCRIPT_BASE_URL}"
