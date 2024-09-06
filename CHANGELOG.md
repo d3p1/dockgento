@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/d3p1/dockgento/compare/v1.3.0...v1.3.1) (2024-09-06)
+
+
+### Bug Fixes
+
+* use new env var names for Composer credentials in PHP FPM (for Dev Container) images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([3ba734f](https://github.com/d3p1/dockgento/commit/3ba734f5c269064063be55ef7c7b50e0d33fb411))
+
 # [1.3.0](https://github.com/d3p1/dockgento/compare/v1.2.0...v1.3.0) (2024-09-06)
 
 
