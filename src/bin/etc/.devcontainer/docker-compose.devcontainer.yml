@@ -16,3 +16,5 @@ services:
   fpm_dev:
     image:
       d3p1/magento-php:${BASE_PHP_VERSION}-fpm-dev
+    volumes:
+      - ~/composer:${BASE_COMPOSER_HOME}
