@@ -49,7 +49,7 @@ main() {
     ##
     # @note Return with success
     ##
-    return 0;
+    exit 0;
 }
 
 ##
