@@ -50,6 +50,9 @@
 -- *Explain the idea of `dockgento` and `KISS`. The idea is to just setup the necessary `Docker Compose` environment and then any additional steps using `Docker Compose` commands and `services` scripts (like start the environment, installing a `Magento` platform, etc.) *
 -- *Explain the it is possible to use just `docker compose up -d` because it is used the environment variable `COMPOSE_FILE` inside the `.env` to the define the respective `Docker Compose` files to use taking into consideration the environment defined*
 -- *Mention how to work with credentials that are persisted inside the environment files in a production environment*
+-- *Explain how the `dockgento` script works (the use of the environment variables, `envsubst` command, `.dockgento_profile` file, etc.)* 
+-- *Remember to mention to init the `cron` service if it is necessary with `docker compose start cron`*
+-- *Document how to use the different scripts of the `cli` service (like the one that allows the installation of a Magento platform or the setup of a Magento platform)*  
 -- *Explain the `.dockgento_profile` file (based in `.bash_profile`) and what each environment variable does (and when it is used - when it is required for certain environment):*
 --- BASE_DOCKER_PATH="${SCRIPT_DOCKER_PATH}"
 --- BASE_USER_EMAIL="${SCRIPT_BASE_USER_EMAIL}"
