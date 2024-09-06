@@ -27,6 +27,8 @@ FROM magento/magento-cloud-docker-php:8.1-cli-1.3.7
     #       to distinguish them from other variables that are not related
     #       to Magento installation/configuration
     ##
+    ENV MAGENTO_COMPOSER_USERNAME=""
+    ENV MAGENTO_COMPOSER_PASSWORD=""
     ENV MAGENTO_VERSION="2.4.6"
     ENV MAGENTO_BASE_URL="http://magento.test/"
     ENV MAGENTO_BASE_URL_SECURE="https://magento.test/"
@@ -71,6 +73,13 @@ FROM magento/magento-cloud-docker-php:8.1-cli-1.3.7
     ENV MAGENTO_STATIC_CONTENT_DEPLOY_MODE="quick"
     ENV MAGENTO_STATIC_CONTENT_DEPLOY_JOBS="2"
     ENV MAGENTO_COMMAND_PATH="${MAGENTO_ROOT}/bin/magento"
+
+    ##
+    # @note Set Composer credentials
+    # @link https://github.com/magento/magento-cloud-docker/blob/36d595ca424dd73d104459f89a8c0d42617f601d/images/php/cli/docker-entrypoint.sh#L31
+    ##
+    ENV COMPOSER_MAGENTO_USERNAME=${MAGENTO_COMPOSER_USERNAME}
+    ENV COMPOSER_MAGENTO_PASSWORD=${MAGENTO_COMPOSER_PASSWORD}
 
     ##
     # @note Add `SGID` to folder so it is possible to share `www` group
