@@ -6,14 +6,13 @@
 ##
 
 ##
-# Print message in terminal using specific format (each message/text received is
-# separated by a new line and printed)
+# Print message in terminal using specific format
 #
-# @param  string $1 Message
+# @param  string $1 Texts
 # @return void
-# @note   In reality, the `@` symbol (as a rest operator) is used to retrieve
-#         script parameters. Consequently, every argument is treated
-#         as part of `$1`, and will be used as a script parameter
+# @note   The `@` symbol (as a rest operator) is used to retrieve
+#         received texts. Consequently, every argument/text is treated
+#         as part of `$1`, and will be used to form the message
 ##
 print_message() {
     printf "%s\n" "$@"
