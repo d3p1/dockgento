@@ -85,7 +85,7 @@ _print_help() {
 	" - To init a Docker environment: \`dockgento init <env>\`" \
 	" - To install a Magento platform: \`dockgento mage-install\`" \
 	" - To setup a Magento platform: \`dockgento mage-setup\`" \
-	"[NOTE] Before using this script, remember to configure the \`.dockgento_profile\` file"
+	"[NOTICE] Before using this script, remember to configure the \`.dockgento_profile\` file"
 }
 
 ##
