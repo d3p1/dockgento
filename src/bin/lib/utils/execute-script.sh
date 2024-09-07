@@ -38,10 +38,11 @@ execute_script() {
     shift
     if [ -e "$script" ]; then
         . "$script" "$@"
+        return 0
     fi
 
     ##
-    # @note Return with success
+    # @note Return with error
     ##
-    return 0
+    return 1
 }
