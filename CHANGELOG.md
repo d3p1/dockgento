@@ -1,3 +1,26 @@
+# [1.4.0](https://github.com/d3p1/dockgento/compare/v1.3.1...v1.4.0) (2024-09-07)
+
+
+### Bug Fixes
+
+* adjust env var names for Composer credentials in Magento environment file [[#1](https://github.com/d3p1/dockgento/issues/1)] ([9d4967f](https://github.com/d3p1/dockgento/commit/9d4967fbc11b5e4013441bd2190cf5fdf6e72b26))
+* adjust return statement for PHP CLI scripts [[#1](https://github.com/d3p1/dockgento/issues/1)] ([94c6cdb](https://github.com/d3p1/dockgento/commit/94c6cdba98eae9b5a1da2807684222dee6d7b249))
+
+
+### Features
+
+* add composer volumen to Docker Compose file of Dev Container environment [[#1](https://github.com/d3p1/dockgento/issues/1)] ([9023de4](https://github.com/d3p1/dockgento/commit/9023de43b341f9cc04c097000e8c5038bdf04ab8))
+* add Docker utils [[#1](https://github.com/d3p1/dockgento/issues/1)] ([e314c2d](https://github.com/d3p1/dockgento/commit/e314c2d79f9867db170407fbc680b7372da13bd1))
+* add mkcert utils [[#1](https://github.com/d3p1/dockgento/issues/1)] ([16406b2](https://github.com/d3p1/dockgento/commit/16406b2bf59e8c0f6390f20bbe23786bade24ab1))
+* add MySQL utils [[#1](https://github.com/d3p1/dockgento/issues/1)] ([7d10f0f](https://github.com/d3p1/dockgento/commit/7d10f0f22009d224a06dfc17856febdbf586a829))
+* add util that will allow dockgento scritps to get host resources [[#1](https://github.com/d3p1/dockgento/issues/1)] ([a516f42](https://github.com/d3p1/dockgento/commit/a516f42eabd54bcf6ea55c7dfd124d7a64d3afb1))
+* add util that will allow the execute of scripts inside dockgento script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6115625](https://github.com/d3p1/dockgento/commit/611562595c1fe6ceb4caf60f1cc3f6d1a8d2fd07))
+* add util to envsubst files in a given location [[#1](https://github.com/d3p1/dockgento/issues/1)] ([566e9b6](https://github.com/d3p1/dockgento/commit/566e9b6c9e6e513d9b7994a22e49189bedcc9a89))
+* add util to print message in terminal [[#1](https://github.com/d3p1/dockgento/issues/1)] ([1c27adb](https://github.com/d3p1/dockgento/commit/1c27adb06745a4279b1e483a6594b84a6b824f31))
+* improve return status in execute script util [[#1](https://github.com/d3p1/dockgento/issues/1)] ([f268a7b](https://github.com/d3p1/dockgento/commit/f268a7b393b96f44f680ffefec079f6a0bc4cf74))
+* init .dockgento_profile.sample file [[#1](https://github.com/d3p1/dockgento/issues/1)] ([f0e6413](https://github.com/d3p1/dockgento/commit/f0e6413c8f815e2ec21d0514c9e6113b41d581d5))
+* init dockgento script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([a571565](https://github.com/d3p1/dockgento/commit/a571565364669fbbb80644e1238a5033e0f054a1))
+
 ## [1.3.1](https://github.com/d3p1/dockgento/compare/v1.3.0...v1.3.1) (2024-09-06)
 
 
