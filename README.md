@@ -56,7 +56,8 @@
 -- *Analyze if there is a way to encapsulate the repetitive code that is done inside install dependencies logic (that installs a given tool like `docker` or `mkcert`)*
 -- *Analyze if there is a way to improve `envsubst_files` command in deploy script*
 -- *Improve scripts validations before execution (`dockgento init`, `dockgento mage-install`, `dockgento mage-setup`)* 
--- *Improve log messages in `PHP CLI` image scripts* 
+-- *Improve log messages in `PHP CLI` image scripts*
+-- *For now, installer add `dockgento` as a `bash` command but improve this logic so it is added as other shell command*
 -- *Explain the `.dockgento_profile` file (based in `.bash_profile`) and what each environment variable does (and when it is used - when it is required for certain environment):*
 --- BASE_DOCKER_PATH="${SCRIPT_DOCKER_PATH}"
 --- BASE_USER_EMAIL="${SCRIPT_USER_EMAIL}"
