@@ -14,23 +14,23 @@ set -eu
 ##
 # Main
 #
-# @param  bool $1 Is setup flag
+# @param  bool $1 Is installation flag
 # @return void
 ##
 main() {
     ##
-    # @note Check if it is a setup
+    # @note Check if it is an installation
     ##
     if [ "$1" -eq 1 ]; then
-        ##
-        # @note Setup Magento
-        ##
-        setup
-    else
         ##
         # @note Install Magento
         ##
         install
+    else
+        ##
+        # @note Setup Magento
+        ##
+        setup
     fi
     
     ##
