@@ -16,7 +16,6 @@ source $BASE_DIR/lib/utils/docker/install.sh
 # Main
 #
 # @return void
-# @note   Install `docker`
 ##
 main() {
     _install_docker

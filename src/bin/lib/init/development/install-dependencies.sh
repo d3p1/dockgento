@@ -16,14 +16,13 @@ source $BASE_DIR/lib/mkcert/install.sh
 # Main
 # 
 # @return void
-# @note   Install `mkcert` to generate locally-trusted SSL certificates
 ##
 main() {
     _install_mkcert
 }
 
 ##
-# Install `mkcert` tool
+# Install `mkcert` to generate locally-trusted SSL certificates
 #
 # @return void
 # @link   https://github.com/FiloSottile/mkcert
