@@ -19,6 +19,9 @@
 # @note        The `SCRIPT_DEV_DOC_ROOT_DIR` should be defined only for
 #              a development environment and must point to the local
 #              Magento source code that is being developed
+# @note        The `SCRIPT_DB_DUMP` should be defined only for
+#              the `dockgento mage-setup` command and must point to the local
+#              DB dump location that should be migrated to setup the platform
 # @link        https://account.magento.com/applications/customer/login
 ##
 export SCRIPT_USER_EMAIL=""
@@ -34,3 +37,4 @@ export SCRIPT_MAGENTO_VERSION="2.4.6"
 export SCRIPT_MAGENTO_ADMIN_FIRSTNAME=""
 export SCRIPT_MAGENTO_ADMIN_LASTNAME=""
 export SCRIPT_DEV_DOC_ROOT_DIR="./www"
+export SCRIPT_DB_DUMP=""
