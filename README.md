@@ -54,6 +54,7 @@
 -- *Remember to mention to init the `cron` service if it is necessary with `docker compose start cron`*
 -- *Document how to use the different scripts of the `cli` service (like the one that allows the installation of a Magento platform or the setup of a Magento platform)*  
 -- *Analyze if there is a way to encapsulate the repetitive code that is done inside install dependencies logic (that installs a given tool like `docker` or `mkcert`)*
+-- *Analyze if there is a way to improve `envsubst_files` command in deploy script*
 -- *Explain the `.dockgento_profile` file (based in `.bash_profile`) and what each environment variable does (and when it is used - when it is required for certain environment):*
 --- BASE_DOCKER_PATH="${SCRIPT_DOCKER_PATH}"
 --- BASE_USER_EMAIL="${SCRIPT_USER_EMAIL}"
@@ -86,7 +87,6 @@
 --- MYSQL_ROOT_PASSWORD="${SCRIPT_MYSQL_ROOT_PASSWORD}"
 --- NGINX_WORKER_PROCESSES="${SCRIPT_NGINX_WORKER_PROCESSES}"
 --- NGINX_WORKER_CONNECTIONS="${SCRIPT_NGINX_WORKER_CONNECTIONS}" 
-
 
 ## Changelog
 
