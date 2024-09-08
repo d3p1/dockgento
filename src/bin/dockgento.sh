@@ -36,11 +36,11 @@ main() {
 	case "$1" in
 		init | mage-install | mage-setup)
 			_execute_command "$@"
-		;;
+			;;
 
 		*)
-	  		_print_help
-		;;
+			_print_help
+			;;
 	esac
 
 	exit 0
