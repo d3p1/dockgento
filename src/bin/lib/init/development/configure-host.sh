@@ -27,6 +27,12 @@ main() {
     # @note Generate locally-trusted SSL certificates
     ##
     _generate_ssl_certificates
+
+    ##
+	# @note Add domain to `/etc/hosts` to be able to access project from
+	#       localhost without a DNS proxy configuration
+	##
+	_add_domain_to_hosts
 }
 
 ##
@@ -52,6 +58,22 @@ _generate_ssl_certificates() {
     "$SCRIPT_DOMAIN" \
     "$BASE_DIR/etc/services/traefik/etc/certs/"
     print_message "[NOTICE] End generation of locally-trusted SSL certificates for domain $SCRIPT_DOMAIN"
+}
+
+##
+# Add domain to `/etc/hosts`
+#
+# @return void
+# @link   https://github.com/markshust/docker-magento/blob/master/compose/bin/setup-domain
+# @link   https://unix.stackexchange.com/questions/464652/is-there-any-difference-between-tee-and-when-using-echo
+# @link   https://stackoverflow.com/questions/4749330/how-to-test-if-string-exists-in-file-with-bash
+##
+_add_domain_to_hosts() {
+    if ! grep -q "$SCRIPT_DOMAIN" /etc/hosts; then
+    	print_message "[NOTICE] Start add domain $SCRIPT_DOMAIN to \`/etc/hosts\`"
+        echo "127.0.0.1 ::1 $SCRIPT_DOMAIN" | sudo tee -a /etc/hosts
+        print_message "[NOTICE] End add domain $SCRIPT_DOMAIN to \`/etc/hosts\`"
+    fi
 }
 
 ##
