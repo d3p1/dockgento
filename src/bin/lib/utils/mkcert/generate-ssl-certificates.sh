@@ -14,7 +14,7 @@
 # @return void
 # @link   https://github.com/FiloSottile/mkcert
 ##
-generate_ssl_certifcates() {    
+generate_ssl_certificates() {
     local key
     local crt
     

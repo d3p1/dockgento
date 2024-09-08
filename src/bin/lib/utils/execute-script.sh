@@ -16,6 +16,9 @@
 #         script parameters. Consequently, every argument
 #         following the `$1` parameter (script path) is treated as part of `$2`,
 #         and will be used as a script parameter
+# @note   It is used `return` instead of `exit` to return status code
+#         in order to allow caller script to validate execution code
+#         and does additional/personalized logic to handle the situation
 ##
 execute_script() {
     local script
