@@ -1,3 +1,35 @@
+# [1.5.0](https://github.com/d3p1/dockgento/compare/v1.4.0...v1.5.0) (2024-09-08)
+
+
+### Bug Fixes
+
+* add configure services step inside the dockgento init command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([0343be6](https://github.com/d3p1/dockgento/commit/0343be67286ab77f42e25b0a600084f9957efb2d))
+* adjust Traefik acme.json file path in configure prod host script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([3b6f583](https://github.com/d3p1/dockgento/commit/3b6f583478a7825b91e4ede3491b29cddd2b98e9))
+* improve init script received param of PHP CLI images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([5d30290](https://github.com/d3p1/dockgento/commit/5d302907bfeb27b0bbf0704b62898401f6c34a75))
+* remove unneeded common configure host script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([24f56ea](https://github.com/d3p1/dockgento/commit/24f56eadc24135180048c8d3d805b183f24c710b))
+* source .dockgento.profile file before executing dockgento commands [[#1](https://github.com/d3p1/dockgento/issues/1)] ([4ecac1b](https://github.com/d3p1/dockgento/commit/4ecac1b6eedae312406f70fe8a997e0ef8186d5c))
+
+
+### Features
+
+* add configure dev host script for dockgento init command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([19534ad](https://github.com/d3p1/dockgento/commit/19534adce424312ecd479f1aed6a97c658101e26))
+* add configure dev services script for dockgento init command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6105e1f](https://github.com/d3p1/dockgento/commit/6105e1f9eccd179a431e381975fe819ee9184bdf))
+* add configure host script for dockgento init command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([50ed070](https://github.com/d3p1/dockgento/commit/50ed070389e61c4187e2f2260bf1deff2d1d94f9))
+* add configure prod host script for dockgento init command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([cf98abf](https://github.com/d3p1/dockgento/commit/cf98abf523015b2ffd5ed8be2e782bb1b2d17523))
+* add configure prod services script for dockgento init command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6205d5d](https://github.com/d3p1/dockgento/commit/6205d5d49453411114571ef1794c0f1da4995522))
+* add configure services script for dockgento init command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([992cf1c](https://github.com/d3p1/dockgento/commit/992cf1cb5c87748c2d4590cf2020d2d78f53d267))
+* add deploy script for dockgento init command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([b56cc0e](https://github.com/d3p1/dockgento/commit/b56cc0ee417383f43b084c7e5ec5e530bd431b79))
+* add dockgento init command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([27b741c](https://github.com/d3p1/dockgento/commit/27b741c5f834bb3d3dd5088edce249f3e4d88382))
+* add dockgento mage-install command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([25e4a2e](https://github.com/d3p1/dockgento/commit/25e4a2e922d3afcaa598f5d1bbe057153364132e))
+* add dockgento mage-setup command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([a06a14f](https://github.com/d3p1/dockgento/commit/a06a14f360e33785b5ec8f81d13f85c7cbce51e8))
+* add domain to hosts file in configure dev host script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([2ecf9c5](https://github.com/d3p1/dockgento/commit/2ecf9c500449f3164ace4e167f48afc124400b99))
+* add generation of SSL certificates in configure dev host script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([9d24657](https://github.com/d3p1/dockgento/commit/9d24657b0c7f8bc92718dbf6f031786daa90ddd8))
+* add install dependencies script for dockgento init command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([e7503a8](https://github.com/d3p1/dockgento/commit/e7503a8823defd87b3516735fcdfd4ffde616548))
+* add install dev env dependencies script for dockgento init command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([879d123](https://github.com/d3p1/dockgento/commit/879d123a0080ec1d69576ff3cd67f9d3eae84cd4))
+* add utility to generate a random value [[#1](https://github.com/d3p1/dockgento/issues/1)] ([8040783](https://github.com/d3p1/dockgento/commit/80407834fdce4f5bddf60532d8fa558ca09b6705))
+* improve env variables exported by docker rootless mode configuration script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([4576d6c](https://github.com/d3p1/dockgento/commit/4576d6ce2088d00154a5c64e55ae39fc34097b5f))
+* improve print messages in terminal util [[#1](https://github.com/d3p1/dockgento/issues/1)] ([0e7b286](https://github.com/d3p1/dockgento/commit/0e7b286248faf0f71a268e8668cd1f71867dee34))
+
 # [1.4.0](https://github.com/d3p1/dockgento/compare/v1.3.1...v1.4.0) (2024-09-07)
 
 
