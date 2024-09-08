@@ -35,6 +35,14 @@ source $BASE_DIR/lib/utils/execute-script.sh
 main() {
 	case "$1" in
 		init | mage-install | mage-setup)
+			if [ ! -e ".dockgento.profile" ]; then
+				print_message \
+				"[ERROR] You must create a \`.dockgento.profile\` file with the required exports of environment variables that are used during command execution" \
+				"[NOTICE] Check for reference: https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.sample"
+				exit 1
+			fi
+
+			source .dockgento.profile
 			_execute_command "$@"
 			;;
 
