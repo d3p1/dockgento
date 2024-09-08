@@ -91,7 +91,7 @@ _configure_traefik() {
     #        permissions 644 for /etc/traefik/acme.json are too open, \
     #        please use 600"`
     ##
-    traefik_acme_file_path="./$BASE_DIR/etc/services/traefik/etc/acme.json"
+    traefik_acme_file_path="$BASE_DIR/etc/services/traefik/etc/acme.json"
     if [ ! -e traefik_acme_file_path ]; then
 		print_message "[NOTICE] Start configuration of Traefik"
 		touch "$traefik_acme_file_path"
