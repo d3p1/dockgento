@@ -39,7 +39,8 @@ main() {
 # @note   It is considered that in a dev environment, the `docker` socket
 #         is located in `/var/run/docker.sock`
 # @note   The `docker` socket is mounted in Traefik service so it can work
-#         with the infrastructure (i.e.: recognizing available services)
+#         with the infrastructure
+#         (i.e.: it allows the recognition of available services)
 ##
 _configure_traefik() {
 	print_message "[NOTICE] Start init Traefik dev environment variables"
