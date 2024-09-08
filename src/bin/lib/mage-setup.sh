@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ##
 # @description Dockgento command to setup a Magento platform
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
