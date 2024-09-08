@@ -18,7 +18,15 @@ source $BASE_DIR/lib/utils/docker/configure.sh
 # @return void
 ##
 main() {
+	##
+	# @note Configure `docker`
+	##
     _configure_docker
+
+    ##
+    # @note Generate locally-trusted SSL certificates
+    ##
+    _generate_ssl_certificates
 }
 
 ##
@@ -30,6 +38,20 @@ _configure_docker() {
     print_message "[NOTICE] Start configuration of \`docker\`"
     configure_docker
     print_message "[NOTICE] End configuration of \`docker\`"
+}
+
+##
+# Generate SSL certificates
+#
+# @return void
+##
+_generate_ssl_certificates() {
+    print_message "[NOTICE] Start generation of locally-trusted SSL certificates for domain $SCRIPT_DOMAIN"
+    generate_ssl_certificates \
+    "magento" \
+    "$SCRIPT_DOMAIN" \
+    "$BASE_DIR/etc/services/traefik/etc/certs/"
+    print_message "[NOTICE] End generation of locally-trusted SSL certificates for domain $SCRIPT_DOMAIN"
 }
 
 ##
