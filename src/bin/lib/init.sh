@@ -16,10 +16,6 @@ source $BASE_DIR/lib/utils/execute-script.sh
 #
 # @param  string $1 Environment to initialize
 # @return void
-# @note   In the executed scripts, will be exported the
-#         respective environment variables that
-#         will be persisted in the respective env file using
-#         the `envsubst` command
 ##
 main() {
 	##
@@ -37,12 +33,21 @@ main() {
 	##
 	_execute_init_script "configure-host" "$1"
 
+    ##
+	# @note Execute script to configure (Docker Compose) services
+	# @note In this script will be exported the
+    #       respective environment variables that
+    #       will be persisted by the `deploy` script
+    #       in the respective env files using the `envsubst` command
+	##
+	_execute_init_script "configure-services" "$1"
+
 	##
 	# @note Execute script to deploy environment.
 	#       It will be created the respective Docker Compose files
 	#       with the respective environment files in the current directory,
-	#       so the user can run the environment
-	#       with `docker compose up -d` command on demand
+	#       so the user can run the environment on demand
+	#       with `docker compose up -d` command
 	##
 	_execute_init_script "deploy" "$1"
 }
