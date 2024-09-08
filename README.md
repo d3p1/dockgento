@@ -53,6 +53,7 @@
 -- *Explain how the `dockgento` script works (the use of the environment variables, `envsubst` command, `.dockgento_profile` file, etc.)* 
 -- *Remember to mention to init the `cron` service if it is necessary with `docker compose start cron`*
 -- *Document how to use the different scripts of the `cli` service (like the one that allows the installation of a Magento platform or the setup of a Magento platform)*  
+-- *Analyze if there is a way to encapsulate the repetitive code that is done inside install dependencies logic (that installs a given tool like `docker` or `mkcert`)*
 -- *Explain the `.dockgento_profile` file (based in `.bash_profile`) and what each environment variable does (and when it is used - when it is required for certain environment):*
 --- BASE_DOCKER_PATH="${SCRIPT_DOCKER_PATH}"
 --- BASE_USER_EMAIL="${SCRIPT_BASE_USER_EMAIL}"
