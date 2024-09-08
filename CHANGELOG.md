@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/d3p1/dockgento/compare/v1.5.0...v1.6.0) (2024-09-08)
+
+
+### Bug Fixes
+
+* adjust mage-install and mage-setup shebang [[#1](https://github.com/d3p1/dockgento/issues/1)] ([a086e8c](https://github.com/d3p1/dockgento/commit/a086e8cd5a7c4c30cf2ce4adf885db71fb692bb5))
+
+
+### Features
+
+* add dockgento installer [[#1](https://github.com/d3p1/dockgento/issues/1)] ([9cf442c](https://github.com/d3p1/dockgento/commit/9cf442c7af97d1add0676eaebd941af72b499188))
+
 # [1.5.0](https://github.com/d3p1/dockgento/compare/v1.4.0...v1.5.0) (2024-09-08)
 
 
