@@ -16,7 +16,6 @@ source $BASE_DIR/lib/utils/get-resources.sh
 # Main
 #
 # @return void
-# @note   Configure Magento static content deploy jobs
 ##
 main() {
     _configure_magento_static_content_deploy_jobs
@@ -26,9 +25,6 @@ main() {
 # Configure Magento static content deploy jobs
 #
 # @return void
-# @note   It is exported the respective environment variable that
-#         then will be persisted in the respective env file using
-#         the `envsubst` command
 ##
 _configure_magento_static_content_deploy_jobs() {
 	print_message "[NOTICE] Start creation of environment variable \`SCRIPT_MAGENTO_STATIC_CONTENT_DEPLOY_JOBS\`"
