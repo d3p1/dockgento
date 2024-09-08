@@ -22,7 +22,7 @@ export BASE_DIR
 ##
 # @note Import required utilities
 ##
-source $BASE_DIR/lib/utils/print-message.sh
+source $BASE_DIR/lib/utils/log.sh
 source $BASE_DIR/lib/utils/execute-script.sh
 
 ##

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##
-# @description An utility to print message in terminal
+# @description An utility to log messages in terminal
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
 ##
 
@@ -16,4 +16,14 @@
 ##
 print_message() {
     printf "%s\n" "$@"
+}
+
+##
+# Print environment variable name and value in terminal using specific format
+#
+# @param  string $1 Environment variable name
+# @return void
+##
+print_env_var() {
+	print_message "[NOTICE] \`$1\`: ${!1}"
 }
