@@ -16,6 +16,10 @@ source $BASE_DIR/lib/utils/execute-script.sh
 #
 # @param  string $1 Environment to initialize
 # @return void
+# @note   In the executed scripts, will be exported the
+#         respective environment variables that
+#         will be persisted in the respective env file using
+#         the `envsubst` command
 ##
 main() {
 	##
