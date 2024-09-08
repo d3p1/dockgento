@@ -48,7 +48,7 @@ services:
     labels:
       - traefik.http.routers.https-magento.entrypoints=websecure
       - traefik.http.routers.https-magento.tls=true
-      - traefik.http.routers.https-magento.rule=Host(`${BASE_URL}`) || Host(`www.${BASE_URL}`)
+      - traefik.http.routers.https-magento.rule=Host(`${BASE_DOMAIN}`) || Host(`www.${BASE_DOMAIN}`)
       - traefik.http.routers.https-magento.service=https-magento
       - traefik.http.services.https-magento.loadbalancer.server.port=80
     restart:

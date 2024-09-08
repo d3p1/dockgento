@@ -21,8 +21,8 @@
 #              Magento source code that is being developed
 # @link        https://account.magento.com/applications/customer/login
 ##
-export SCRIPT_BASE_USER_EMAIL=""
-export SCRIPT_BASE_URL=""
+export SCRIPT_USER_EMAIL=""
+export SCRIPT_DOMAIN=""
 export SCRIPT_MARIADB_VERSION="10.6"
 export SCRIPT_SMTP_HOST=""
 export SCRIPT_SMTP_PORT=""

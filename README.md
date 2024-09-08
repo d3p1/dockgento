@@ -56,8 +56,8 @@
 -- *Analyze if there is a way to encapsulate the repetitive code that is done inside install dependencies logic (that installs a given tool like `docker` or `mkcert`)*
 -- *Explain the `.dockgento_profile` file (based in `.bash_profile`) and what each environment variable does (and when it is used - when it is required for certain environment):*
 --- BASE_DOCKER_PATH="${SCRIPT_DOCKER_PATH}"
---- BASE_USER_EMAIL="${SCRIPT_BASE_USER_EMAIL}"
---- BASE_URL="${SCRIPT_BASE_URL}"
+--- BASE_USER_EMAIL="${SCRIPT_USER_EMAIL}"
+--- BASE_DOMAIN="${SCRIPT_DOMAIN}"
 --- BASE_MARIADB_DB_NAME="${SCRIPT_MARIADB_DB_NAME}"
 --- BASE_MARIADB_DB_USER="${SCRIPT_MARIADB_USER}"
 --- BASE_MARIADB_DB_PASSWORD="${SCRIPT_MARIADB_PASSWORD}"
