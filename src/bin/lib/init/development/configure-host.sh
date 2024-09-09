@@ -11,6 +11,7 @@
 ##
 source $BASE_DIR/lib/utils/log.sh
 source $BASE_DIR/lib/utils/docker/configure.sh
+source $BASE_DIR/lib/utils/mkcert/generate-ssl-certificates.sh
 
 ##
 # Main
