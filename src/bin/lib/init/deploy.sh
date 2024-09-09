@@ -47,7 +47,7 @@ _generate_infra_files() {
     print_message "[NOTICE] End env files generation"
 
     print_message "[NOTICE] Start \`devcontainer.json\` file generation"
-    envsubst_file ".devcontainer/devcontainer.json" '${BASE_SEARCH_SERVICE}'
+    envsubst_file ".devcontainer/devcontainer.json" '${SCRIPT_SEARCH_SERVICE}'
     print_message "[NOTICE] End \`devcontainer.json\` file generation"
 }
 
