@@ -27,25 +27,27 @@ CLI_DIR="$HOME/bin/dockgento"
 main() {
     ##
     # @note Check if script is already installed
+    # @note If script is already installer, it is removed so it can be
+    #       downloaded and configured a new version
     ##
     if [ -d "$CLI_DIR" ]; then
-		_print_message "[NOTICE] \`dockgento\` is already installed"
-    else
-    	##
-    	# @note Setup CLI
-    	##
-    	_setup_cli
+		rm -rf "$CLI_DIR"
+	fi
 
-		##
-		# @note Install CLI
-		##
-		_install_cli
+	##
+	# @note Setup CLI
+	##
+	_setup_cli
 
-		##
-		# @note Persist CLI in `PATH` environment variable
-		##
-		_add_shell_command
-    fi
+	##
+	# @note Install CLI
+	##
+	_install_cli
+
+	##
+	# @note Persist CLI in `PATH` environment variable
+	##
+	_add_shell_command
 
     exit 0;
 }
