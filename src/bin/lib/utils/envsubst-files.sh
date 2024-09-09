@@ -19,8 +19,19 @@
 envsubst_files() {
     shopt -s globstar
     for file in **/$1; do
-        local tmp
-        tmp=$(mktemp)
-        envsubst "$2" < "$file" > "$tmp" && mv "$tmp" "$file"
+    	envsubst_file "$file" "$2"
     done
+}
+
+##
+# Replace file with `envsubst` result
+#
+# @param  string $1 File
+# @param  string $2 Variables to replace
+# @return void
+##
+envsubst_file() {
+	local tmp
+	tmp=$(mktemp)
+	envsubst "$2" < "$1" > "$tmp" && mv "$tmp" "$1"
 }
