@@ -1,6 +1,6 @@
 {
     "name": "@d3p1/dockgento",
-    "version": "1.7.6",
+    "version": "1.7.7",
     "description": "A Docker environment generator for Magento 2",
     "author": "C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)",
     "homepage": "https://github.com/d3p1/dockgento#readme",
