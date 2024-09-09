@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/d3p1/dockgento/compare/v1.6.1...v1.6.2) (2024-09-09)
+
+
+### Bug Fixes
+
+* source .dockgento_profile instead of .dockgento.profile [[#1](https://github.com/d3p1/dockgento/issues/1)] ([8310e92](https://github.com/d3p1/dockgento/commit/8310e925b00392e3d9a7011bd623c9a217aaca7c))
+
 ## [1.6.1](https://github.com/d3p1/dockgento/compare/v1.6.0...v1.6.1) (2024-09-09)
 
 
