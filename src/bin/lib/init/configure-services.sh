@@ -182,7 +182,7 @@ _configure_magento() {
 # @return void
 ##
 _generate_random_name() {
-	generate_random_value 'A-Za-z!?%=' "10"
+	generate_random_value 'A-Za-z' "10"
 }
 
 ##
