@@ -1,3 +1,10 @@
+## [1.7.6](https://github.com/d3p1/dockgento/compare/v1.7.5...v1.7.6) (2024-09-09)
+
+
+### Bug Fixes
+
+* adjust devcontainer.json file generation [[#1](https://github.com/d3p1/dockgento/issues/1)] ([410607c](https://github.com/d3p1/dockgento/commit/410607c72bd248434c0381d92f5575c9b4202014))
+
 ## [1.7.5](https://github.com/d3p1/dockgento/compare/v1.7.4...v1.7.5) (2024-09-09)
 
 
