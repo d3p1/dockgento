@@ -64,10 +64,10 @@ _configure_mariadb() {
     export SCRIPT_MARIADB_USER
     export SCRIPT_MARIADB_PASSWORD
     export SCRIPT_MYSQL_ROOT_PASSWORD
-    log_env_var "SCRIPT_MARIADB_DB_NAME"
-    log_env_var "SCRIPT_MARIADB_USER"
-    log_env_var "SCRIPT_MARIADB_PASSWORD"
-    log_env_var "SCRIPT_MYSQL_ROOT_PASSWORD"
+    print_env_var "SCRIPT_MARIADB_DB_NAME"
+    print_env_var "SCRIPT_MARIADB_USER"
+    print_env_var "SCRIPT_MARIADB_PASSWORD"
+    print_env_var "SCRIPT_MYSQL_ROOT_PASSWORD"
     print_message "[NOTICE] End init MariaDB environment variables"
 }
 
@@ -82,8 +82,8 @@ _configure_rabbitmq() {
     SCRIPT_RABBITMQ_DEFAULT_PASS="$(_generate_random_password)"
     export SCRIPT_RABBITMQ_DEFAULT_USER
     export SCRIPT_RABBITMQ_DEFAULT_PASS
-    log_env_var "SCRIPT_RABBITMQ_DEFAULT_USER"
-    log_env_var "SCRIPT_RABBITMQ_DEFAULT_PASS"
+    print_env_var "SCRIPT_RABBITMQ_DEFAULT_USER"
+    print_env_var "SCRIPT_RABBITMQ_DEFAULT_PASS"
     print_message "[NOTICE] End init RabbitMQ environment variables"
 }
 
@@ -99,8 +99,8 @@ _configure_web() {
 	SCRIPT_NGINX_WORKER_CONNECTIONS="$(ulimit -n)"
 	export SCRIPT_NGINX_WORKER_PROCESSES
     export SCRIPT_NGINX_WORKER_CONNECTIONS
-    log_env_var "SCRIPT_NGINX_WORKER_PROCESSES"
-    log_env_var "SCRIPT_NGINX_WORKER_CONNECTIONS"
+    print_env_var "SCRIPT_NGINX_WORKER_PROCESSES"
+    print_env_var "SCRIPT_NGINX_WORKER_CONNECTIONS"
     print_message "[NOTICE] End init web server (Nginx) environment variables"
 }
 
@@ -122,7 +122,7 @@ _configure_search_engine() {
     MEM=$(get_ram_mem)
     SEARCH_ENGINE_MEM=$(( MEM / 2 ))
     export SCRIPT_SEARCH_JAVA_OPTS="-Xms${SEARCH_ENGINE_MEM}k -Xmx${SEARCH_ENGINE_MEM}k"
-    log_env_var "SCRIPT_SEARCH_JAVA_OPTS"
+    print_env_var "SCRIPT_SEARCH_JAVA_OPTS"
 
     ##
     # @note Evaluate search engine and export environment variables
@@ -147,9 +147,9 @@ _configure_search_engine() {
     export SCRIPT_MAGENTO_SEARCH_ENGINE_HOST
     export SCRIPT_MAGENTO_SEARCH_ENGINE_PORT
     export SCRIPT_MAGENTO_SEARCH_ENGINE
-    log_env_var "SCRIPT_MAGENTO_SEARCH_ENGINE_HOST"
-    log_env_var "SCRIPT_MAGENTO_SEARCH_ENGINE_PORT"
-    log_env_var "SCRIPT_MAGENTO_SEARCH_ENGINE"
+    print_env_var "SCRIPT_MAGENTO_SEARCH_ENGINE_HOST"
+    print_env_var "SCRIPT_MAGENTO_SEARCH_ENGINE_PORT"
+    print_env_var "SCRIPT_MAGENTO_SEARCH_ENGINE"
 
     print_message "[NOTICE] End init search engine environment variables"
 }
@@ -164,14 +164,14 @@ _configure_magento() {
 
     SCRIPT_MAGENTO_STATIC_CONTENT_DEPLOY_JOBS="$(get_number_cpus)"
 	export SCRIPT_MAGENTO_STATIC_CONTENT_DEPLOY_JOBS
-	log_env_var "SCRIPT_MAGENTO_STATIC_CONTENT_DEPLOY_JOBS"
+	print_env_var "SCRIPT_MAGENTO_STATIC_CONTENT_DEPLOY_JOBS"
 
 	SCRIPT_MAGENTO_ADMIN_USER="$(_generate_random_name)"
 	SCRIPT_MAGENTO_ADMIN_PASSWORD="$(_generate_random_password)"
 	export SCRIPT_MAGENTO_ADMIN_USER
     export SCRIPT_MAGENTO_ADMIN_PASSWORD
-    log_env_var "SCRIPT_MAGENTO_ADMIN_USER"
-    log_env_var "SCRIPT_MAGENTO_ADMIN_PASSWORD"
+    print_env_var "SCRIPT_MAGENTO_ADMIN_USER"
+    print_env_var "SCRIPT_MAGENTO_ADMIN_PASSWORD"
 
 	print_message "[NOTICE] End init Magento environment variables"
 }
