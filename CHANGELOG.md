@@ -1,3 +1,11 @@
+## [1.7.2](https://github.com/d3p1/dockgento/compare/v1.7.1...v1.7.2) (2024-09-09)
+
+
+### Bug Fixes
+
+* import generate SSL certificates function to solve SSL certificates generation [[#1](https://github.com/d3p1/dockgento/issues/1)] ([48eadcb](https://github.com/d3p1/dockgento/commit/48eadcb0509cf3064933e6433751ca2d07de164c))
+* replace undefined log_env_var function by print_env_var function [[#1](https://github.com/d3p1/dockgento/issues/1)] ([a0f3776](https://github.com/d3p1/dockgento/commit/a0f3776f50384073af7b08fbe27d101308ddaed3))
+
 ## [1.7.1](https://github.com/d3p1/dockgento/compare/v1.7.0...v1.7.1) (2024-09-09)
 
 
