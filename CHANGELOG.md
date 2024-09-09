@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/d3p1/dockgento/compare/v1.6.2...v1.7.0) (2024-09-09)
+
+
+### Features
+
+* allow the installation of a new version of dockgento [[#1](https://github.com/d3p1/dockgento/issues/1)] ([b75727b](https://github.com/d3p1/dockgento/commit/b75727ba720427e3000f163f308d5c8b321b163d))
+
 ## [1.6.2](https://github.com/d3p1/dockgento/compare/v1.6.1...v1.6.2) (2024-09-09)
 
 
