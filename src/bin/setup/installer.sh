@@ -49,6 +49,11 @@ main() {
 	##
 	_add_shell_command
 
+	##
+	# @note Add success message
+	##
+	_print_message "[NOTICE] \`dockgento\` was successfully installed "
+
     exit 0;
 }
 
@@ -109,7 +114,6 @@ _add_shell_command() {
 	"%s\n" \
 	"$current_profile" \
 	"export PATH=$CLI_DIR:$PATH" > "$HOME/.bash_profile"
-	_print_message "[NOTICE] Execute \`source ~/.bash_profile\` in order to start using the \`dockgento\` command"
 
 	_print_message "[NOTICE] End add \`dockgento\` to commands"
 }
