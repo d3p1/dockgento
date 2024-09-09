@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/d3p1/dockgento/compare/v1.6.0...v1.6.1) (2024-09-09)
+
+
+### Bug Fixes
+
+* adjust installer installation cli instructions [[#1](https://github.com/d3p1/dockgento/issues/1)] ([d50f924](https://github.com/d3p1/dockgento/commit/d50f9244057dfa197c4ddb1e5fbb73ba30311cda))
+
 # [1.6.0](https://github.com/d3p1/dockgento/compare/v1.5.0...v1.6.0) (2024-09-08)
 
 
