@@ -68,9 +68,9 @@ _setup_cli() {
 ##
 _install_cli() {
 	_print_message "[NOTICE] Start CLI installation"
-	cp "$CURRENT_DIR/../dockgento" . && chmod +x dockgento
-	mkdir lib && cp -R "$CURRENT_DIR/../lib/*" ./lib && chmod -R +x ./lib/*.sh
-	mkdir etc && cp -R "$CURRENT_DIR/../etc/*" ./etc
+	cp "$CURRENT_DIR/../dockgento.sh" dockgento && chmod u+x dockgento
+	cp -R "$CURRENT_DIR/../lib/" . && chmod -R +x ./lib/
+	cp -R "$CURRENT_DIR/../etc/" .
 	_print_message "[NOTICE] End CLI installation"
 }
 
