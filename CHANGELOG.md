@@ -1,3 +1,11 @@
+## [1.7.4](https://github.com/d3p1/dockgento/compare/v1.7.3...v1.7.4) (2024-09-09)
+
+
+### Bug Fixes
+
+* add forgotten environment variables used inside the deployed environment files [[#1](https://github.com/d3p1/dockgento/issues/1)] ([e8fc516](https://github.com/d3p1/dockgento/commit/e8fc51660a7a2a59ee43c62d0ba84d458d3f938e))
+* adjust random name generation for service configuration script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([81de897](https://github.com/d3p1/dockgento/commit/81de897e8a82abd25d34904d0976ed5b4219a84b))
+
 ## [1.7.3](https://github.com/d3p1/dockgento/compare/v1.7.2...v1.7.3) (2024-09-09)
 
 
