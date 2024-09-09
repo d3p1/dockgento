@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/d3p1/dockgento/compare/v1.7.2...v1.7.3) (2024-09-09)
+
+
+### Bug Fixes
+
+* create cert directory to avoid errors on local SSL certificates generation [[#1](https://github.com/d3p1/dockgento/issues/1)] ([88acbf1](https://github.com/d3p1/dockgento/commit/88acbf11f107a2d93a028dfeee8388b838938669))
+
 ## [1.7.2](https://github.com/d3p1/dockgento/compare/v1.7.1...v1.7.2) (2024-09-09)
 
 
