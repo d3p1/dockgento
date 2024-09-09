@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/d3p1/dockgento/compare/v1.7.0...v1.7.1) (2024-09-09)
+
+
+### Bug Fixes
+
+* adjust call to mkcert util script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([0cc8481](https://github.com/d3p1/dockgento/commit/0cc848169889110c5dca801373f16012fef9e4ac))
+
 # [1.7.0](https://github.com/d3p1/dockgento/compare/v1.6.2...v1.7.0) (2024-09-09)
 
 
