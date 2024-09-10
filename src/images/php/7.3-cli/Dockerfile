@@ -88,12 +88,12 @@ FROM magento/magento-cloud-docker-php:7.3-cli-1.3.6
     COPY bin/setup /usr/local/bin/
     COPY bin/deploy /usr/local/bin/
     COPY bin/run-cron /usr/local/bin/
-    COPY bin/lib/configure-varnish /usr/local/bin/lib/
-    COPY bin/lib/configure-smtp /usr/local/bin/lib/
+    COPY bin/configure-varnish /usr/local/bin/
+    COPY bin/configure-smtp /usr/local/bin/
     RUN chmod +x /usr/local/bin/init
     RUN chmod +x /usr/local/bin/install
     RUN chmod +x /usr/local/bin/setup
     RUN chmod +x /usr/local/bin/deploy
     RUN chmod +x /usr/local/bin/run-cron
-    RUN chmod +x /usr/local/bin/lib/configure-varnish
-    RUN chmod +x /usr/local/bin/lib/configure-smtp
+    RUN chmod +x /usr/local/bin/configure-varnish
+    RUN chmod +x /usr/local/bin/configure-smtp

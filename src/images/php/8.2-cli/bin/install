@@ -38,13 +38,13 @@ main() {
     # @note Setup Varnish
     # @note Use custom script
     ##
-    ./lib/configure-varnish
+    configure-varnish
 
     ##
     # @note Setup SMTP server
     # @note Use custom script
     ##
-    ./lib/configure-smtp
+    configure-smtp
 
     ##
     # @note Return with success

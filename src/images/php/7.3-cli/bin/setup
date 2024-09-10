@@ -41,7 +41,7 @@ main() {
     # @note Configure SMTP
     # @note Setup SMTP using custom script
     ##
-    ./lib/configure-smtp
+    configure-smtp
 
     ##
     # @note Return with success
@@ -92,7 +92,7 @@ _configure_cache() {
     --page-cache-redis-server="$MAGENTO_PAGE_CACHE_REDIS_SERVER" \
     --page-cache-redis-db="$MAGENTO_PAGE_CACHE_REDIS_DB"
 
-    ./lib/configure-varnish
+    configure-varnish
 }
 
 ##
