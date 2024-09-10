@@ -57,7 +57,7 @@ _configure_traefik() {
 ##
 _configure_magento() {
 	print_message "[NOTICE] Start init Magento dev environment variables"
-	SCRIPT_MAGENTO_RUN_MODE="development"
+	SCRIPT_MAGENTO_RUN_MODE="developer"
 	export SCRIPT_MAGENTO_RUN_MODE
 	print_env_var "SCRIPT_MAGENTO_RUN_MODE"
 	print_message "[NOTICE] End init Magento dev environment variables"
