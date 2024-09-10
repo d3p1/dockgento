@@ -1,3 +1,10 @@
+## [1.7.8](https://github.com/d3p1/dockgento/compare/v1.7.7...v1.7.8) (2024-09-10)
+
+
+### Bug Fixes
+
+* rename Composer environment variable names [[#1](https://github.com/d3p1/dockgento/issues/1)] ([39e54ad](https://github.com/d3p1/dockgento/commit/39e54ada110129e298776229dbe208e4c23c1518))
+
 ## [1.7.7](https://github.com/d3p1/dockgento/compare/v1.7.6...v1.7.7) (2024-09-09)
 
 
