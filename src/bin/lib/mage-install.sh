@@ -31,6 +31,9 @@ main() {
 ##
 _install_magento_platform() {
 	##
+	# @note In order to install a Magento platform,
+	#       the Redis, MariaDB and other resources should be running,
+	#       to avoid Magento exceptions during installation
 	# @note The `cli` service uses the project PHP CLI image.
 	#       This image has an `init` script that receives as first param
 	#       a flag to determine if it is required to execute an installation.
@@ -39,6 +42,7 @@ _install_magento_platform() {
 	# @link https://hub.docker.com/r/d3p1/magento-php
 	##
 	print_message "[NOTICE] Start Magento installation"
+	docker compose up -d
 	docker compose run --rm cli init 1
 	print_message "[NOTICE] End Magento installation"
 }
