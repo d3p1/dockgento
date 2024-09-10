@@ -35,8 +35,6 @@ main() {
 # Configure Composer
 #
 # @return void
-# @link   https://github.com/d3p1/dockgento/blob/bd0e0501e550572513206dfccfd2d648a1075c50/src/images/php/8.2-cli/Dockerfile#L32
-# @link   https://github.com/d3p1/dockgento/blob/bd0e0501e550572513206dfccfd2d648a1075c50/src/images/php/8.2-cli/Dockerfile#L83
 # @link   https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/php/cli/docker-entrypoint.sh
 ##
 _configure_composer() {
@@ -49,12 +47,12 @@ _configure_composer() {
                 github-oauth.github.com \
                 "$COMPOSER_GITHUB_TOKEN"
     fi
-    if [ -n "$MAGENTO_COMPOSER_USERNAME" ]; then
+    if [ -n "$COMPOSER_MAGENTO_USERNAME" ]; then
         composer config \
                  --global \
                  http-basic.repo.magento.com \
-                 "$MAGENTO_COMPOSER_USERNAME" \
-                 "$MAGENTO_COMPOSER_PASSWORD"
+                 "$COMPOSER_MAGENTO_USERNAME" \
+                 "$COMPOSER_MAGENTO_PASSWORD"
     fi
 }
 

@@ -8,8 +8,8 @@
 #              SMTP service
 # @note        For `SCRIPT_SEARCH_SERVICE` should be used:
 #              `elasticsearch` or `opensearch`
-# @note        To get the `SCRIPT_MAGENTO_COMPOSER_USERNAME` and
-#              `SCRIPT_MAGENTO_COMPOSER_PASSWORD` credentials, you should
+# @note        To get the `SCRIPT_COMPOSER_MAGENTO_USERNAME` and
+#              `SCRIPT_COMPOSER_MAGENTO_PASSWORD` credentials, you should
 #              login into
 #              `https://account.magento.com/applications/customer/login`,
 #              go to `My Profile` -> `My Products` -> `Access Keys`,
@@ -31,8 +31,8 @@ export SCRIPT_SMTP_HOST=""
 export SCRIPT_SMTP_PORT=""
 export SCRIPT_PHP_VERSION="8.2"
 export SCRIPT_SEARCH_SERVICE="elasticsearch"
-export SCRIPT_MAGENTO_COMPOSER_USERNAME=""
-export SCRIPT_MAGENTO_COMPOSER_PASSWORD=""
+export SCRIPT_COMPOSER_MAGENTO_USERNAME=""
+export SCRIPT_COMPOSER_MAGENTO_PASSWORD=""
 export SCRIPT_MAGENTO_VERSION="2.4.6"
 export SCRIPT_MAGENTO_ADMIN_FIRSTNAME=""
 export SCRIPT_MAGENTO_ADMIN_LASTNAME=""
