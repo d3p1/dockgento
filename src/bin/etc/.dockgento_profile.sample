@@ -19,6 +19,13 @@
 # @note        The `SCRIPT_DEV_DOC_ROOT_DIR` should be defined only for
 #              a development environment and must point to the local
 #              Magento source code that is being developed
+# @note        It is possible to define a Magento admin user and password
+#              using the `SCRIPT_MAGENTO_ADMIN_USER` and
+#              `SCRIPT_MAGENTO_ADMIN_PASSWORD` environment variables,
+#              but if they are keep empty, then the `dockgento init <env>`
+#              command will generate custom values to them.
+#              Take into consideration that the admin password must have
+#              letters and numbers
 # @note        The `SCRIPT_DB_DUMP` should be defined only for
 #              the `dockgento mage-setup` command and must point to the local
 #              DB dump location that should be migrated to setup the platform
@@ -36,5 +43,7 @@ export SCRIPT_COMPOSER_MAGENTO_PASSWORD=""
 export SCRIPT_MAGENTO_VERSION="2.4.6"
 export SCRIPT_MAGENTO_ADMIN_FIRSTNAME=""
 export SCRIPT_MAGENTO_ADMIN_LASTNAME=""
+export SCRIPT_MAGENTO_ADMIN_USER=""
+export SCRIPT_MAGENTO_ADMIN_PASSWORD=""
 export SCRIPT_DEV_DOC_ROOT_DIR="./www"
 export SCRIPT_DB_DUMP=""

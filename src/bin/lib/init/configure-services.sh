@@ -166,12 +166,17 @@ _configure_magento() {
 	export SCRIPT_MAGENTO_STATIC_CONTENT_DEPLOY_JOBS
 	print_env_var "SCRIPT_MAGENTO_STATIC_CONTENT_DEPLOY_JOBS"
 
-	SCRIPT_MAGENTO_ADMIN_USER="$(_generate_random_name)"
-	SCRIPT_MAGENTO_ADMIN_PASSWORD="$(_generate_random_password)"
-	export SCRIPT_MAGENTO_ADMIN_USER
-    export SCRIPT_MAGENTO_ADMIN_PASSWORD
-    print_env_var "SCRIPT_MAGENTO_ADMIN_USER"
-    print_env_var "SCRIPT_MAGENTO_ADMIN_PASSWORD"
+	if [ -z "$SCRIPT_MAGENTO_ADMIN_USER" ]; then
+		SCRIPT_MAGENTO_ADMIN_USER="$(_generate_random_name)"
+		export SCRIPT_MAGENTO_ADMIN_USER
+		print_env_var "SCRIPT_MAGENTO_ADMIN_USER"
+	fi
+
+	if [ -z "$SCRIPT_MAGENTO_ADMIN_PASSWORD" ]; then
+		SCRIPT_MAGENTO_ADMIN_PASSWORD="$(_generate_random_password)"
+		export SCRIPT_MAGENTO_ADMIN_PASSWORD
+		print_env_var "SCRIPT_MAGENTO_ADMIN_PASSWORD"
+	fi
 
 	print_message "[NOTICE] End init Magento environment variables"
 }
