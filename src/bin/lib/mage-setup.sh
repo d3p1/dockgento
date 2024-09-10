@@ -41,8 +41,8 @@ _setup_magento_platform() {
 	# @link https://hub.docker.com/r/d3p1/magento-php
 	##
 	print_message "[NOTICE] Start Magento setup"
-	_migrate_db "$SCRIPT_DB_DUMP"
 	docker compose up -d
+	_migrate_db "$SCRIPT_DB_DUMP"
 	docker compose run --rm cli init 0
 	print_message "[NOTICE] End Magento setup"
 }
