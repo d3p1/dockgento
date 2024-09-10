@@ -30,6 +30,9 @@ main() {
 ##
 _setup_magento_platform() {
 	##
+	# @note In order to setup a Magento platform,
+    #       the Redis, MariaDB and other resources should be running,
+    #       to avoid Magento exceptions
 	# @note The `cli` service uses the project PHP CLI image.
 	#       This image has an `init` script that receives as first param
 	#       a flag to determine if it is required to execute an installation.
@@ -39,6 +42,7 @@ _setup_magento_platform() {
 	##
 	print_message "[NOTICE] Start Magento setup"
 	_migrate_db "$SCRIPT_DB_DUMP"
+	docker compose up -d
 	docker compose run --rm cli init 0
 	print_message "[NOTICE] End Magento setup"
 }
