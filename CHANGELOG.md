@@ -1,3 +1,12 @@
+## [1.7.9](https://github.com/d3p1/dockgento/compare/v1.7.8...v1.7.9) (2024-09-10)
+
+
+### Bug Fixes
+
+* adjust Magento developer mode set [[#1](https://github.com/d3p1/dockgento/issues/1)] ([06f0eb7](https://github.com/d3p1/dockgento/commit/06f0eb7f82c78eb24515b801e7197db0f1b0cfa0))
+* adjust PHP CLI images utility scripts [[#1](https://github.com/d3p1/dockgento/issues/1)] ([aff0305](https://github.com/d3p1/dockgento/commit/aff030502f9c9b5539b724ac02fa12751c46f373))
+* run services before Magento installation to avoid errors [[#1](https://github.com/d3p1/dockgento/issues/1)] ([f9710f9](https://github.com/d3p1/dockgento/commit/f9710f958b731b96a113ccaad4363bbbaa590f86))
+
 ## [1.7.8](https://github.com/d3p1/dockgento/compare/v1.7.7...v1.7.8) (2024-09-10)
 
 
