@@ -1,3 +1,10 @@
+## [1.7.10](https://github.com/d3p1/dockgento/compare/v1.7.9...v1.7.10) (2024-09-10)
+
+
+### Bug Fixes
+
+* run services before Magento setup to avoid errors [[#1](https://github.com/d3p1/dockgento/issues/1)] ([2143ef3](https://github.com/d3p1/dockgento/commit/2143ef37c610f17d782920d5da024f3ae1f78b36))
+
 ## [1.7.9](https://github.com/d3p1/dockgento/compare/v1.7.8...v1.7.9) (2024-09-10)
 
 
