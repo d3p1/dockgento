@@ -23,6 +23,7 @@ main() {
 
 	##
 	# @note Export required environment variables for Magento
+	#       (and PHP related services)
 	##
 	_configure_magento
 
@@ -51,14 +52,17 @@ _configure_traefik() {
 }
 
 ##
-# Configure Magento
+# Configure Magento (and related PHP services)
 #
 # @return void
 ##
 _configure_magento() {
 	print_message "[NOTICE] Start init Magento dev environment variables"
+	SCRIPT_PHP_SENDMAIL_PATH="mhsendmail"
 	SCRIPT_MAGENTO_RUN_MODE="developer"
+	export SCRIPT_PHP_SENDMAIL_PATH
 	export SCRIPT_MAGENTO_RUN_MODE
+	print_env_var "SCRIPT_PHP_SENDMAIL_PATH"
 	print_env_var "SCRIPT_MAGENTO_RUN_MODE"
 	print_message "[NOTICE] End init Magento dev environment variables"
 }
