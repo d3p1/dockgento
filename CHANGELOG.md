@@ -1,3 +1,12 @@
+## [1.8.1](https://github.com/d3p1/dockgento/compare/v1.8.0...v1.8.1) (2024-09-11)
+
+
+### Bug Fixes
+
+* add platform access using 80 port [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6e4cd06](https://github.com/d3p1/dockgento/commit/6e4cd06c785c2cc3790f5c20899981031ba89847))
+* adjust access to mailhog service [[#1](https://github.com/d3p1/dockgento/issues/1)] ([4f88bf0](https://github.com/d3p1/dockgento/commit/4f88bf0e38f3adb2f081a00edb992843ea8eafc4))
+* adjust send emails using mailhog service [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6af5190](https://github.com/d3p1/dockgento/commit/6af5190b78649eb117e5699b2a56aa94c3f13d45))
+
 # [1.8.0](https://github.com/d3p1/dockgento/compare/v1.7.11...v1.8.0) (2024-09-11)
 
 
