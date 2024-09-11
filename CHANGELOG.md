@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/d3p1/dockgento/compare/v1.7.11...v1.8.0) (2024-09-11)
+
+
+### Bug Fixes
+
+* adjust docker installation to avoid errors in first attempt [[#1](https://github.com/d3p1/dockgento/issues/1)] ([a1c2767](https://github.com/d3p1/dockgento/commit/a1c2767955dd5bfc21dc457720f597a7c609804f))
+
+
+### Features
+
+* add the possibility to define a custom Magento admin user and password [[#1](https://github.com/d3p1/dockgento/issues/1)] ([bcdeab7](https://github.com/d3p1/dockgento/commit/bcdeab791b42c915b224efb0ae1d2ed2e4a8bcc4))
+
 ## [1.7.11](https://github.com/d3p1/dockgento/compare/v1.7.10...v1.7.11) (2024-09-10)
 
 
