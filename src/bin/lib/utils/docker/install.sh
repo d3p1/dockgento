@@ -4,7 +4,6 @@
 # @description An utility to install Docker tools
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
 # @todo        For now, this utility only works with Debian
-# @todo        Analyze why first attempt of installation always fails
 ##
 
 ##
@@ -45,6 +44,7 @@ _configure_docker_repo() {
     sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt-get update
 }
 
 ##
