@@ -26,10 +26,15 @@
 ##
 services:
   traefik:
+    ports:
+      - 8025:8025
+    depends_on:
+      - mailhog
     volumes:
       - ./services/traefik/etc:/etc/traefik
     environment:
-      - TRAEFIK_PROVIDERS_FILE_DIRECTORY=./services/traefik/etc/file-provider
+      - TRAEFIK_ENTRYPOINTS_MAIL_ADDRESS=:8025
+      - TRAEFIK_PROVIDERS_FILE_DIRECTORY=/etc/traefik/file-provider
 
   web:
     volumes:
@@ -66,12 +71,16 @@ services:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
       
   mailhog:
-    image: 
+    image:
       d3p1/magento-mailhog:1.0
     expose:
-      - 8025
       - 1025
+      - 8025
     labels:
-      - traefik.enable=false
+      - traefik.http.routers.mail.entrypoints=mail
+      - traefik.http.routers.mail.tls=true
+      - traefik.http.routers.mail.rule=Host(`${BASE_DOMAIN}`) || Host(`www.${BASE_DOMAIN}`)
+      - traefik.http.routers.mail.service=mail
+      - traefik.http.services.mail.loadbalancer.server.port=8025
     restart:
       always
