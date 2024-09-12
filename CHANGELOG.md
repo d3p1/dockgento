@@ -1,3 +1,10 @@
+## [1.8.5](https://github.com/d3p1/dockgento/compare/v1.8.4...v1.8.5) (2024-09-12)
+
+
+### Bug Fixes
+
+* disable Traefik interaction for cli and cron services [[#1](https://github.com/d3p1/dockgento/issues/1)] ([883964f](https://github.com/d3p1/dockgento/commit/883964f1fa9bb50fbe595ec79a4dc919f4722de8))
+
 ## [1.8.4](https://github.com/d3p1/dockgento/compare/v1.8.3...v1.8.4) (2024-09-12)
 
 
