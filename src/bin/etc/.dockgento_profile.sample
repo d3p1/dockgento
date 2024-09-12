@@ -1,18 +1,24 @@
 ##
 # @description Profile file to setup environment variables that will be used
-#              by `dockgento init` to initialize the Docker environment
+#              by `dockgento` to initialize/setup the Docker environment
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
-# @note        The `SCRIPT_SMTP_HOST` and `SCRIPT_SMTP_PORT` should point to
-#              to the `mailhog` service and `1025` port respectively for a
-#              development environment, but could also point to a custom
-#              SMTP service
+# @note        If you would like to use a custom SMTP server to be used
+#              by the Magento platform, you should fill the
+#              `SCRIPT_SMTP_HOST` and `SCRIPT_SMTP_PORT`
+# @note        For a development environment, to be able to use MailHog
+#              as an SMTP server, you should use the value
+#              `/usr/local/bin/mhsendmail --smtp-addr=mailhog:1025` for the
+#              `SCRIPT_PHP_SENDMAIL_PATH` environment variable
+#              (it is a little more complicated to use the `SCRIPT_SMTP_HOST`
+#              and `SCRIPT_SMTP_PORT` for this job)
 # @note        For `SCRIPT_SEARCH_SERVICE` should be used:
 #              `elasticsearch` or `opensearch`
 # @note        To get the `SCRIPT_COMPOSER_MAGENTO_USERNAME` and
 #              `SCRIPT_COMPOSER_MAGENTO_PASSWORD` credentials, you should
 #              login into
 #              `https://account.magento.com/applications/customer/login`,
-#              go to `My Profile` -> `My Products` -> `Access Keys`,
+#              go to
+#              `Marketplace` -> `My Profile` -> `My Products` -> `Access Keys`,
 #              and create the respective keys
 # @note        The `SCRIPT_MAGENTO_VERSION` is only used when it is required to
 #              install a Magento platform using the `cli` service
@@ -25,7 +31,8 @@
 #              but if they are keep empty, then the `dockgento init <env>`
 #              command will generate custom values to them.
 #              Take into consideration that the admin password must have
-#              letters and numbers
+#              letters and numbers to avoid
+#              Magento exceptions during installation
 # @note        The `SCRIPT_DB_DUMP` should be defined only for
 #              the `dockgento mage-setup` command and must point to the local
 #              DB dump location that should be migrated to setup the platform
@@ -36,6 +43,7 @@ export SCRIPT_DOMAIN=""
 export SCRIPT_MARIADB_VERSION="10.6"
 export SCRIPT_SMTP_HOST=""
 export SCRIPT_SMTP_PORT=""
+export SCRIPT_PHP_SENDMAIL_PATH=""
 export SCRIPT_PHP_VERSION="8.2"
 export SCRIPT_SEARCH_SERVICE="elasticsearch"
 export SCRIPT_COMPOSER_MAGENTO_USERNAME=""
