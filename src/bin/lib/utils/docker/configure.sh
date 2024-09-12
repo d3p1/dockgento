@@ -58,7 +58,7 @@ configure_docker_rootless_mode() {
 	# @link https://github.com/docker/docs/issues/14491
 	# @link https://unix.stackexchange.com/questions/587674/systemd-not-detected-dockerd-daemon-needs-to-be-started-manually
 	##
-	export XDG_RUNTIME_DIR=/run/user/$(id -u)
+	export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 
     ##
     # @note Configure daemon as rootless mode
