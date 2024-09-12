@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/d3p1/dockgento/compare/v1.8.2...v1.8.3) (2024-09-12)
+
+
+### Bug Fixes
+
+* solve docker rootless installation issue related to systemd not being detected [[#1](https://github.com/d3p1/dockgento/issues/1)] ([5c33dc0](https://github.com/d3p1/dockgento/commit/5c33dc095842a183961c6fb4985422a1d56291f1))
+
 ## [1.8.2](https://github.com/d3p1/dockgento/compare/v1.8.1...v1.8.2) (2024-09-12)
 
 
