@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/d3p1/dockgento/compare/v1.8.3...v1.8.4) (2024-09-12)
+
+
+### Bug Fixes
+
+* adjust docker rootless installation issue [[#1](https://github.com/d3p1/dockgento/issues/1)] ([93bd268](https://github.com/d3p1/dockgento/commit/93bd26886b90f3ca96209110b2a2c6521ef75b7d))
+
 ## [1.8.3](https://github.com/d3p1/dockgento/compare/v1.8.2...v1.8.3) (2024-09-12)
 
 
