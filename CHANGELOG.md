@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/d3p1/dockgento/compare/v1.8.1...v1.8.2) (2024-09-12)
+
+
+### Bug Fixes
+
+* adjust configuration to send emails using mailhog [[#1](https://github.com/d3p1/dockgento/issues/1)] ([98ac39e](https://github.com/d3p1/dockgento/commit/98ac39eebc936660f9b73f9063ef94e53d234700))
+
 ## [1.8.1](https://github.com/d3p1/dockgento/compare/v1.8.0...v1.8.1) (2024-09-11)
 
 
