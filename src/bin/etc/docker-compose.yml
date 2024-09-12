@@ -100,6 +100,8 @@ services:
       - ~/composer:${BASE_COMPOSER_HOME}
     env_file:
       - services/magento/.env
+    labels:
+      - traefik.enable=false
     profiles:
       - setup
 
@@ -110,6 +112,8 @@ services:
       - docroot:/app
     env_file:
       - services/magento/.env
+    labels:
+      - traefik.enable=false
     profiles:
       - setup
     command:
