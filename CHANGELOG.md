@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/d3p1/dockgento/compare/v1.8.5...v1.9.0) (2024-09-14)
+
+
+### Bug Fixes
+
+* improve installer execution [[#1](https://github.com/d3p1/dockgento/issues/1)] ([03829dd](https://github.com/d3p1/dockgento/commit/03829dda7ad527819ba85b2306cbed70ecb98d79))
+* improve script execution so program stops when there is an error [[#1](https://github.com/d3p1/dockgento/issues/1)] ([aa47d18](https://github.com/d3p1/dockgento/commit/aa47d185fde2c3223cc54e1a78b5d933a8b38a37))
+
+
+### Features
+
+* improve format of terminal messages [[#1](https://github.com/d3p1/dockgento/issues/1)] ([1c3b451](https://github.com/d3p1/dockgento/commit/1c3b45132527a4c8562bb41655d1583aa2947369))
+
 ## [1.8.5](https://github.com/d3p1/dockgento/compare/v1.8.4...v1.8.5) (2024-09-12)
 
 
