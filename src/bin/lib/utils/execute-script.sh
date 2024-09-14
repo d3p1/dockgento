@@ -16,15 +16,11 @@
 #         script parameters. Consequently, every argument
 #         following the `$1` parameter (script path) is treated as part of `$2`,
 #         and will be used as a script parameter
-# @note   It is used `return` instead of `exit` to return status code
-#         in order to allow caller script to validate execution code
-#         and does additional/personalized logic to handle the situation
 ##
 execute_script() {
     local script
 
     ##
-    # @note Validate and execute script
     # @note It is used "dot space script" calling syntax 
     #       (it is like `source` command), so it is used current shell to
     #       execute the script (and it is not created a sub-shell that avoids
@@ -39,13 +35,5 @@ execute_script() {
     ##
     script=$1
     shift
-    if [ -e "$script" ]; then
-        . "$script" "$@"
-        return 0
-    fi
-
-    ##
-    # @note Return with error
-    ##
-    return 1
+    . "$script" "$@"
 }

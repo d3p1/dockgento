@@ -68,18 +68,9 @@ main() {
 ##
 _execute_command() {
     local script
-
-	##
-	# @note Execute script
-	# @note Check script execution.
-	#       If the returned status is different from success,
-	#       then display help message
-	##
     script="$BASE_DIR/lib/$1.sh"
     shift
-    if ! execute_script "$script" "$@"; then
-		_print_help
-	fi
+    execute_script "$script" "$@"
 }
 
 ##
