@@ -69,7 +69,7 @@ main() {
 ##
 _setup_cli() {
 	print_message "Start CLI dir creation: $CLI_DIR" "notice"
-	mkdir -p "$CLI_DIR" && cd "$CLI_DIR"
+	mkdir -p "$CLI_DIR"
 	print_message "End CLI dir creation: $CLI_DIR" "notice"
 }
 
@@ -80,9 +80,10 @@ _setup_cli() {
 ##
 _install_cli() {
 	print_message "Start CLI installation" "notice"
-	cp "$BASE_DIR/../dockgento.sh" dockgento && chmod u+x dockgento
-	cp -R "$BASE_DIR/../lib/" . && chmod -R +x ./lib/
-	cp -R "$BASE_DIR/../etc/" .
+	cp "$BASE_DIR/../dockgento.sh" "$CLI_DIR/dockgento"
+	chmod u+x "$CLI_DIR/dockgento"
+	cp -R "$BASE_DIR/../lib/" "$CLI_DIR" && chmod -R +x "$CLI_DIR/lib/"
+	cp -R "$BASE_DIR/../etc/" "$CLI_DIR"
 	print_message "End CLI installation" "notice"
 }
 
