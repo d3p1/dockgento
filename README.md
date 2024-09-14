@@ -58,7 +58,7 @@
 -- *Improve scripts validations before execution (`dockgento init`, `dockgento mage-install`, `dockgento mage-setup`)* 
 -- *Improve log messages in `PHP CLI` image scripts*
 -- *For now, installer add `dockgento` as a `bash` command but improve this logic so it is added as other shell command*
--- *Document the one line to installer the CLI: `git clone https://github.com/d3p1/dockgento.git && cd dockgento/src/bin/setup/ && chmod +x installer.sh && ./installer.sh && source ~/.bash_profile && cd ../../../../ && rm -rf dockgento/`*
+-- *Document the one line to installer the CLI: `git clone https://github.com/d3p1/dockgento.git && chmod +x dockgento/src/bin/setup/installer.sh && ./dockgento/src/bin/setup/installer.sh && source ~/.bash_profile && rm -rf dockgento/`*
 -- *Document that to access `mailhog` mail service in development environment, it is used the platform domain and the port `8025`* 
 -- *Document that to Docker rootless installation, avoid switching to user using `sudo` and `su` because known error: https://github.com/docker/docs/issues/14491 - https://unix.stackexchange.com/questions/587674/systemd-not-detected-dockerd-daemon-needs-to-be-started-manually* 
 -- *Mention that the `dockgento mage-setup` does not create an entry in `/etc/hosts` because it is supposed that it already exists a way to redirect to the old platform that now uses this new environment.*
