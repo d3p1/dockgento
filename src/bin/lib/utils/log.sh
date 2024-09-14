@@ -49,21 +49,16 @@ print_message() {
 	##
 	case "$type" in
 		notice)
-			echo -e "${notice_format}[NOTICE] $1\n"
+			echo -e "${notice_format}[NOTICE] $1${reset_format}"
 			;;
 		success)
-			echo -e "${success_format}[SUCCESS] $1\n"
+			echo -e "${success_format}[SUCCESS] $1${reset_format}"
 			;;
 		error)
-			echo -e "${error_format}[ERROR] $1\n"
+			echo -e "${error_format}[ERROR] $1${reset_format}"
 			;;
 		*)
 			echo -e "$1\n"
 			;;
 	esac;
-
-	##
-	# @note Reset terminal format
-	##
-	echo -e "${reset_format}"
 }
