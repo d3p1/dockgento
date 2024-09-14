@@ -57,7 +57,7 @@ main() {
 	##
 	# @note Add success message
 	##
-	_print_message "\`dockgento\` was successfully installed " "success"
+	print_message "\`dockgento\` was successfully installed " "success"
 
     exit 0;
 }
@@ -68,9 +68,9 @@ main() {
 # @return void
 ##
 _setup_cli() {
-	_print_message "Start CLI dir creation: $CLI_DIR" "notice"
+	print_message "Start CLI dir creation: $CLI_DIR" "notice"
 	mkdir -p "$CLI_DIR" && cd "$CLI_DIR"
-	_print_message "End CLI dir creation: $CLI_DIR" "notice"
+	print_message "End CLI dir creation: $CLI_DIR" "notice"
 }
 
 ##
@@ -79,11 +79,11 @@ _setup_cli() {
 # @return void
 ##
 _install_cli() {
-	_print_message "Start CLI installation" "notice"
+	print_message "Start CLI installation" "notice"
 	cp "$BASE_DIR/../dockgento.sh" dockgento && chmod u+x dockgento
 	cp -R "$BASE_DIR/../lib/" . && chmod -R +x ./lib/
 	cp -R "$BASE_DIR/../etc/" .
-	_print_message "End CLI installation" "notice"
+	print_message "End CLI installation" "notice"
 }
 
 ##
@@ -94,7 +94,7 @@ _install_cli() {
 _add_shell_command() {
 	local current_profile
 
-	_print_message "Start add \`dockgento\` to commands" "notice"
+	print_message "Start add \`dockgento\` to commands" "notice"
 
 	##
 	# @note Get user profile
@@ -120,7 +120,7 @@ _add_shell_command() {
 	"$current_profile" \
 	"export PATH=$CLI_DIR:$PATH" > "$HOME/.bash_profile"
 
-	_print_message "End add \`dockgento\` to commands" "notice"
+	print_message "End add \`dockgento\` to commands" "notice"
 }
 
 ##
