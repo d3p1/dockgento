@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/d3p1/dockgento/compare/v1.9.0...v1.9.1) (2024-09-14)
+
+
+### Bug Fixes
+
+* adjust print message in installer [[#1](https://github.com/d3p1/dockgento/issues/1)] ([ee7a585](https://github.com/d3p1/dockgento/commit/ee7a585f8354b824c95776a4007fde6c6de98ad3))
+
 # [1.9.0](https://github.com/d3p1/dockgento/compare/v1.8.5...v1.9.0) (2024-09-14)
 
 
