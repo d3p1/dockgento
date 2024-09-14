@@ -14,10 +14,15 @@ set -eu
 ##
 # @note Init global variables
 ##
-declare CURRENT_DIR
+declare BASE_DIR
 declare CLI_DIR
-CURRENT_DIR="$(pwd)"
+BASE_DIR="$(dirname "${BASH_SOURCE[0]}")"
 CLI_DIR="$HOME/bin/dockgento"
+
+##
+# @note Import required utilities
+##
+source $BASE_DIR/../lib/utils/log.sh
 
 ##
 # Main
@@ -52,7 +57,7 @@ main() {
 	##
 	# @note Add success message
 	##
-	_print_message "[NOTICE] \`dockgento\` was successfully installed "
+	_print_message "\`dockgento\` was successfully installed " "success"
 
     exit 0;
 }
@@ -63,9 +68,9 @@ main() {
 # @return void
 ##
 _setup_cli() {
-	_print_message "[NOTICE] Start CLI dir creation: $CLI_DIR"
+	_print_message "Start CLI dir creation: $CLI_DIR" "notice"
 	mkdir -p "$CLI_DIR" && cd "$CLI_DIR"
-	_print_message "[NOTICE] End CLI dir creation: $CLI_DIR"
+	_print_message "End CLI dir creation: $CLI_DIR" "notice"
 }
 
 ##
@@ -74,11 +79,11 @@ _setup_cli() {
 # @return void
 ##
 _install_cli() {
-	_print_message "[NOTICE] Start CLI installation"
-	cp "$CURRENT_DIR/../dockgento.sh" dockgento && chmod u+x dockgento
-	cp -R "$CURRENT_DIR/../lib/" . && chmod -R +x ./lib/
-	cp -R "$CURRENT_DIR/../etc/" .
-	_print_message "[NOTICE] End CLI installation"
+	_print_message "Start CLI installation" "notice"
+	cp "$BASE_DIR/../dockgento.sh" dockgento && chmod u+x dockgento
+	cp -R "$BASE_DIR/../lib/" . && chmod -R +x ./lib/
+	cp -R "$BASE_DIR/../etc/" .
+	_print_message "End CLI installation" "notice"
 }
 
 ##
@@ -89,7 +94,7 @@ _install_cli() {
 _add_shell_command() {
 	local current_profile
 
-	_print_message "[NOTICE] Start add \`dockgento\` to commands"
+	_print_message "Start add \`dockgento\` to commands" "notice"
 
 	##
 	# @note Get user profile
@@ -115,17 +120,7 @@ _add_shell_command() {
 	"$current_profile" \
 	"export PATH=$CLI_DIR:$PATH" > "$HOME/.bash_profile"
 
-	_print_message "[NOTICE] End add \`dockgento\` to commands"
-}
-
-##
-# Print message
-#
-# @param  string $1 Message
-# @return void
-##
-_print_message() {
-	printf "%s\n" "$1"
+	_print_message "End add \`dockgento\` to commands" "notice"
 }
 
 ##
