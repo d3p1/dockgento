@@ -1,3 +1,11 @@
+## [1.9.2](https://github.com/d3p1/dockgento/compare/v1.9.1...v1.9.2) (2024-09-14)
+
+
+### Bug Fixes
+
+* adjust installer copy logic [[#1](https://github.com/d3p1/dockgento/issues/1)] ([9ea566b](https://github.com/d3p1/dockgento/commit/9ea566bdce6b77ac268231affddb7a2d3f686151))
+* solve empty lines in print message logic [[#1](https://github.com/d3p1/dockgento/issues/1)] ([e0c13a1](https://github.com/d3p1/dockgento/commit/e0c13a1647af268e97e1e3dd8105e272b755fbc4))
+
 ## [1.9.1](https://github.com/d3p1/dockgento/compare/v1.9.0...v1.9.1) (2024-09-14)
 
 
