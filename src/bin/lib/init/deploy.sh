@@ -29,26 +29,26 @@ _generate_infra_files() {
     ##
     # @note Copy required infra files inside current folder
     ##
-    print_message "[NOTICE] Start copy infra files"
+    print_message "Start copy infra files" "notice"
     cp "$BASE_DIR/etc/docker-compose.yml" docker-compose.yml
     cp "$BASE_DIR/etc/docker-compose.dev.yml" docker-compose.dev.yml
     cp "$BASE_DIR/etc/docker-compose.prod.yml" docker-compose.prod.yml
     cp -R "$BASE_DIR/etc/.devcontainer" ./.devcontainer
     cp "$BASE_DIR/etc/.env" .env
     cp -R "$BASE_DIR/etc/services" ./services
-    print_message "[NOTICE] End copy infra files"
+    print_message "End copy infra files" "notice"
     
     ##
     # @note Replace environment variables inside `.env` files with
     #       defined environment variables during this script
     ##
-    print_message "[NOTICE] Start env files generation"
+    print_message "Start env files generation" "notice"
     envsubst_files ".env" '${SCRIPT_USER_EMAIL},${SCRIPT_DOMAIN},${SCRIPT_MARIADB_VERSION},${SCRIPT_SMTP_HOST},${SCRIPT_SMTP_PORT},${SCRIPT_PHP_VERSION},${SCRIPT_SEARCH_SERVICE},${SCRIPT_COMPOSER_MAGENTO_USERNAME},${SCRIPT_COMPOSER_MAGENTO_PASSWORD},${SCRIPT_MAGENTO_VERSION},${SCRIPT_MAGENTO_ADMIN_FIRSTNAME},${SCRIPT_MAGENTO_ADMIN_LASTNAME},${SCRIPT_DEV_DOC_ROOT_DIR},${SCRIPT_DOCKER_PATH},${SCRIPT_MARIADB_DB_NAME},${SCRIPT_MARIADB_USER},${SCRIPT_MARIADB_PASSWORD},${SCRIPT_RABBITMQ_DEFAULT_USER},${SCRIPT_RABBITMQ_DEFAULT_PASS},${SCRIPT_SEARCH_JAVA_OPTS},${SCRIPT_COMPOSE_FILE},${SCRIPT_PHP_SENDMAIL_PATH},${SCRIPT_MAGENTO_RUN_MODE},${SCRIPT_MAGENTO_STATIC_CONTENT_DEPLOY_JOBS},${SCRIPT_MAGENTO_ADMIN_USER},${SCRIPT_MAGENTO_ADMIN_PASSWORD},${SCRIPT_MAGENTO_SEARCH_ENGINE},${SCRIPT_MAGENTO_SEARCH_ENGINE_HOST},${SCRIPT_MAGENTO_SEARCH_ENGINE_PORT},${SCRIPT_MYSQL_ROOT_PASSWORD},${SCRIPT_NGINX_WORKER_PROCESSES},${SCRIPT_NGINX_WORKER_CONNECTIONS}'
-    print_message "[NOTICE] End env files generation"
+    print_message "End env files generation" "notice"
 
-    print_message "[NOTICE] Start \`devcontainer.json\` file generation"
+    print_message "Start \`devcontainer.json\` file generation" "notice"
     envsubst_file ".devcontainer/devcontainer.json" '${SCRIPT_SEARCH_SERVICE}'
-    print_message "[NOTICE] End \`devcontainer.json\` file generation"
+    print_message "End \`devcontainer.json\` file generation" "notice"
 }
 
 ##

@@ -31,11 +31,11 @@ _install_docker() {
     # @note Check if `docker` is already installed
     ##
     if [ -z "$(which docker)" ]; then
-        print_message "[NOTICE] Start \`docker\` installation"
+        print_message "Start \`docker\` installation" "notice"
         install_docker
-        print_message "[NOTICE] End \`docker\` installation"
+        print_message "End \`docker\` installation" "notice"
     else
-		print_message "[NOTICE] \`docker\` is already installed in the system"
+		print_message "\`docker\` is already installed in the system" "notice"
 	fi
 }
 

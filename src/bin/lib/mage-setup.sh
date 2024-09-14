@@ -40,11 +40,11 @@ _setup_magento_platform() {
 	#       executed. If it is set to `false`, then a Magento setup is executed
 	# @link https://hub.docker.com/r/d3p1/magento-php
 	##
-	print_message "[NOTICE] Start Magento setup"
+	print_message "Start Magento setup" "notice"
 	docker compose up -d
 	_migrate_db "$SCRIPT_DB_DUMP"
 	docker compose run --rm cli init 0
-	print_message "[NOTICE] End Magento setup"
+	print_message "End Magento setup" "notice"
 }
 
 ##
@@ -54,15 +54,15 @@ _setup_magento_platform() {
 # @return void
 ##
 _migrate_db() {
-	print_message "[NOTICE] Start DB migration"
+	print_message "Start DB migration" "notice"
 
     ##
     # @note The DB dump is normalized to avoid user permission errors
     # @link https://github.com/markshust/docker-magento?tab=readme-ov-file#database
     ##
-    print_message "[NOTICE] Start DB normalization"
+    print_message "Start DB normalization" "notice"
     normalize_db_dump "$1"
-    print_message "[NOTICE] End DB normalization"
+    print_message "End DB normalization" "notice"
 
     ##
     # @note The DB dump is copied to the DB service to be able to migrate it
@@ -71,13 +71,13 @@ _migrate_db() {
     #       container shell to be able to use container environment variables
     # @link https://superuser.com/questions/1628497/docker-exec-with-dollar-variable
     ##
-    print_message "[NOTICE] Start DB deploy"
+    print_message "Start DB deploy" "notice"
     docker compose cp "$1" mariadb:/tmp/db.sql
     docker compose exec mariadb sh -c \
     'mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" < /tmp/db.sql'
-    print_message "[NOTICE] End DB deploy"
+    print_message "End DB deploy" "notice"
 
-    print_message "[NOTICE] End DB migration"
+    print_message "End DB migration" "notice"
 }
 
 ##

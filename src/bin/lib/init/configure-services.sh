@@ -55,7 +55,7 @@ main() {
 # @return void
 ##
 _configure_mariadb() {
-	print_message "[NOTICE] Start init MariaDB environment variables"
+	print_message "Start init MariaDB environment variables" "notice"
 	SCRIPT_MARIADB_DB_NAME="$(_generate_random_name)"
     SCRIPT_MARIADB_USER="$(_generate_random_name)"
     SCRIPT_MARIADB_PASSWORD="$(_generate_random_password)"
@@ -68,7 +68,7 @@ _configure_mariadb() {
     print_env_var "SCRIPT_MARIADB_USER"
     print_env_var "SCRIPT_MARIADB_PASSWORD"
     print_env_var "SCRIPT_MYSQL_ROOT_PASSWORD"
-    print_message "[NOTICE] End init MariaDB environment variables"
+    print_message "End init MariaDB environment variables" "notice"
 }
 
 ##
@@ -77,14 +77,14 @@ _configure_mariadb() {
 # @return void
 ##
 _configure_rabbitmq() {
-	print_message "[NOTICE] Start init RabbitMQ environment variables"
+	print_message "Start init RabbitMQ environment variables" "notice"
 	SCRIPT_RABBITMQ_DEFAULT_USER="$(_generate_random_name)"
     SCRIPT_RABBITMQ_DEFAULT_PASS="$(_generate_random_password)"
     export SCRIPT_RABBITMQ_DEFAULT_USER
     export SCRIPT_RABBITMQ_DEFAULT_PASS
     print_env_var "SCRIPT_RABBITMQ_DEFAULT_USER"
     print_env_var "SCRIPT_RABBITMQ_DEFAULT_PASS"
-    print_message "[NOTICE] End init RabbitMQ environment variables"
+    print_message "End init RabbitMQ environment variables" "notice"
 }
 
 ##
@@ -94,14 +94,14 @@ _configure_rabbitmq() {
 # @link   https://www.digitalocean.com/community/tutorials/how-to-optimize-nginx-configuration
 ##
 _configure_web() {
-	print_message "[NOTICE] Start init web server (Nginx) environment variables"
+	print_message "Start init web server (Nginx) environment variables" "notice"
 	SCRIPT_NGINX_WORKER_PROCESSES="$(get_number_cpus)"
 	SCRIPT_NGINX_WORKER_CONNECTIONS="$(ulimit -n)"
 	export SCRIPT_NGINX_WORKER_PROCESSES
     export SCRIPT_NGINX_WORKER_CONNECTIONS
     print_env_var "SCRIPT_NGINX_WORKER_PROCESSES"
     print_env_var "SCRIPT_NGINX_WORKER_CONNECTIONS"
-    print_message "[NOTICE] End init web server (Nginx) environment variables"
+    print_message "End init web server (Nginx) environment variables" "notice"
 }
 
 ##
@@ -110,7 +110,7 @@ _configure_web() {
 # @return void
 ##
 _configure_search_engine() {
-	print_message "[NOTICE] Start init search engine environment variables"
+	print_message "Start init search engine environment variables" "notice"
 
 	##
     # @note Export environment variable required for
@@ -151,7 +151,7 @@ _configure_search_engine() {
     print_env_var "SCRIPT_MAGENTO_SEARCH_ENGINE_PORT"
     print_env_var "SCRIPT_MAGENTO_SEARCH_ENGINE"
 
-    print_message "[NOTICE] End init search engine environment variables"
+    print_message "End init search engine environment variables" "notice"
 }
 
 ##
@@ -160,7 +160,7 @@ _configure_search_engine() {
 # @return void
 ##
 _configure_magento() {
-	print_message "[NOTICE] Start init Magento environment variables"
+	print_message "Start init Magento environment variables" "notice"
 
     SCRIPT_MAGENTO_STATIC_CONTENT_DEPLOY_JOBS="$(get_number_cpus)"
 	export SCRIPT_MAGENTO_STATIC_CONTENT_DEPLOY_JOBS
@@ -178,7 +178,7 @@ _configure_magento() {
 		print_env_var "SCRIPT_MAGENTO_ADMIN_PASSWORD"
 	fi
 
-	print_message "[NOTICE] End init Magento environment variables"
+	print_message "End init Magento environment variables" "notice"
 }
 
 ##

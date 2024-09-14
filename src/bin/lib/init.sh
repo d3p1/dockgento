@@ -82,9 +82,9 @@ _execute_init_script() {
 ##
 _process_init_script_execution() {
 	if [ -e "$1" ]; then
-		print_message "[NOTICE] Start execution of $1"
+		print_message "Start execution of $1" "notice"
 		execute_script "$1"
-		print_message "[NOTICE] End execution of $1"
+		print_message "End execution of $1" "notice"
 	fi
 }
 
@@ -96,8 +96,7 @@ _process_init_script_execution() {
 ##
 _validate() {
 	if [ "$1" != "development" ] && [ "$1" != "production" ]; then
-		print_message \
-		"[ERROR] You should specified \`\"development\"\` or \`\"production\"\` as argument to define which type of environment initialize"
+		print_message "You should specified \`\"development\"\` or \`\"production\"\` as argument to define which type of environment initialize" "error"
 		exit 1
 	fi
 }

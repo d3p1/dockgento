@@ -41,10 +41,10 @@ _install_magento_platform() {
 	#       executed. If it is set to `false`, then a Magento setup is executed
 	# @link https://hub.docker.com/r/d3p1/magento-php
 	##
-	print_message "[NOTICE] Start Magento installation"
+	print_message "Start Magento installation" "notice"
 	docker compose up -d
 	docker compose run --rm cli init 1
-	print_message "[NOTICE] End Magento installation"
+	print_message "End Magento installation" "notice"
 }
 
 ##

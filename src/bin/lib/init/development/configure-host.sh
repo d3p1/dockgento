@@ -42,9 +42,9 @@ main() {
 # @return void
 ##
 _configure_docker() {
-    print_message "[NOTICE] Start configuration of \`docker\`"
+    print_message "Start configuration of \`docker\`" "notice"
     configure_docker
-    print_message "[NOTICE] End configuration of \`docker\`"
+    print_message "End configuration of \`docker\`" "notice"
 }
 
 ##
@@ -55,14 +55,14 @@ _configure_docker() {
 _generate_ssl_certificates() {
 	local cert_dir
 
-    print_message "[NOTICE] Start generation of locally-trusted SSL certificates for domain $SCRIPT_DOMAIN"
+    print_message "Start generation of locally-trusted SSL certificates for domain $SCRIPT_DOMAIN" "notice"
     cert_dir="$BASE_DIR/etc/services/traefik/etc/certs/"
     mkdir -p "$cert_dir"
     generate_ssl_certificates \
     "magento" \
     "$SCRIPT_DOMAIN" \
     "$cert_dir"
-    print_message "[NOTICE] End generation of locally-trusted SSL certificates for domain $SCRIPT_DOMAIN"
+    print_message "End generation of locally-trusted SSL certificates for domain $SCRIPT_DOMAIN" "notice"
 }
 
 ##
@@ -75,9 +75,9 @@ _generate_ssl_certificates() {
 ##
 _add_domain_to_hosts() {
     if ! grep -q "$SCRIPT_DOMAIN" /etc/hosts; then
-    	print_message "[NOTICE] Start add domain $SCRIPT_DOMAIN to \`/etc/hosts\`"
+    	print_message "Start add domain $SCRIPT_DOMAIN to \`/etc/hosts\`" "notice"
         echo "127.0.0.1 ::1 $SCRIPT_DOMAIN" | sudo tee -a /etc/hosts
-        print_message "[NOTICE] End add domain $SCRIPT_DOMAIN to \`/etc/hosts\`"
+        print_message "End add domain $SCRIPT_DOMAIN to \`/etc/hosts\`" "notice"
     fi
 }
 

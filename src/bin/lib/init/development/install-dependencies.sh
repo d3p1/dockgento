@@ -32,11 +32,11 @@ _install_mkcert() {
     # @note Check if `mkcert` is already installed
     ##
     if [ -z "$(which mkcert)" ]; then
-        print_message "[NOTICE] Start \`mkcert\` installation"
+        print_message "Start \`mkcert\` installation" "notice"
         install_mkcert
-        print_message "[NOTICE] End \`mkcert\` installation"
+        print_message "End \`mkcert\` installation" "notice"
 	else
-		print_message "[NOTICE] \`mkcert\` is already installed in the system"
+		print_message "\`mkcert\` is already installed in the system" "notice"
     fi    
 }
 

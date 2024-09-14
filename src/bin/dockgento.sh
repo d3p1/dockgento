@@ -36,9 +36,8 @@ main() {
 	case "$1" in
 		init | mage-install | mage-setup)
 			if [ ! -e ".dockgento_profile" ]; then
-				print_message \
-				"[ERROR] You must create a \`.dockgento_profile\` file with the required exports of environment variables that are used during command execution" \
-				"[NOTICE] Check for reference: https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.sample"
+				print_message "You must create a \`.dockgento_profile\` file with the required exports of environment variables that are used during command execution" "error"
+				print_message "Check for reference: https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.sample" "notice"
 				exit 1
 			fi
 
@@ -79,12 +78,11 @@ _execute_command() {
 # @return void
 ##
 _print_help() {
-	print_message \
-	"Usage:" \
-	" - To init a Docker environment: \`dockgento init <env>\`" \
-	" - To install a Magento platform: \`dockgento mage-install\`" \
-	" - To setup a Magento platform: \`dockgento mage-setup\`" \
-	"[NOTICE] Before using this script, remember to configure the \`.dockgento_profile\` file"
+	print_message "Usage:" "normal"
+	print_message " - To init a Docker environment: \`dockgento init <env>\`" "normal"
+	print_message " - To install a Magento platform: \`dockgento mage-install\`" "normal"
+	print_message " - To setup a Magento platform: \`dockgento mage-setup\`" "normal"
+	print_message "Before using this script, remember to configure the \`.dockgento_profile\` file" "notice"
 }
 
 ##

@@ -42,9 +42,9 @@ main() {
 # @return void
 ##
 _configure_docker_rootless_mode() {
-    print_message "[NOTICE] Start configuration of \`docker\` in rootless mode"
+    print_message "Start configuration of \`docker\` in rootless mode" "notice"
     configure_docker_rootless_mode
-    print_message "[NOTICE] End configuration of \`docker\` in rootless mode"
+    print_message "End configuration of \`docker\` in rootless mode" "notice"
 }
 
 ##
@@ -65,13 +65,13 @@ _configure_search_engine() {
     # @note Disable memory paging and swapping
     # @link https://stackoverflow.com/questions/4749330/how-to-test-if-string-exists-in-file-with-bash
     ##
-    print_message "[NOTICE] Start configuration of search engine"
+    print_message "Start configuration of search engine" "notice"
     if ! grep -Fxq "vm.max_map_count=262144" /etc/sysctl.conf; then
         echo "vm.max_map_count=262144" | sudo tee -a /etc/sysctl.conf
     fi
     sudo sysctl -p
     sudo swapoff -a
-    print_message "[NOTICE] End configuration of search engine"
+    print_message "End configuration of search engine" "notice"
 }
 
 ##
@@ -93,10 +93,10 @@ _configure_traefik() {
     ##
     traefik_acme_file_path="$BASE_DIR/etc/services/traefik/etc/acme.json"
     if [ ! -e traefik_acme_file_path ]; then
-		print_message "[NOTICE] Start configuration of Traefik"
+		print_message "Start configuration of Traefik" "notice"
 		touch "$traefik_acme_file_path"
 		chmod 600 "$traefik_acme_file_path"
-		print_message "[NOTICE] End configuration of Traefik"
+		print_message "End configuration of Traefik" "notice"
     fi
 }
 

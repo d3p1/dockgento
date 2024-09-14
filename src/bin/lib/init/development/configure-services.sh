@@ -43,11 +43,11 @@ main() {
 #         (i.e.: it allows the recognition of available services)
 ##
 _configure_traefik() {
-	print_message "[NOTICE] Start init Traefik dev environment variables"
+	print_message "Start init Traefik dev environment variables" "notice"
     SCRIPT_DOCKER_PATH="/var/run/docker.sock"
     export SCRIPT_DOCKER_PATH
     print_env_var "SCRIPT_DOCKER_PATH"
-    print_message "[NOTICE] End init Traefik dev environment variables"
+    print_message "End init Traefik dev environment variables" "notice"
 }
 
 ##
@@ -56,11 +56,11 @@ _configure_traefik() {
 # @return void
 ##
 _configure_magento() {
-	print_message "[NOTICE] Start init Magento dev environment variables"
+	print_message "Start init Magento dev environment variables" "notice"
 	SCRIPT_MAGENTO_RUN_MODE="developer"
 	export SCRIPT_MAGENTO_RUN_MODE
 	print_env_var "SCRIPT_MAGENTO_RUN_MODE"
-	print_message "[NOTICE] End init Magento dev environment variables"
+	print_message "End init Magento dev environment variables" "notice"
 }
 
 ##
@@ -72,11 +72,11 @@ _configure_magento() {
 #         when `docker compose up -d` is executed
 ##
 _configure_compose() {
-	print_message "[NOTICE] Start init Docker Compose dev environment variables"
+	print_message "Start init Docker Compose dev environment variables" "notice"
 	SCRIPT_COMPOSE_FILE="docker-compose.yml:docker-compose.dev.yml:services/search/${SCRIPT_SEARCH_SERVICE}/docker-compose.yml"
 	export SCRIPT_COMPOSE_FILE
 	print_env_var "SCRIPT_COMPOSE_FILE"
-	print_message "[NOTICE] End init Docker Compose dev environment variables"
+	print_message "End init Docker Compose dev environment variables" "notice"
 }
 
 ##
