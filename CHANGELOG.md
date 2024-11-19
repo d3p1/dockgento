@@ -1,3 +1,10 @@
+## [1.9.3](https://github.com/d3p1/dockgento/compare/v1.9.2...v1.9.3) (2024-11-19)
+
+
+### Bug Fixes
+
+* adjust init validation error message [[#1](https://github.com/d3p1/dockgento/issues/1)] ([4599713](https://github.com/d3p1/dockgento/commit/45997132f65b90df17fec5ee5e05d57d301444ca))
+
 ## [1.9.2](https://github.com/d3p1/dockgento/compare/v1.9.1...v1.9.2) (2024-09-14)
 
 
