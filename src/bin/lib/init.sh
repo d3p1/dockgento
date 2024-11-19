@@ -96,7 +96,7 @@ _process_init_script_execution() {
 ##
 _validate() {
 	if [ "$1" != "development" ] && [ "$1" != "production" ]; then
-		print_message "You should specified \`\"development\"\` or \`\"production\"\` as argument to define which type of environment initialize" "error"
+		print_message "You should specify \`\"development\"\` or \`\"production\"\` as an argument to define which type of environment to initialize" "error"
 		exit 1
 	fi
 }
