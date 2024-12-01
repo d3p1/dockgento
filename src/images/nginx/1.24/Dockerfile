@@ -19,7 +19,7 @@ FROM magento/magento-cloud-docker-nginx:1.24-1.3.6
     ##
     # @note Improve `XDEBUG_HOST` service name 
     ##
-    ENV XDEBUG_HOST="fpm_dev"
+    ENV XDEBUG_HOST="fpm"
     
     ##
     # @note Create `www` user and group (`1000:1000`)
