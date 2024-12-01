@@ -102,3 +102,10 @@ FROM magento/magento-cloud-docker-php:8.2-cli-1.3.7
     RUN chmod +x /usr/local/bin/run-cron
     RUN chmod +x /usr/local/bin/configure-varnish
     RUN chmod +x /usr/local/bin/configure-smtp
+
+    ##
+    # @note Install Magento cache watcher globally to be able to use it
+    #       as a development tool
+    # @link https://github.com/mage2tv/magento-cache-clean
+    ##
+    RUN composer global require mage2tv/magento-cache-clean

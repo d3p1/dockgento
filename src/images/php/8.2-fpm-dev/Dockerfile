@@ -75,7 +75,7 @@ FROM d3p1/magento-php:8.2-fpm
      # @note Add Xdebug as current enabled extensions
      # @link https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/php/fpm/docker-entrypoint.sh#L13
      ##
-     ENV PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli opcache pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
+     ENV PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
 
      ##
      # @note Add custom entrypoint to include startup logic

@@ -31,10 +31,6 @@ FROM magento/magento-cloud-docker-php:7.3-fpm-1.3.6
 
     ##
     # @note Add custom Xdebug configuration to connect it to our local IDE
-    # @note Although this instruction is already present in the base image,
-    #       it is necessary to repeat it. Otherwise, our new file
-    #       with the respective customization will not be copied,
-    #       and it will not overwrite the base image file
     # @link https://github.com/magento/magento-cloud-docker/blob/36d595ca424dd73d104459f89a8c0d42617f601d/images/php/7.4-fpm/Dockerfile#L160
     ##
     COPY etc/php-xdebug.ini /usr/local/etc/php/conf.d/zz-xdebug-settings.ini
