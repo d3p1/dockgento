@@ -96,6 +96,7 @@
 --- NGINX_WORKER_PROCESSES="${SCRIPT_NGINX_WORKER_PROCESSES}"
 --- NGINX_WORKER_CONNECTIONS="${SCRIPT_NGINX_WORKER_CONNECTIONS}" 
 - Remember to document how to run Magento cron service and how to run and configure Magento dev container service
+- Add a `.dockgento_profile` sample for development and production environments
 
 ## Changelog
 
