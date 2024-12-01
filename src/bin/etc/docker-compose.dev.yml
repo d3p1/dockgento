@@ -9,16 +9,15 @@
 #               up -d`
 # @note        Add file provider configuration to Traefik to be able to
 #              use locally generated SSL certificates
-# @note        Add PHP FPM service that enables Xdebug feature
+# @note        Add Xdebug feature to `fpm`, `cli` and `cron` services
+# @note        Remove OPcache feature from `fpm`, `cli` and `cron` services
+#              to be development friendly
 # @note        Add MailHog service to be able to work with emails locally
 # @note        Mount host folder with developed code into containers
 # @note        The service naming convention uses the 
 #              underlying technology name for easy identification within 
 #              the infrastructure stack. There is an exception for 
-#              the `fpm_dev` service. This temporary naming is required for 
-#              `web` to correctly identify it as the PHP FPM service to use
-#              when debug feature is enabled.
-#              Also, the `fpm_dev` service name was used to describe 
+#              the `fpm_dev` service. This name was used to describe
 #              in a cleaner way the container purpose
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/nginx/1.24/Dockerfile#L4
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/nginx/1.24/etc/vhost.conf#L41
@@ -45,6 +44,8 @@ services:
   fpm:
     volumes:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
+    environment:
+      - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
 
   fpm_dev:
     image:
@@ -55,20 +56,24 @@ services:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
     env_file:
       - services/magento/.env
-    environment:
-      - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli opcache pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
     labels:
       - traefik.enable=false
+    profiles:
+      - devcontainer
     restart:
       always
 
   cli:
     volumes:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
+    environment:
+      - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
 
   cron:
     volumes:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
+    environment:
+      - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
       
   mailhog:
     image:
