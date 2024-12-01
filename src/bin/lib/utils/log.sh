@@ -26,42 +26,42 @@ print_env_var() {
 # @link   https://dev.to/ifenna__/adding-colors-to-bash-scripts-48g4
 ##
 print_message() {
-	##
-	# @note Define message type format
-	##
-	local notice_format="\e[3;33m"
-	local success_format="\e[32m"
-	local error_format="\e[31m"
-	local reset_format="\e[0m"
+    ##
+    # @note Define message type format
+    ##
+    local notice_format="\e[3;33m"
+    local success_format="\e[32m"
+    local error_format="\e[31m"
+    local reset_format="\e[0m"
 
-	##
-	# @note Evaluate message type
-	##
-	local type
-	if [ -z "$2" ]; then
-		type="normal"
-	else
-		type="$2"
-	fi
+    ##
+    # @note Evaluate message type
+    ##
+    local type
+    if [ -z "$2" ]; then
+        type="normal"
+    else
+        type="$2"
+    fi
 
-	##
-	# @note Print message
-	##
-	case "$type" in
-		notice)
-			echo -e "${notice_format}[NOTICE] $1${reset_format}"
-			;;
+    ##
+    # @note Print message
+    ##
+    case "$type" in
+        notice)
+            echo -e "${notice_format}[NOTICE] $1${reset_format}"
+        ;;
 
-		success)
-			echo -e "${success_format}[SUCCESS] $1${reset_format}"
-			;;
+        success)
+            echo -e "${success_format}[SUCCESS] $1${reset_format}"
+        ;;
 
-		error)
-			echo -e "${error_format}[ERROR] $1${reset_format}"
-			;;
+        error)
+            echo -e "${error_format}[ERROR] $1${reset_format}"
+        ;;
 
-		*)
-			echo -e "$1\n"
-			;;
-	esac;
+        *)
+            echo -e "$1\n"
+        ;;
+    esac;
 }
