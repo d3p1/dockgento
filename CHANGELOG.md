@@ -1,3 +1,10 @@
+## [1.9.5](https://github.com/d3p1/dockgento/compare/v1.9.4...v1.9.5) (2024-12-01)
+
+
+### Bug Fixes
+
+* improve development configuration for PHP services [[#1](https://github.com/d3p1/dockgento/issues/1)] ([7dfe3a5](https://github.com/d3p1/dockgento/commit/7dfe3a543abe55faade7b5a22e982f0e3837315b))
+
 ## [1.9.4](https://github.com/d3p1/dockgento/compare/v1.9.3...v1.9.4) (2024-12-01)
 
 
