@@ -1,3 +1,10 @@
+## [1.9.4](https://github.com/d3p1/dockgento/compare/v1.9.3...v1.9.4) (2024-12-01)
+
+
+### Bug Fixes
+
+* adjust Xdebug host in Nginx image [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6aa6721](https://github.com/d3p1/dockgento/commit/6aa6721c0f66063547fc0e4aaf72a9db48ce97ce))
+
 ## [1.9.3](https://github.com/d3p1/dockgento/compare/v1.9.2...v1.9.3) (2024-11-19)
 
 
