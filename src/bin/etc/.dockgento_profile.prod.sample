@@ -1,0 +1,32 @@
+##
+# @description Profile file to setup environment variables that will be used
+#              by `dockgento` to initialize/setup the Docker environment
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+# @note        If you would like to use a custom SMTP server to be used
+#              by the Magento platform, you should fill the
+#              `SCRIPT_SMTP_HOST` and `SCRIPT_SMTP_PORT`
+# @note        To get the `SCRIPT_COMPOSER_MAGENTO_USERNAME` and
+#              `SCRIPT_COMPOSER_MAGENTO_PASSWORD` credentials, you should
+#              login into
+#              `https://account.magento.com/applications/customer/login`,
+#              go to
+#              `Marketplace` -> `My Profile` -> `My Products` -> `Access Keys`,
+#              and create the respective keys
+# @note        The `SCRIPT_MAGENTO_VERSION` is only used when it is required to
+#              install a Magento platform using the `cli` service
+# @note        The `SCRIPT_DB_DUMP` should be defined only for
+#              the `dockgento mage-setup` command and must point to the local
+#              DB dump location that should be migrated to setup the platform
+# @link        https://account.magento.com/applications/customer/login
+##
+export SCRIPT_USER_EMAIL=""
+export SCRIPT_DOMAIN=""
+export SCRIPT_MARIADB_VERSION="10.6"
+export SCRIPT_SMTP_HOST=""
+export SCRIPT_SMTP_PORT=""
+export SCRIPT_PHP_VERSION="8.2"
+export SCRIPT_SEARCH_SERVICE="elasticsearch"
+export SCRIPT_COMPOSER_MAGENTO_USERNAME=""
+export SCRIPT_COMPOSER_MAGENTO_PASSWORD=""
+export SCRIPT_MAGENTO_VERSION="2.4.6"
+export SCRIPT_DB_DUMP=""
