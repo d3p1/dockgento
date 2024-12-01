@@ -33,24 +33,24 @@ source $BASE_DIR/lib/utils/execute-script.sh
 # @return void
 ##
 main() {
-	case "$1" in
-		init | mage-install | mage-setup)
-			if [ ! -e ".dockgento_profile" ]; then
-				print_message "You must create a \`.dockgento_profile\` file with the required exports of environment variables that are used during command execution" "error"
-				print_message "Check for reference: https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.sample" "notice"
-				exit 1
-			fi
+    case "$1" in
+        init | mage-install | mage-setup)
+            if [ ! -e ".dockgento_profile" ]; then
+                print_message "You must create a \`.dockgento_profile\` file with the required exports of environment variables that are used during command execution" "error"
+                print_message "Check for reference: https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.sample" "notice"
+                exit 1
+            fi
 
-			source .dockgento_profile
-			_execute_command "$@"
-			;;
+            source .dockgento_profile
+            _execute_command "$@"
+            ;;
 
-		*)
-			_print_help
-			;;
-	esac
+        *)
+            _print_help
+            ;;
+    esac
 
-	exit 0
+    exit 0
 }
 
 ##
@@ -78,11 +78,11 @@ _execute_command() {
 # @return void
 ##
 _print_help() {
-	print_message "Usage:" "normal"
-	print_message " - To init a Docker environment: \`dockgento init <env>\`" "normal"
-	print_message " - To install a Magento platform: \`dockgento mage-install\`" "normal"
-	print_message " - To setup a Magento platform: \`dockgento mage-setup\`" "normal"
-	print_message "Before using this script, remember to configure the \`.dockgento_profile\` file" "notice"
+    print_message "Usage:" "normal"
+    print_message " - To init a Docker environment: \`dockgento init <env>\`" "normal"
+    print_message " - To install a Magento platform: \`dockgento mage-install\`" "normal"
+    print_message " - To setup a Magento platform: \`dockgento mage-setup\`" "normal"
+    print_message "Before using this script, remember to configure the \`.dockgento_profile\` file" "notice"
 }
 
 ##

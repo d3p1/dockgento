@@ -93,10 +93,10 @@ _configure_traefik() {
     ##
     traefik_acme_file_path="$BASE_DIR/etc/services/traefik/etc/acme.json"
     if [ ! -e traefik_acme_file_path ]; then
-		print_message "Start configuration of Traefik" "notice"
-		touch "$traefik_acme_file_path"
-		chmod 600 "$traefik_acme_file_path"
-		print_message "End configuration of Traefik" "notice"
+        print_message "Start configuration of Traefik" "notice"
+        touch "$traefik_acme_file_path"
+        chmod 600 "$traefik_acme_file_path"
+        print_message "End configuration of Traefik" "notice"
     fi
 }
 

@@ -35,9 +35,9 @@ _install_mkcert() {
         print_message "Start \`mkcert\` installation" "notice"
         install_mkcert
         print_message "End \`mkcert\` installation" "notice"
-	else
-		print_message "\`mkcert\` is already installed in the system" "notice"
-    fi    
+    else
+        print_message "\`mkcert\` is already installed in the system" "notice"
+    fi
 }
 
 ##

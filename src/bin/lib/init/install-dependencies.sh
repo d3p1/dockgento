@@ -35,8 +35,8 @@ _install_docker() {
         install_docker
         print_message "End \`docker\` installation" "notice"
     else
-		print_message "\`docker\` is already installed in the system" "notice"
-	fi
+        print_message "\`docker\` is already installed in the system" "notice"
+    fi
 }
 
 ##

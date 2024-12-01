@@ -19,7 +19,7 @@
 envsubst_files() {
     shopt -s globstar
     for file in **/$1; do
-    	envsubst_file "$file" "$2"
+        envsubst_file "$file" "$2"
     done
 }
 
@@ -31,7 +31,7 @@ envsubst_files() {
 # @return void
 ##
 envsubst_file() {
-	local tmp
-	tmp=$(mktemp)
-	envsubst "$2" < "$1" > "$tmp" && mv "$tmp" "$1"
+    local tmp
+    tmp=$(mktemp)
+    envsubst "$2" < "$1" > "$tmp" && mv "$tmp" "$1"
 }

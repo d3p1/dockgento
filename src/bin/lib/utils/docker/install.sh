@@ -13,24 +13,24 @@
 # @link   https://docs.docker.com/engine/install/debian/
 ##
 install_docker() {
-	##
-	# @note Install required dependencies
-	##
-	sudo apt-get update
-	sudo apt-get install \
-		ca-certificates \
-		curl \
-		gnupg
+    ##
+    # @note Install required dependencies
+    ##
+    sudo apt-get update
+    sudo apt-get install \
+        ca-certificates \
+        curl \
+        gnupg
 
-	##
-	# @note Configure repository
-	##
-	_configure_docker_repo
+    ##
+    # @note Configure repository
+    ##
+    _configure_docker_repo
 
-	##
-	# @note Install tools
-	##
-	_install_docker_tools
+    ##
+    # @note Install tools
+    ##
+    _install_docker_tools
 }
 
 ##

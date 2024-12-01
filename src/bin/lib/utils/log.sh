@@ -12,7 +12,7 @@
 # @return void
 ##
 print_env_var() {
-	print_message "\`$1\`: ${!1}" "notice"
+    print_message "\`$1\`: ${!1}" "notice"
 }
 
 ##
@@ -51,12 +51,15 @@ print_message() {
 		notice)
 			echo -e "${notice_format}[NOTICE] $1${reset_format}"
 			;;
+
 		success)
 			echo -e "${success_format}[SUCCESS] $1${reset_format}"
 			;;
+
 		error)
 			echo -e "${error_format}[ERROR] $1${reset_format}"
 			;;
+
 		*)
 			echo -e "$1\n"
 			;;

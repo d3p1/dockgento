@@ -17,7 +17,7 @@ source $BASE_DIR/lib/utils/mysql/normalize-dump.sh
 # @return void
 ##
 main() {
-	_setup_magento_platform
+    _setup_magento_platform
 }
 
 ##
@@ -29,22 +29,22 @@ main() {
 #         using `docker compose up <service>`)
 ##
 _setup_magento_platform() {
-	##
-	# @note In order to setup a Magento platform,
+    ##
+    # @note In order to setup a Magento platform,
     #       the Redis, MariaDB and other resources should be running,
     #       to avoid Magento exceptions
-	# @note The `cli` service uses the project PHP CLI image.
-	#       This image has an `init` script that receives as first param
-	#       a flag to determine if it is required to execute an installation.
-	#       If it is set to `true`, then a Magento platform installation is
-	#       executed. If it is set to `false`, then a Magento setup is executed
-	# @link https://hub.docker.com/r/d3p1/magento-php
-	##
-	print_message "Start Magento setup" "notice"
-	docker compose up -d
-	_migrate_db "$SCRIPT_DB_DUMP"
-	docker compose run --rm cli init 0
-	print_message "End Magento setup" "notice"
+    # @note The `cli` service uses the project PHP CLI image.
+    #       This image has an `init` script that receives as first param
+    #       a flag to determine if it is required to execute an installation.
+    #       If it is set to `true`, then a Magento platform installation is
+    #       executed. If it is set to `false`, then a Magento setup is executed
+    # @link https://hub.docker.com/r/d3p1/magento-php
+    ##
+    print_message "Start Magento setup" "notice"
+    docker compose up -d
+    _migrate_db "$SCRIPT_DB_DUMP"
+    docker compose run --rm cli init 0
+    print_message "End Magento setup" "notice"
 }
 
 ##
@@ -54,7 +54,7 @@ _setup_magento_platform() {
 # @return void
 ##
 _migrate_db() {
-	print_message "Start DB migration" "notice"
+    print_message "Start DB migration" "notice"
 
     ##
     # @note The DB dump is normalized to avoid user permission errors

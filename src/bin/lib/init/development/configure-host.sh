@@ -19,9 +19,9 @@ source $BASE_DIR/lib/utils/mkcert/generate-ssl-certificates.sh
 # @return void
 ##
 main() {
-	##
-	# @note Configure `docker`
-	##
+    ##
+    # @note Configure `docker`
+    ##
     _configure_docker
 
     ##
@@ -30,10 +30,10 @@ main() {
     _generate_ssl_certificates
 
     ##
-	# @note Add domain to `/etc/hosts` to be able to access project from
-	#       localhost without a DNS proxy configuration
-	##
-	_add_domain_to_hosts
+    # @note Add domain to `/etc/hosts` to be able to access project from
+    #       localhost without a DNS proxy configuration
+    ##
+    _add_domain_to_hosts
 }
 
 ##
@@ -53,7 +53,7 @@ _configure_docker() {
 # @return void
 ##
 _generate_ssl_certificates() {
-	local cert_dir
+    local cert_dir
 
     print_message "Start generation of locally-trusted SSL certificates for domain $SCRIPT_DOMAIN" "notice"
     cert_dir="$BASE_DIR/etc/services/traefik/etc/certs/"
@@ -75,7 +75,7 @@ _generate_ssl_certificates() {
 ##
 _add_domain_to_hosts() {
     if ! grep -q "$SCRIPT_DOMAIN" /etc/hosts; then
-    	print_message "Start add domain $SCRIPT_DOMAIN to \`/etc/hosts\`" "notice"
+        print_message "Start add domain $SCRIPT_DOMAIN to \`/etc/hosts\`" "notice"
         echo "127.0.0.1 ::1 $SCRIPT_DOMAIN" | sudo tee -a /etc/hosts
         print_message "End add domain $SCRIPT_DOMAIN to \`/etc/hosts\`" "notice"
     fi

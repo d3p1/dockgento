@@ -46,20 +46,20 @@ configure_docker_rootless_mode() {
     ##
     sudo systemctl disable --now docker.service docker.socket
 
-	##
-	# @note Define and export `XDG_RUNTIME_DIR` just in case it is not defined.
-	#       In this way, it is avoided errors during
-	#       `dockerd-rootless-setuptool.sh install` like
-	#       `systemd not detected` and
-	#       `Failed to connect to bus: No such file or directory`.
-	#       This issue only happens when you switch to user using
-	#       `sudo` or `su`, because in this situation,
-	#       all needed hooks to use systemctl are not configured correctly
-	# @link https://github.com/docker/docs/issues/14491
-	# @link https://unix.stackexchange.com/questions/587674/systemd-not-detected-dockerd-daemon-needs-to-be-started-manually
-	##
-	XDG_RUNTIME_DIR="/run/user/$(id -u)"
-	export XDG_RUNTIME_DIR
+    ##
+    # @note Define and export `XDG_RUNTIME_DIR` just in case it is not defined.
+    #       In this way, it is avoided errors during
+    #       `dockerd-rootless-setuptool.sh install` like
+    #       `systemd not detected` and
+    #       `Failed to connect to bus: No such file or directory`.
+    #       This issue only happens when you switch to user using
+    #       `sudo` or `su`, because in this situation,
+    #       all needed hooks to use `systemctl` are not configured correctly
+    # @link https://github.com/docker/docs/issues/14491
+    # @link https://unix.stackexchange.com/questions/587674/systemd-not-detected-dockerd-daemon-needs-to-be-started-manually
+    ##
+    XDG_RUNTIME_DIR="/run/user/$(id -u)"
+    export XDG_RUNTIME_DIR
 
     ##
     # @note Configure daemon as rootless mode
