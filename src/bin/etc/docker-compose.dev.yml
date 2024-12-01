@@ -9,7 +9,13 @@
 #               up -d`
 # @note        Add file provider configuration to Traefik to be able to
 #              use locally generated SSL certificates
-# @note        Add Xdebug feature to `fpm`, `cli` and `cron` services
+# @note        Add Xdebug feature to `fpm`, `cli` and `cron` services.
+#              Because of that, it is also added the host map between the
+#              container and the host (`host.docker.internal:host-gateway`),
+#              so Xdebug can connect to the IDE that is listening to it
+#              on the host (Xdebug used in these services must be configured
+#              with `xdebug.client_host = host.docker.internal` so it connects
+#              to the IDE in the host)
 # @note        Remove OPcache feature from `fpm`, `cli` and `cron` services
 #              to be development friendly
 # @note        Add MailHog service to be able to work with emails locally
@@ -46,6 +52,8 @@ services:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
     environment:
       - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   fpm_dev:
     image:
@@ -68,13 +76,17 @@ services:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
     environment:
       - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   cron:
     volumes:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
     environment:
       - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
-      
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
   mailhog:
     image:
       d3p1/magento-mailhog:1.0
