@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/d3p1/dockgento/compare/v1.9.7...v1.10.0) (2024-12-01)
+
+
+### Features
+
+* add dockgento profile sample files for development and production environments [[#1](https://github.com/d3p1/dockgento/issues/1)] ([2926a31](https://github.com/d3p1/dockgento/commit/2926a311dd3fc2c1080792685013d91dca0bcdb2))
+
 ## [1.9.7](https://github.com/d3p1/dockgento/compare/v1.9.6...v1.9.7) (2024-12-01)
 
 
