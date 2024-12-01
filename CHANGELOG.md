@@ -1,3 +1,10 @@
+## [1.9.7](https://github.com/d3p1/dockgento/compare/v1.9.6...v1.9.7) (2024-12-01)
+
+
+### Bug Fixes
+
+* adjust Xdebug configuration for PHP services so Xdebug connects to local IDE [[#1](https://github.com/d3p1/dockgento/issues/1)] ([4171ea7](https://github.com/d3p1/dockgento/commit/4171ea7ae859e964ff933c91227beecf5933e2f9))
+
 ## [1.9.6](https://github.com/d3p1/dockgento/compare/v1.9.5...v1.9.6) (2024-12-01)
 
 
