@@ -1,3 +1,10 @@
+## [1.9.6](https://github.com/d3p1/dockgento/compare/v1.9.5...v1.9.6) (2024-12-01)
+
+
+### Bug Fixes
+
+* adjust PHP images for development purpose [[#1](https://github.com/d3p1/dockgento/issues/1)] ([e048f09](https://github.com/d3p1/dockgento/commit/e048f09872f455fb6e6491f55f1d0441e832b95c))
+
 ## [1.9.5](https://github.com/d3p1/dockgento/compare/v1.9.4...v1.9.5) (2024-12-01)
 
 
