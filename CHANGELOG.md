@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/d3p1/dockgento/compare/v1.10.0...v1.10.1) (2024-12-02)
+
+
+### Bug Fixes
+
+* remove unneeded host map in PHP services used to allow Xdebug connect to local IDE [[#1](https://github.com/d3p1/dockgento/issues/1)] ([cdd9518](https://github.com/d3p1/dockgento/commit/cdd9518c4a6541ef5a35fa72db3fe054e4b0e63f))
+
 # [1.10.0](https://github.com/d3p1/dockgento/compare/v1.9.7...v1.10.0) (2024-12-01)
 
 
