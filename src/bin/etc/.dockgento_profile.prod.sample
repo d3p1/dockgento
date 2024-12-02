@@ -17,6 +17,8 @@
 # @note        The `SCRIPT_DB_DUMP` should be defined only for
 #              the `dockgento mage-setup` command and must point to the local
 #              DB dump location that should be migrated to setup the platform
+# @note        If it is required to run Magento cron, it must be defined the
+#              `cron` value for the `SCRIPT_COMPOSE_PROFILES` environment value
 # @link        https://account.magento.com/applications/customer/login
 ##
 export SCRIPT_USER_EMAIL=""
@@ -30,3 +32,4 @@ export SCRIPT_COMPOSER_MAGENTO_USERNAME=""
 export SCRIPT_COMPOSER_MAGENTO_PASSWORD=""
 export SCRIPT_MAGENTO_VERSION="2.4.6"
 export SCRIPT_DB_DUMP=""
+export SCRIPT_COMPOSE_PROFILES=""
