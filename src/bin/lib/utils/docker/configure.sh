@@ -36,7 +36,8 @@ configure_docker_rootless_mode() {
     ##
     # @note Install required dependencies
     ##
-    sudo apt-get install uidmap
+    sudo apt-get install -y libsubid4
+    sudo apt-get install -y uidmap
     sudo apt-get install -y dbus-user-session
     sudo apt-get install -y fuse-overlayfs
     sudo apt-get install -y slirp4netns
