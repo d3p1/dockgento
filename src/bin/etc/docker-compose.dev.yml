@@ -10,12 +10,14 @@
 # @note        Add file provider configuration to Traefik to be able to
 #              use locally generated SSL certificates
 # @note        Add Xdebug feature to `fpm`, `cli` and `cron` services.
-#              Because of that, it is also added the host map between the
+# @note        It is not required to add the host map between the
 #              container and the host (`host.docker.internal:host-gateway`),
-#              so Xdebug can connect to the IDE that is listening to it
-#              on the host (Xdebug used in these services must be configured
+#              so that Xdebug can connect to the IDE that is listening to it
+#              on the host, because PHP base image entry points already
+#              include that map
+#@note         Xdebug used in PHP services must be configured
 #              with `xdebug.client_host = host.docker.internal` so it connects
-#              to the IDE in the host)
+#              to the IDE in the host
 # @note        Remove OPcache feature from `fpm`, `cli` and `cron` services
 #              to be development friendly
 # @note        Add MailHog service to be able to work with emails locally
@@ -28,6 +30,7 @@
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/nginx/1.24/Dockerfile#L4
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/nginx/1.24/etc/vhost.conf#L41
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/nginx/1.24/etc/xdebug-upstream.conf#L2
+# @link        https://github.com/magento/magento-cloud-docker/blob/develop/images/php/fpm/docker-entrypoint.sh#L16
 ##
 services:
   traefik:
@@ -52,8 +55,6 @@ services:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
     environment:
       - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
   fpm_dev:
     image:
@@ -76,16 +77,12 @@ services:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
     environment:
       - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
   cron:
     volumes:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
     environment:
       - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
   mailhog:
     image:
