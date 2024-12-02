@@ -88,9 +88,7 @@ configure_docker_rootless_mode() {
     echo "export PATH=$PATH" | tee -a ~/.bashrc
     echo "export DOCKER_PATH=$DOCKER_PATH" | tee -a ~/.bashrc
     echo "export DOCKER_HOST=$DOCKER_HOST" | tee -a ~/.bashrc
-    export PATH
-    export DOCKER_PATH
-    export DOCKER_HOST
+    source ~/.bashrc
 
     ##
     # @note Enable the possibility to map privileged ports (like `80` or `443`)
