@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/d3p1/dockgento/compare/v1.10.1...v1.11.0) (2024-12-02)
+
+
+### Features
+
+* add the possibility to define Docker Composer profiles [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6bb080b](https://github.com/d3p1/dockgento/commit/6bb080b453b825bf8ffe991b86812c1c8a7e3407))
+
 ## [1.10.1](https://github.com/d3p1/dockgento/compare/v1.10.0...v1.10.1) (2024-12-02)
 
 
