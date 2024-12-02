@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/d3p1/dockgento/compare/v1.11.1...v1.11.2) (2024-12-02)
+
+
+### Bug Fixes
+
+* improve installation of docker rootless mode dependencies [[#1](https://github.com/d3p1/dockgento/issues/1)] ([30339da](https://github.com/d3p1/dockgento/commit/30339da8b296e8513bdb1ee10428f683d908bbcb))
+
 ## [1.11.1](https://github.com/d3p1/dockgento/compare/v1.11.0...v1.11.1) (2024-12-02)
 
 
