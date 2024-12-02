@@ -1,3 +1,11 @@
+## [1.11.1](https://github.com/d3p1/dockgento/compare/v1.11.0...v1.11.1) (2024-12-02)
+
+
+### Bug Fixes
+
+* adjust docker rootless mode configuration logic to correctly export docker env variables [[#1](https://github.com/d3p1/dockgento/issues/1)] ([89d15a4](https://github.com/d3p1/dockgento/commit/89d15a4130657d118b81e65d06e2b9558d4fb8ae))
+* adjust dockgento profile sample file for production environment [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6013687](https://github.com/d3p1/dockgento/commit/6013687e4830252f01bba6573b45020b6a43b66f))
+
 # [1.11.0](https://github.com/d3p1/dockgento/compare/v1.10.1...v1.11.0) (2024-12-02)
 
 
