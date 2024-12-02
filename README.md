@@ -56,7 +56,7 @@ dockgento init development
 
 ### Production use
 
-.dockgento_profile:
+Create .dockgento_profile:
 
 ```shell
 export SCRIPT_USER_EMAIL="cmdepicciotto@binacommerce.com"
@@ -77,10 +77,6 @@ export SCRIPT_COMPOSE_PROFILES="cron"
 
 ```shell
 dockgento init production
-```
-
-```shell
-source .bash_profile
 ```
 
 ```shell
