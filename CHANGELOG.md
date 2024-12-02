@@ -1,3 +1,10 @@
+## [1.11.3](https://github.com/d3p1/dockgento/compare/v1.11.2...v1.11.3) (2024-12-02)
+
+
+### Bug Fixes
+
+* adjust PHP_EXTENSIONS environment variable format in Docker Compose file for development environment [[#1](https://github.com/d3p1/dockgento/issues/1)] ([9a94700](https://github.com/d3p1/dockgento/commit/9a94700c5cbf506db1e0d1c9a811447c84e6043f))
+
 ## [1.11.2](https://github.com/d3p1/dockgento/compare/v1.11.1...v1.11.2) (2024-12-02)
 
 
