@@ -14,11 +14,15 @@
 #              and create the respective keys
 # @note        The `SCRIPT_MAGENTO_VERSION` is only used when it is required to
 #              install a Magento platform using the `cli` service
+# @note        It was avoided the definition of the `SCRIPT_MAGENTO_ADMIN_USER`
+#              and `SCRIPT_MAGENTO_ADMIN_PASSWORD` so that the script generates
+#              random ones
 # @note        The `SCRIPT_DB_DUMP` should be defined only for
 #              the `dockgento mage-setup` command and must point to the local
 #              DB dump location that should be migrated to setup the platform
 # @note        If it is required to run Magento cron, it must be defined the
-#              `cron` value for the `SCRIPT_COMPOSE_PROFILES` environment value
+#              `cron` value for the
+#              `SCRIPT_COMPOSE_PROFILES` environment variable
 # @link        https://account.magento.com/applications/customer/login
 ##
 export SCRIPT_USER_EMAIL=""
@@ -31,5 +35,7 @@ export SCRIPT_SEARCH_SERVICE="elasticsearch"
 export SCRIPT_COMPOSER_MAGENTO_USERNAME=""
 export SCRIPT_COMPOSER_MAGENTO_PASSWORD=""
 export SCRIPT_MAGENTO_VERSION="2.4.6"
+export SCRIPT_MAGENTO_ADMIN_FIRSTNAME=""
+export SCRIPT_MAGENTO_ADMIN_LASTNAME=""
 export SCRIPT_DB_DUMP=""
-export SCRIPT_COMPOSE_PROFILES=""
+export SCRIPT_COMPOSE_PROFILES="cron"
