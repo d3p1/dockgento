@@ -13,9 +13,17 @@
 
 ## Usage
 
-It will be detailed how to use this tool. If you would like to have a better understanding on how this tool works under the hood, you can visit the [wiki page](https://github.com/d3p1/dockgento/wiki).
+It will be detailed how to use this tool. If you would like to have a better understanding of how this tool works under the hood, you can visit the [wiki page](https://github.com/d3p1/dockgento/wiki).
+
+> [!NOTE]
+> Also if you experience some issue during the use of this tool, you can visit the [troubleshooting page](https://github.com/d3p1/dockgento/wiki/%5B6%5D-Troubleshooting).
+
+> [!IMPORTANT]
+> For now, this tool was only tested in `Debina 12` and requires an environment with `bash` to work properly.
 
 ### Prerequisites
+
+User with sudo privileges. See why [here](https://github.com/d3p1/dockgento/wiki/%5B5%5D-Command-script).
 
 Install Git.
 
@@ -36,12 +44,6 @@ dockgento mage-install
 ```shell
 dockgento mage-setup
 ```
-
-> [!NOTE]
-> You must have a user with `sudo` privileges. This is required because the script [installs `docker`](https://github.com/d3p1/dockgento/blob/main/src/bin/lib/init/install-dependencies.sh#L29), [installs `mkcert`](https://github.com/d3p1/dockgento/blob/main/src/bin/lib/init/development/install-dependencies.sh#L30) (for development environments), [updates the `/etc/hosts` file](https://github.com/d3p1/dockgento/blob/main/src/bin/lib/init/development/configure-host.sh#L76) (for development environments), [configures `docker` in rootless mode](https://github.com/d3p1/dockgento/blob/main/src/bin/lib/init/production/configure-host.sh#L44) (for production environments), etc.
-
-> [!IMPORTANT]
-> For now, this tool was only tested in `Debina 12` and requires an environment with `bash` to work properly.
 
 ### Development use
 
@@ -84,11 +86,6 @@ source .bash_profile
 ```shell
 dockgento mage-install
 ```
-
-> [!IMPORTANT]
-> Avoid switching to a specific user using `sudo` and `su` before executing `dockgento init production`. This caused a known error while configuring `docker` in rootless mode:
-> - https://github.com/docker/docs/issues/14491
-> - https://unix.stackexchange.com/questions/587674/systemd-not-detected-dockerd-daemon-needs-to-be-started-manually
 
 ## Changelog
 
