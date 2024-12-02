@@ -54,7 +54,7 @@ services:
     volumes:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
     environment:
-      - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
+      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
 
   fpm_dev:
     image:
@@ -76,13 +76,13 @@ services:
     volumes:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
     environment:
-      - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
+      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
 
   cron:
     volumes:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
     environment:
-      - PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug"
+      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
 
   mailhog:
     image:
