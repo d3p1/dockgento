@@ -1,3 +1,10 @@
+## [1.11.4](https://github.com/d3p1/dockgento/compare/v1.11.3...v1.11.4) (2024-12-03)
+
+
+### Bug Fixes
+
+* add new PHP-FPM with Xdebug feature service [[#1](https://github.com/d3p1/dockgento/issues/1)] ([8cea0dd](https://github.com/d3p1/dockgento/commit/8cea0ddd6cfd243053c5f45f85c56059c924b534))
+
 ## [1.11.3](https://github.com/d3p1/dockgento/compare/v1.11.2...v1.11.3) (2024-12-02)
 
 
