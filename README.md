@@ -27,7 +27,7 @@ Using this tool is straightforward:
 
 1. Install `dockgento`.
 
-2. Create a [`.dockgento_profile` file](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.sample). This file lets you configure environment variables that define how the project environment should be generated.
+2. Create a [`.dockgento_profile` file](https://github.com/d3p1/dockgento/blob/v1.11.4/src/bin/etc/.dockgento_profile.sample). This file lets you configure environment variables that define how the project environment should be generated.
 
 3. Execute `dockgento init <environment>` to generate the necessary [Docker Compose](https://docs.docker.com/compose/) files for the project.
 
@@ -66,7 +66,7 @@ rm -rf dockgento/
 
 Assuming `dockgento` is already installed, and I want to create a development site pointing to the domain `magento.test`, the steps are as follows:
 
-In the folder where I want to host the environment files, I need to create a [`.dockgento_profile`](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.dev.sample):
+In the folder where I want to host the environment files, I need to create a [`.dockgento_profile`](https://github.com/d3p1/dockgento/blob/v1.11.4/src/bin/etc/.dockgento_profile.dev.sample):
 
 ```shell
 export SCRIPT_USER_EMAIL="d3p1@d3p1.dev"
@@ -108,7 +108,7 @@ You should now be able to access the platform at `https://magento.test/` and the
 
 Assuming `dockgento` is already installed and the `DNS` records are pointing to the live server, I want to create a live site for the domain `magento.live`. The steps are as follows:
 
-In the folder where I want to host the environment files, I need to create a [`.dockgento_profile`](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.prod.sample):
+In the folder where I want to host the environment files, I need to create a [`.dockgento_profile`](https://github.com/d3p1/dockgento/blob/v1.11.4/src/bin/etc/.dockgento_profile.prod.sample):
 
 ```shell
 export SCRIPT_USER_EMAIL="d3p1@d3p1.dev"
