@@ -19,21 +19,19 @@ It is worth mentioning that this tool was inspired by other excellent tools that
 - [Warden](https://docs.warden.dev/environments/magento2.html)
 
 > [!NOTE]
-> Mark Shust's Docker Magento also provides great video tutorials on configuring your IDE to work seamlessly with Docker. His tutorials help me a lot!
+> [Mark Shust's Docker Magento](https://github.com/markshust/docker-magento) also provides great video tutorials on configuring your IDE to work seamlessly with Docker.
 
 ## Usage
 
 Using this tool is straightforward:
 
-1 - Install `dockgento`.
+1. Install `dockgento`.
 
-2 - Create a [`.dockgento_profile` file](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.sample). This file lets you configure environment variables that define how the project environment should be generated.
+2. Create a [`.dockgento_profile` file](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.sample). This file lets you configure environment variables that define how the project environment should be generated.
 
-3 - Execute `dockgento init <environment>` to generate the necessary [Docker Compose](https://docs.docker.com/compose/) files for the project. 
+3. Execute `dockgento init <environment>` to generate the necessary [Docker Compose](https://docs.docker.com/compose/) files for the project.
 
-4 - Execute `dockgento mage-install` if you want to install a new Magento platform to work with the current generated environment.
-
-5 - Execute `dockgento mage-setup` if you want to configure an existing Magento project to work with the current environment.
+4. Execute `dockgento mage-install` if you want to install a new Magento platform to work with the current generated environment. Or execute `dockgento mage-setup` if you want to configure an existing Magento project to work with the current environment.
 
 > [!NOTE]
 > To gain a deeper understanding of how this tool works under the hood, visit the [wiki page](https://github.com/d3p1/dockgento/wiki).
