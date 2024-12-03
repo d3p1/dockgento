@@ -9,7 +9,14 @@
 #               up -d`
 # @note        Add file provider configuration to Traefik to be able to
 #              use locally generated SSL certificates
-# @note        Add Xdebug feature to `fpm`, `cli` and `cron` services.
+# @note        Add Xdebug feature to `cli` and `cron` services
+# @note        Add an PHP-FPM service called `fpm_xdebug` that
+#              includes Xdebug feature.
+#              I think that it is important to have another
+#              service to attend Xdebug request because
+#              Xdebug extension can cause performance issues.
+#              In that way, the `fpm` container can continue
+#              working as expected
 # @note        It is not required to add the host map between the
 #              container and the host (`host.docker.internal:host-gateway`),
 #              so that Xdebug can connect to the IDE that is listening to it
@@ -18,15 +25,19 @@
 #@note         Xdebug used in PHP services must be configured
 #              with `xdebug.client_host = host.docker.internal` so it connects
 #              to the IDE in the host
-# @note        Remove OPcache feature from `fpm`, `cli` and `cron` services
-#              to be development friendly
+# @note        Remove OPcache feature from `fpm`, `fpm_xdebug`, `cli`
+#              and `cron` services to be development friendly
 # @note        Add MailHog service to be able to work with emails locally
 # @note        Mount host folder with developed code into containers
 # @note        The service naming convention uses the 
 #              underlying technology name for easy identification within 
 #              the infrastructure stack. There is an exception for 
-#              the `fpm_dev` service. This name was used to describe
-#              in a cleaner way the container purpose
+#              the `fpm_dev` and `fpm_xdebug` services.
+#              The `fpm_dev` name was used to describe in a cleaner way
+#              the container purpose.
+#              The `fpm_xdebug` name is required because the
+#              `web` service (Nginx) is configured to redirect Xdebug request
+#              to this hostname
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/nginx/1.24/Dockerfile#L4
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/nginx/1.24/etc/vhost.conf#L41
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/nginx/1.24/etc/xdebug-upstream.conf#L2
@@ -54,11 +65,27 @@ services:
     volumes:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
     environment:
+      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl
+
+  fpm_xdebug:
+    image:
+      d3p1/magento-php:${BASE_PHP_VERSION}-fpm
+    expose:
+      - 9000
+    volumes:
+      - ${BASE_DEV_DOC_ROOT_DIR}:/app
+    env_file:
+      - services/magento/.env
+    environment:
       - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
+    labels:
+      - traefik.enable=false
+    restart:
+      always
 
   fpm_dev:
     image:
-      d3p1/magento-php:${BASE_PHP_VERSION}-fpm
+      d3p1/magento-php:${BASE_PHP_VERSION}-fpm-dev
     expose:
       - 9000
     volumes:

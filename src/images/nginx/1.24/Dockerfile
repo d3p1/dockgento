@@ -8,19 +8,13 @@
 # @note Use official Magento Cloud image
 # @note Add healthcheck using as reference the excellent implementation in
 #       `markshust/docker-magento` project
-# @note Improve `XDEBUG_HOST` service name
-# @note Create `www` user and group (`1000:1000`) 
+# @note Create `www` user and group (`1000:1000`)
 #       so it is possible to match host user with this container user
 # @link https://hub.docker.com/r/magento/magento-cloud-docker-nginx
 # @link https://github.com/magento/magento-cloud-docker/blob/develop/images/nginx/1.24/Dockerfile
 # @link https://github.com/markshust/docker-magento/blob/master/compose/compose.healthcheck.yaml#L5
 ##
 FROM magento/magento-cloud-docker-nginx:1.24-1.3.6
-    ##
-    # @note Improve `XDEBUG_HOST` service name 
-    ##
-    ENV XDEBUG_HOST="fpm"
-    
     ##
     # @note Create `www` user and group (`1000:1000`)
     # @note Update working directory ownership to `www:www` so it can
