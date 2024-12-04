@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/d3p1/dockgento/compare/v1.12.0...v1.12.1) (2024-12-04)
+
+
+### Bug Fixes
+
+* adjust setup logic in PHP CLI images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6631e6f](https://github.com/d3p1/dockgento/commit/6631e6f0ca014566d319c5bbf02e414fbbf7c6f9))
+
 # [1.12.0](https://github.com/d3p1/dockgento/compare/v1.11.4...v1.12.0) (2024-12-04)
 
 
