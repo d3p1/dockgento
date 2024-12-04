@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/d3p1/dockgento/compare/v1.11.4...v1.12.0) (2024-12-04)
+
+
+### Features
+
+* add PHP 7.4 images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([ff0116c](https://github.com/d3p1/dockgento/commit/ff0116cae623518b116c5467b823b4980b4c08b0))
+
 ## [1.11.4](https://github.com/d3p1/dockgento/compare/v1.11.3...v1.11.4) (2024-12-03)
 
 
