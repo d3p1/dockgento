@@ -85,6 +85,7 @@ FROM magento/magento-cloud-docker-php:8.1-cli-1.3.7
     # @note Add custom script to run Magento cron
     # @note Add custom utility script to configure Varnish cache
     # @note Add custom utility script to configure SMTP server
+    # @note Add custom utility script to clean cache
     ##
     COPY bin/init /usr/local/bin/
     COPY bin/install /usr/local/bin/
@@ -93,6 +94,7 @@ FROM magento/magento-cloud-docker-php:8.1-cli-1.3.7
     COPY bin/run-cron /usr/local/bin/
     COPY bin/configure-varnish /usr/local/bin/
     COPY bin/configure-smtp /usr/local/bin/
+    COPY bin/purge-cache /usr/local/bin/
     RUN chmod +x /usr/local/bin/init
     RUN chmod +x /usr/local/bin/install
     RUN chmod +x /usr/local/bin/setup
@@ -100,6 +102,7 @@ FROM magento/magento-cloud-docker-php:8.1-cli-1.3.7
     RUN chmod +x /usr/local/bin/run-cron
     RUN chmod +x /usr/local/bin/configure-varnish
     RUN chmod +x /usr/local/bin/configure-smtp
+    RUN chmod +x /usr/local/bin/purge-cache
 
     ##
     # @note Install Magento cache watcher globally to be able to use it

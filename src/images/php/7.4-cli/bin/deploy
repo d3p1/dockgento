@@ -67,8 +67,7 @@ main() {
     ##
     # @note Clean cache
     ##
-    $MAGENTO_COMMAND_PATH cache:clean
-    $MAGENTO_COMMAND_PATH cache:flush
+    purge-cache
 
     ##
     # @note Return with success

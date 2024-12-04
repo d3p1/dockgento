@@ -49,6 +49,11 @@ main() {
     configure-smtp
 
     ##
+    # @note Clean Magento cache
+    ##
+    purge-cache
+
+    ##
     # @note Return with success
     ##
     return 0;

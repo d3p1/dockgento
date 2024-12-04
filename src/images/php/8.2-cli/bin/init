@@ -26,17 +26,25 @@ main() {
         # @note Install Magento
         ##
         install
+
+        ##
+        # @note Deploy Magento
+        ##
+        deploy
     else
+        ##
+        # @note Deploy Magento
+        # @note To set up Magento, we first need a functional Magento platform
+        #       (as we will update its configuration using `bin/magento` commands).
+        #       This is why we perform the deployment first and then proceed with the setup
+        ##
+        deploy
+
         ##
         # @note Setup Magento
         ##
         setup
     fi
-
-    ##
-    # @note Deploy Magento
-    ##
-    deploy
 
     ##
     # @note Change ownership to 1000:1000 account to be able to work
