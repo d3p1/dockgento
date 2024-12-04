@@ -1,0 +1,45 @@
+#!/bin/sh
+
+##
+# @description Run Magento 2 cron
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+# @note        The Magento Cloud PHP CLI image already includes a script to
+#              run Magento cron, but it is believed that it may
+#              not work properly for this project
+# @link        https://github.com/magento/magento-cloud-docker/blob/163a02c4b7fed2ec7da3f0d2f9e98f027f3712e8/images/php/cli/bin/run-cron
+##
+
+##
+# @note Add flag to exit script if there is an error related to a command
+#       or if it is used an undefined variable
+##
+set -eu
+
+##
+# Main
+#
+# @return void
+##
+main() {
+    ##
+    # @note Install Magento cron
+    # @note This command install cron in crontab if it does not exist, or
+    #       dispatches an error and avoid creating it if it exists
+    ##
+    $MAGENTO_COMMAND_PATH cron:install
+
+    ##
+    # @note Execute cron service as foreground by default
+    #       to avoid container exit
+    # @note It is used `exec` to avoid the creation of a subshell
+    #       and run the command as the main process
+    #       (in this way, it is possible to send signals to this process)
+    # @link https://lostindetails.com/articles/How-to-run-cron-inside-Docker
+    ##
+    exec cron -f
+}
+
+##
+# @note Run Magento cron
+##
+main "$@"

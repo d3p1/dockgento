@@ -1,0 +1,82 @@
+#!/bin/sh
+
+##
+# @description Deploy Magento 2 platform
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+# @note        The Magento Cloud PHP CLI image already includes a script to 
+#              deploy Magento, but it is believed that it may not work properly 
+#              for this project
+# @link        https://github.com/magento/magento-cloud-docker/blob/develop/images/php/cli/bin/cloud-deploy
+##
+
+##
+# @note Add flag to exit script if there is an error related to a command
+#       or if it is used an undefined variable
+##
+set -eu
+
+##
+# Main
+#
+# @return void
+##
+main() {
+    ##
+    # @note Install packages
+    ##
+    if [ "$MAGENTO_RUN_MODE" = 'production' ]; then
+        composer install --no-dev
+    else
+        composer install
+    fi
+
+    ##
+    # @note Set run mode
+    ##
+    $MAGENTO_COMMAND_PATH deploy:mode:set "$MAGENTO_RUN_MODE" --skip-compilation
+    
+    ##
+    # @note Upgrade DB
+    ##
+    $MAGENTO_COMMAND_PATH setup:upgrade
+
+    ##
+    # @note Compile DI
+    ##
+    $MAGENTO_COMMAND_PATH setup:di:compile
+
+    ##
+    # @note Deploy static content
+    ##
+    $MAGENTO_COMMAND_PATH setup:static-content:deploy \
+    -f \
+    -s "$MAGENTO_STATIC_CONTENT_DEPLOY_MODE" \
+    --jobs="$MAGENTO_STATIC_CONTENT_DEPLOY_JOBS" \
+    "$MAGENTO_LANGUAGE" 
+
+    ##
+    # @note Reindex
+    ##
+    $MAGENTO_COMMAND_PATH indexer:reindex
+
+    ##
+    # @note Enable cache
+    ##
+    $MAGENTO_COMMAND_PATH cache:enable
+
+    ##
+    # @note Clean cache
+    ##
+    $MAGENTO_COMMAND_PATH cache:clean
+    $MAGENTO_COMMAND_PATH cache:flush
+
+    ##
+    # @note Return with success
+    ##
+    return 0;
+}
+
+##
+# @note Deploy Magento
+##
+main "$@"

@@ -1,0 +1,58 @@
+#!/bin/sh
+
+##
+# @description Init a Magento 2 platform
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+##
+
+##
+# @note Add flag to exit script if there is an error related to a command
+#       or if it is used an undefined variable
+##
+set -eu
+
+##
+# Main
+#
+# @param  bool $1 Is installation flag
+# @return void
+##
+main() {
+    ##
+    # @note Check if it is an installation
+    ##
+    if [ "$1" -eq 1 ]; then
+        ##
+        # @note Install Magento
+        ##
+        install
+    else
+        ##
+        # @note Setup Magento
+        ##
+        setup
+    fi
+    
+    ##
+    # @note Deploy Magento
+    ##
+    deploy
+
+    ##
+    # @note Change ownership to 1000:1000 account to be able to work 
+    #       with source code on the host
+    # @link https://github.com/magento/magento-cloud-docker/blob/develop/images/php/cli/Dockerfile#L75
+    # @link https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
+    ##
+    chown -R www:www .
+
+    ##
+    # @note Return with success
+    ##
+    exit 0;
+}
+
+##
+# @note Install/Setup and deploy Magento
+##
+main "$@"
