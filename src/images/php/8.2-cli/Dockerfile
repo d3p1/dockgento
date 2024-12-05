@@ -85,26 +85,32 @@ FROM magento/magento-cloud-docker-php:8.2-cli-1.3.7
     # @note Add custom scripts to install, setup and
     #       deploy a Magento platform
     # @note Add custom script to run Magento cron
+    # @note Add custom utility script to configure search engine
     # @note Add custom utility script to configure Varnish cache
     # @note Add custom utility script to configure SMTP server
     # @note Add custom utility script to clean cache
+    # @note Add custom utility script to reindex
     ##
     COPY bin/init /usr/local/bin/
     COPY bin/install /usr/local/bin/
     COPY bin/setup /usr/local/bin/
     COPY bin/deploy /usr/local/bin/
     COPY bin/run-cron /usr/local/bin/
+    COPY bin/configure-search-engine /usr/local/bin/
     COPY bin/configure-varnish /usr/local/bin/
     COPY bin/configure-smtp /usr/local/bin/
     COPY bin/purge-cache /usr/local/bin/
+    COPY bin/reindex /usr/local/bin/
     RUN chmod +x /usr/local/bin/init
     RUN chmod +x /usr/local/bin/install
     RUN chmod +x /usr/local/bin/setup
     RUN chmod +x /usr/local/bin/deploy
     RUN chmod +x /usr/local/bin/run-cron
+    RUN chmod +x /usr/local/bin/configure-search-engine
     RUN chmod +x /usr/local/bin/configure-varnish
     RUN chmod +x /usr/local/bin/configure-smtp
     RUN chmod +x /usr/local/bin/purge-cache
+    RUN chmod +x /usr/local/bin/reindex
 
     ##
     # @note Install Magento cache watcher globally to be able to use it

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ##
-# @description Setup Magento 2 platform
+# @description Setup an already installed Magento 2 platform
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
 ##
 
@@ -28,19 +28,19 @@ main() {
     _configure_session
 
     ##
+    # @note Configure search engine
+    ##
+    _configure_search_engine
+
+    ##
     # @note Configure cache
     ##
     _configure_cache
 
     ##
-    # @note Configure AMQP 
+    # @note Configure AMQP
     ##
     _configure_amqp
-
-    ##
-    # @note Configure search engine
-    ##
-    _configure_search_engine
 
     ##
     # @note Configure SMTP
@@ -88,6 +88,18 @@ _configure_session() {
 }
 
 ##
+# Configure search engine
+#
+# @return void
+# @note   Setup search engine using custom script
+# @note   Search engine setup requires reindex
+##
+_configure_search_engine() {
+    configure-search-engine
+    reindex
+}
+
+##
 # Configure cache
 #
 # @return void
@@ -116,26 +128,7 @@ _configure_amqp() {
     --amqp-port="$MAGENTO_AMQP_PORT" \
     --amqp-user="$MAGENTO_AMQP_USER" \
     --amqp-password="$MAGENTO_AMQP_PASSWORD" \
-    --amqp-virtualhost="$MAGENTO_AMQP_VIRTUALHOST"   
-}
-
-##
-# Configure search engine
-#
-# @return void
-##
-_configure_search_engine() {
-    $MAGENTO_COMMAND_PATH config:set \
-    catalog/search/engine \
-    "$MAGENTO_SEARCH_ENGINE"
-
-    $MAGENTO_COMMAND_PATH config:set \
-    catalog/search/"$MAGENTO_SEARCH_ENGINE"_server_hostname \
-    "$MAGENTO_SEARCH_ENGINE_HOST"
-
-    $MAGENTO_COMMAND_PATH config:set \
-    catalog/search/"$MAGENTO_SEARCH_ENGINE"_server_port \
-    "$MAGENTO_SEARCH_ENGINE_PORT"
+    --amqp-virtualhost="$MAGENTO_AMQP_VIRTUALHOST"
 }
 
 ##

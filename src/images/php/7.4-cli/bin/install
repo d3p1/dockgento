@@ -35,6 +35,12 @@ main() {
     _install
 
     ##
+    # @note Setup search engine
+    # @note Use custom script
+    ##
+    configure-search-engine
+
+    ##
     # @note Setup Varnish
     # @note Use custom script
     ##

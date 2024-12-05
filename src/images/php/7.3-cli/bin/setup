@@ -28,6 +28,11 @@ main() {
     _configure_session
 
     ##
+    # @note Configure search engine
+    ##
+    _configure_search_engine
+
+    ##
     # @note Configure cache
     ##
     _configure_cache
@@ -80,6 +85,18 @@ _configure_session() {
     --session-save-redis-host="$MAGENTO_SESSION_SAVE_REDIS_HOST" \
     --session-save-redis-log-level="$MAGENTO_SESSION_SAVE_REDIS_LOG_LEVEL" \
     --session-save-redis-db="$MAGENTO_SESSION_SAVE_REDIS_DB"
+}
+
+##
+# Configure search engine
+#
+# @return void
+# @note   Setup search engine using custom script
+# @note   Search engine setup requires reindex
+##
+_configure_search_engine() {
+    configure-search-engine
+    reindex
 }
 
 ##

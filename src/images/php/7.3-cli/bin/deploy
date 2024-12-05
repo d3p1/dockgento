@@ -57,7 +57,7 @@ main() {
     ##
     # @note Reindex
     ##
-    $MAGENTO_COMMAND_PATH indexer:reindex
+    reindex
 
     ##
     # @note Enable cache

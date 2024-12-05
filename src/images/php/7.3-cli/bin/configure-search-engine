@@ -1,0 +1,44 @@
+#!/bin/sh
+
+##
+# @description Configure Magento 2 search engine
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+##
+
+##
+# @note Add flag to exit script if there is an error related to a command
+#       or if it is used an undefined variable
+##
+set -eu
+
+##
+# Main
+#
+# @return void
+# @todo   Analize if there is a way to use sh native features
+##
+main() {
+    if [ -n "$MAGENTO_SEARCH_ENGINE" ]; then
+        $MAGENTO_COMMAND_PATH setup:config:set \
+        --search-engine="$MAGENTO_SEARCH_ENGINE"
+
+        if [[ $MAGENTO_SEARCH_ENGINE =~ ^elasticsearch* ]]; then
+            $MAGENTO_COMMAND_PATH setup:config:set \
+            --elasticsearch-host="$MAGENTO_ELASTICSEARCH_HOST"
+
+            $MAGENTO_COMMAND_PATH setup:config:set \
+            --elasticsearch-port="$MAGENTO_ELASTICSEARCH_PORT"
+        else
+            $MAGENTO_COMMAND_PATH setup:config:set \
+            --opensearch-host="$MAGENTO_ELASTICSEARCH_HOST"
+
+            $MAGENTO_COMMAND_PATH setup:config:set \
+            --opensearch-port="$MAGENTO_OPENSEARCH_PORT"
+        fi
+    fi
+}
+
+##
+# @note Call main
+##
+main "$@"
