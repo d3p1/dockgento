@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/d3p1/dockgento/compare/v1.12.1...v1.12.2) (2024-12-05)
+
+
+### Bug Fixes
+
+* improve search engine setup in PHP CLI images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([009594b](https://github.com/d3p1/dockgento/commit/009594ba708285512c6544283b8cc2c88a331cf7))
+
 ## [1.12.1](https://github.com/d3p1/dockgento/compare/v1.12.0...v1.12.1) (2024-12-04)
 
 
