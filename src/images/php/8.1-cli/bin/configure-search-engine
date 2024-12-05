@@ -30,7 +30,7 @@ main() {
             --elasticsearch-port="$MAGENTO_ELASTICSEARCH_PORT"
         else
             $MAGENTO_COMMAND_PATH setup:config:set \
-            --opensearch-host="$MAGENTO_ELASTICSEARCH_HOST"
+            --opensearch-host="$MAGENTO_OPENSEARCH_HOST"
 
             $MAGENTO_COMMAND_PATH setup:config:set \
             --opensearch-port="$MAGENTO_OPENSEARCH_PORT"
