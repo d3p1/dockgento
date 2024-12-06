@@ -1,3 +1,10 @@
+## [1.12.4](https://github.com/d3p1/dockgento/compare/v1.12.3...v1.12.4) (2024-12-06)
+
+
+### Bug Fixes
+
+* adjust search engine setup & SMTP setup in PHP CLI images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([3701679](https://github.com/d3p1/dockgento/commit/37016792560477b85373922cef74f49305432754))
+
 ## [1.12.3](https://github.com/d3p1/dockgento/compare/v1.12.2...v1.12.3) (2024-12-05)
 
 
