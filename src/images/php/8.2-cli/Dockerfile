@@ -14,7 +14,6 @@
 # @link https://github.com/magento/magento-cloud-docker/blob/develop/images/php/cli/Dockerfile
 ##
 FROM magento/magento-cloud-docker-php:8.2-cli-1.3.7
-
     ##
     # @note It seems that `ARG` variables like `MAGENTO_ROOT`
     #       are not inherited from base images,

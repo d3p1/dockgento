@@ -19,12 +19,12 @@ set -eu
 main() {
     if [ -n "$MAGENTO_SMTP_HOST" ]; then
         $MAGENTO_COMMAND_PATH config:set \
-        system/smtp/host "$MAGENTO_SMTP_HOST"
+        system/smtp/host "$MAGENTO_SMTP_HOST" --lock-env
     fi
 
     if [ -n "$MAGENTO_SMTP_PORT" ]; then
         $MAGENTO_COMMAND_PATH config:set \
-        system/smtp/port "$MAGENTO_SMTP_PORT"
+        system/smtp/port "$MAGENTO_SMTP_PORT" --lock-env
     fi
 }
 

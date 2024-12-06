@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ##
 # @description Configure Magento 2 search engine
@@ -15,25 +15,29 @@ set -eu
 # Main
 #
 # @return void
-# @todo   Analize if there is a way to use sh native features
+# @todo   Analize if there is a way to use only sh native features
 ##
 main() {
     if [ -n "$MAGENTO_SEARCH_ENGINE" ]; then
-        $MAGENTO_COMMAND_PATH setup:config:set \
-        --search-engine="$MAGENTO_SEARCH_ENGINE"
+        $MAGENTO_COMMAND_PATH config:set \
+        catalog/search/engine "$MAGENTO_SEARCH_ENGINE" --lock-env
 
         if [[ $MAGENTO_SEARCH_ENGINE =~ ^elasticsearch* ]]; then
-            $MAGENTO_COMMAND_PATH setup:config:set \
-            --elasticsearch-host="$MAGENTO_ELASTICSEARCH_HOST"
+            $MAGENTO_COMMAND_PATH config:set \
+            catalog/search/elasticsearch7_server_hostname \
+            "$MAGENTO_ELASTICSEARCH_HOST" --lock-env
 
-            $MAGENTO_COMMAND_PATH setup:config:set \
-            --elasticsearch-port="$MAGENTO_ELASTICSEARCH_PORT"
+            $MAGENTO_COMMAND_PATH config:set \
+            catalog/search/elasticsearch7_server_port \
+            "$MAGENTO_ELASTICSEARCH_PORT" --lock-env
         else
-            $MAGENTO_COMMAND_PATH setup:config:set \
-            --opensearch-host="$MAGENTO_OPENSEARCH_HOST"
+            $MAGENTO_COMMAND_PATH config:set \
+            catalog/search/opensearch_server_hostname \
+            "$MAGENTO_OPENSEARCH_HOST" --lock-env
 
-            $MAGENTO_COMMAND_PATH setup:config:set \
-            --opensearch-port="$MAGENTO_OPENSEARCH_PORT"
+            $MAGENTO_COMMAND_PATH config:set \
+            catalog/search/opensearch_server_port \
+            "$MAGENTO_OPENSEARCH_PORT" --lock-env
         fi
     fi
 }
