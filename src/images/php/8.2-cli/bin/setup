@@ -67,11 +67,11 @@ main() {
 _configure_web() {
     $MAGENTO_COMMAND_PATH config:set \
     web/unsecure/base_url \
-    "$MAGENTO_BASE_URL"
+    "$MAGENTO_BASE_URL" --lock-env
 
     $MAGENTO_COMMAND_PATH config:set \
     web/secure/base_url \
-    "$MAGENTO_BASE_URL_SECURE"
+    "$MAGENTO_BASE_URL_SECURE" --lock-env
 }
 
 ##

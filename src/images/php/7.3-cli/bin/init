@@ -34,9 +34,11 @@ main() {
     else
         ##
         # @note Deploy Magento
-        # @note To set up Magento, we first need a functional Magento platform
-        #       (as we will update its configuration using `bin/magento` commands).
-        #       This is why we perform the deployment first and then proceed with the setup
+        # @note To set up Magento, we first need a
+        #       functional Magento platform (as we will update its
+        #       configuration using `bin/magento` commands).
+        #       This is why we perform the deployment first and
+        #       then proceed with the setup
         ##
         deploy
 
