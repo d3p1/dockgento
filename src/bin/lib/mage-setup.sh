@@ -73,7 +73,7 @@ _migrate_db() {
     ##
     print_message "Start DB deploy" "notice"
     docker compose cp "$1" mariadb:/tmp/db.sql
-    docker compose exec mariadb sh -c \
+    docker compose run --rm mariadb sh -c \
     'mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" < /tmp/db.sql'
     print_message "End DB deploy" "notice"
 
