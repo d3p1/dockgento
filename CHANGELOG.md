@@ -1,3 +1,12 @@
+## [1.12.5](https://github.com/d3p1/dockgento/compare/v1.12.4...v1.12.5) (2024-12-07)
+
+
+### Bug Fixes
+
+* adjust DB import logic on setup script to avoid errors when MariaDB is not already running [[#1](https://github.com/d3p1/dockgento/issues/1)] ([30727b9](https://github.com/d3p1/dockgento/commit/30727b9262674518b3622debc943aa11bc732a10))
+* adjust search engine configuration on install script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([f834b2a](https://github.com/d3p1/dockgento/commit/f834b2a871acd2c534e5e94705617db50e28bf47))
+* force Docker rootless mode configuration [[#1](https://github.com/d3p1/dockgento/issues/1)] ([8b91201](https://github.com/d3p1/dockgento/commit/8b91201812d0052da523c92e2e3c46ef50320742))
+
 ## [1.12.4](https://github.com/d3p1/dockgento/compare/v1.12.3...v1.12.4) (2024-12-06)
 
 
