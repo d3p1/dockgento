@@ -65,7 +65,7 @@ configure_docker_rootless_mode() {
     ##
     # @note Configure daemon as rootless mode
     ##
-    dockerd-rootless-setuptool.sh install
+    dockerd-rootless-setuptool.sh install --force
 
     ##
     # @note Enable daemon in rootless mode
