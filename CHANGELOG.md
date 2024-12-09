@@ -1,3 +1,10 @@
+## [1.12.6](https://github.com/d3p1/dockgento/compare/v1.12.5...v1.12.6) (2024-12-09)
+
+
+### Bug Fixes
+
+* adjust DB import logic on setup script to avoid errors when MariaDB is not already running [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6aa7dc2](https://github.com/d3p1/dockgento/commit/6aa7dc2b6840351271f1e42e3d045027cbc01916))
+
 ## [1.12.5](https://github.com/d3p1/dockgento/compare/v1.12.4...v1.12.5) (2024-12-07)
 
 
