@@ -70,15 +70,11 @@ _migrate_db() {
     # @note It is executed the DB dump migration command within a new
     #       container shell to be able to use container environment variables
     # @link https://superuser.com/questions/1628497/docker-exec-with-dollar-variable
-    # @todo For now, it is waited 5 seconds to make sure that `mariadb` service
-    #       is running and ready to execute commands.
-    #       Look for a better approach
     ##
     print_message "Start DB deploy" "notice"
     docker compose cp "$1" mariadb:/tmp/db.sql
-    sleep 5
     docker compose exec mariadb sh -c \
-    'mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" < /tmp/db.sql'
+    'mariadb -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" < /tmp/db.sql'
     print_message "End DB deploy" "notice"
 
     print_message "End DB migration" "notice"
