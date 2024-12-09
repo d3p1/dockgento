@@ -14,9 +14,14 @@
 #              and create the respective keys
 # @note        The `SCRIPT_MAGENTO_VERSION` is only used when it is required to
 #              install a Magento platform using the `cli` service
-# @note        It was avoided the definition of the `SCRIPT_MAGENTO_ADMIN_USER`
-#              and `SCRIPT_MAGENTO_ADMIN_PASSWORD` so that the script generates
-#              random ones
+# @note        It is possible to avoid the definition of
+#              `SCRIPT_MAGENTO_ADMIN_USER` and `SCRIPT_MAGENTO_ADMIN_PASSWORD`
+#              so that the script generates random ones. However, currently,
+#              there is an issue that causes the generation of passwords
+#              without the correct number of alphabetic and numeric characters
+#              required by an admin user password. To avoid this issue,
+#              it is recommended to generate the values of these variables
+#              manually
 # @note        The `SCRIPT_DB_DUMP` should be defined only for
 #              the `dockgento mage-setup` command and must point to the local
 #              DB dump location that should be migrated to setup the platform
@@ -37,5 +42,7 @@ export SCRIPT_COMPOSER_MAGENTO_PASSWORD=""
 export SCRIPT_MAGENTO_VERSION="2.4.6"
 export SCRIPT_MAGENTO_ADMIN_FIRSTNAME=""
 export SCRIPT_MAGENTO_ADMIN_LASTNAME=""
+export SCRIPT_MAGENTO_ADMIN_USER="dock"
+export SCRIPT_MAGENTO_ADMIN_PASSWORD="StrongPasswordWithAlphanumericCharacters"
 export SCRIPT_DB_DUMP=""
 export SCRIPT_COMPOSE_PROFILES="cron"
