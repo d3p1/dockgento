@@ -37,7 +37,7 @@ Using this tool is straightforward:
 > To gain a deeper understanding of how this tool works under the hood, visit the [wiki page](https://github.com/d3p1/dockgento/wiki).
 
 > [!NOTE]
-> If you encounter issues while using this tool, refer to the [troubleshooting page](https://github.com/d3p1/dockgento/wiki/%5B6%5D-Troubleshooting) page for guidance.
+> If you encounter issues while using this tool, refer to the [troubleshooting page](https://github.com/d3p1/dockgento/wiki/%5B6%5D-Troubleshooting) for guidance.
 
 > [!IMPORTANT]
 > Please note that [as of now](https://github.com/d3p1/dockgento/issues/8), this tool has only been tested on `Debian 12` and requires an environment with `bash` to function correctly.
@@ -48,7 +48,7 @@ Before using this tool, ensure that you have:
 
 - User with `sudo` privileges. Learn more about why this is necessary [here](https://github.com/d3p1/dockgento/wiki/%5B5%5D-Command-script).
 
-- [Git](https://git-scm.com/) installed on you system.
+- [Git](https://git-scm.com/) installed on your system.
 
 ### Installation
 
@@ -87,7 +87,7 @@ export SCRIPT_DB_DUMP=""
 export SCRIPT_COMPOSE_PROFILES=""
 ```
 
-Then, I can intialize the environment using the command:
+Then, I can initialize the environment using the command:
 
 ```shell
 dockgento init development
@@ -129,7 +129,7 @@ export SCRIPT_DB_DUMP=""
 export SCRIPT_COMPOSE_PROFILES="cron"
 ```
 
-Then, I can intialize the environment using the command:
+Then, I can initialize the environment using the command:
 
 ```shell
 dockgento init production
