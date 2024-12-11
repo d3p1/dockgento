@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/d3p1/dockgento/compare/v1.13.0...v1.14.0) (2024-12-11)
+
+
+### Features
+
+* add execute_command_script utility [[#1](https://github.com/d3p1/dockgento/issues/1)] ([92605a5](https://github.com/d3p1/dockgento/commit/92605a5e55ba1da28179c7282c0cbc905a17842e))
+
 # [1.13.0](https://github.com/d3p1/dockgento/compare/v1.12.10...v1.13.0) (2024-12-11)
 
 
