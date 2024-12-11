@@ -1,3 +1,10 @@
+## [1.12.8](https://github.com/d3p1/dockgento/compare/v1.12.7...v1.12.8) (2024-12-11)
+
+
+### Bug Fixes
+
+* adjust initialization logic for setup script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([b010039](https://github.com/d3p1/dockgento/commit/b0100393aca44ff3d7b191907bd2fc5aae9b1713))
+
 ## [1.12.7](https://github.com/d3p1/dockgento/compare/v1.12.6...v1.12.7) (2024-12-09)
 
 
