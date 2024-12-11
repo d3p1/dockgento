@@ -9,9 +9,18 @@
 
 ##
 # @note Import required utilities
+# @todo Currently, the required dependencies are imported
+#       using the `BASE_DIR` environment variable.
+#       However, it would be ideal to avoid relying on this
+#       environment variable within this utility script.
+#       This utility script should function independently
+#       of what the main/caller script does.
+#       At the moment, if the main/caller script does not
+#       define this environment variable,
+#       this utility script will stop working
 ##
-source log.sh
-source execute-script.sh
+source $BASE_DIR/lib/utils/log.sh
+source $BASE_DIR/lib/utils/execute-script.sh
 
 ##
 # Execute command script
