@@ -1,3 +1,10 @@
+## [1.14.4](https://github.com/d3p1/dockgento/compare/v1.14.3...v1.14.4) (2024-12-11)
+
+
+### Bug Fixes
+
+* adjust user used to execute PHP CLI container commands to avoid permission errors [[#1](https://github.com/d3p1/dockgento/issues/1)] ([ca695de](https://github.com/d3p1/dockgento/commit/ca695deacafd1b4dacd5589e8343a6b76ce403e6))
+
 ## [1.14.3](https://github.com/d3p1/dockgento/compare/v1.14.2...v1.14.3) (2024-12-11)
 
 
