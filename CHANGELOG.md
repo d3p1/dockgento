@@ -1,3 +1,10 @@
+## [1.14.5](https://github.com/d3p1/dockgento/compare/v1.14.4...v1.14.5) (2024-12-11)
+
+
+### Bug Fixes
+
+* adjust Composer permissions after deploy script in PHP CLI images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([428caab](https://github.com/d3p1/dockgento/commit/428caab27bb8843bcd8799c506b3b67c1250081c))
+
 ## [1.14.4](https://github.com/d3p1/dockgento/compare/v1.14.3...v1.14.4) (2024-12-11)
 
 
