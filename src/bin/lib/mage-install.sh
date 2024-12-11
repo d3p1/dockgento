@@ -43,7 +43,7 @@ _install_magento_platform() {
     ##
     print_message "Start Magento installation" "notice"
     docker compose up -d
-    docker compose run --rm --user=www cli init 1
+    docker compose run --rm cli init 1
     print_message "End Magento installation" "notice"
 }
 
