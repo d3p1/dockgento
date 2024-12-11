@@ -113,6 +113,10 @@ FROM magento/magento-cloud-docker-php:8.1-cli-1.3.7
     ##
     # @note Install Magento cache watcher globally to be able to use it
     #       as a development tool
+    # @note Switch temporarily to `www` user to avoid change
+    #       ownership of Composer files to `root`
     # @link https://github.com/mage2tv/magento-cache-clean
     ##
+    USER www
     RUN composer global require mage2tv/magento-cache-clean
+    USER root
