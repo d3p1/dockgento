@@ -1,3 +1,10 @@
+## [1.12.9](https://github.com/d3p1/dockgento/compare/v1.12.8...v1.12.9) (2024-12-11)
+
+
+### Bug Fixes
+
+* adjust user that runs install and setup commands [[#1](https://github.com/d3p1/dockgento/issues/1)] ([a7057f3](https://github.com/d3p1/dockgento/commit/a7057f34f03a3ffcedb39bcd5f6e84a1bbadd8df))
+
 ## [1.12.8](https://github.com/d3p1/dockgento/compare/v1.12.7...v1.12.8) (2024-12-11)
 
 
