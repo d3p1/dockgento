@@ -43,7 +43,7 @@ _setup_magento_platform() {
     print_message "Start Magento setup" "notice"
     docker compose up -d
     _migrate_db "$SCRIPT_DB_DUMP"
-    docker compose run --rm cli init 0
+    docker compose run --rm --user=www cli init 0
     print_message "End Magento setup" "notice"
 }
 
