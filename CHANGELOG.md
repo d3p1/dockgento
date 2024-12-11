@@ -1,3 +1,10 @@
+## [1.14.3](https://github.com/d3p1/dockgento/compare/v1.14.2...v1.14.3) (2024-12-11)
+
+
+### Bug Fixes
+
+* improve how Composer data is stored [[#1](https://github.com/d3p1/dockgento/issues/1)] ([e535646](https://github.com/d3p1/dockgento/commit/e5356463215ed7f052d4fb7a38080fcd4f61bdbc))
+
 ## [1.14.2](https://github.com/d3p1/dockgento/compare/v1.14.1...v1.14.2) (2024-12-11)
 
 
