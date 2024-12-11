@@ -9,7 +9,7 @@
 # @note Import required utilities
 ##
 source $BASE_DIR/lib/utils/log.sh
-source $BASE_DIR/lib/utils/execute-script.sh
+source $BASE_DIR/lib/utils/execute-command-script.sh
 
 ##
 # Main
@@ -56,34 +56,9 @@ main() {
 #
 # @param  string $1 Script name
 # @return void
-# @note   It is executed the common init script and a custom one that could
-#         exist for the given environment
 ##
 _execute_init_script() {
-    local common_script
-    local env_script
-    local base_path
-
-    base_path="$BASE_DIR/lib/init"
-    common_script="$base_path/$1.sh"
-    env_script="$base_path/$SCRIPT_MODE/$1.sh"
-
-    _process_init_script_execution "$common_script"
-    _process_init_script_execution "$env_script"
-}
-
-##
-# Process init script execution
-#
-# @param  string $1 Script path
-# @return void
-##
-_process_init_script_execution() {
-    if [ -e "$1" ]; then
-        print_message "Start execution of $1" "notice"
-        execute_script "$1"
-        print_message "End execution of $1" "notice"
-    fi
+    execute_command_script "$BASE_DIR/lib/init" "$1" "$SCRIPT_MODE"
 }
 
 ##
