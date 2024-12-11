@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/d3p1/dockgento/compare/v1.14.1...v1.14.2) (2024-12-11)
+
+
+### Bug Fixes
+
+* adjust user used in cache watcher installation in PHP images to avoid ownership errors [[#1](https://github.com/d3p1/dockgento/issues/1)] ([94626ce](https://github.com/d3p1/dockgento/commit/94626cedcdc31c6ebc9ccd3fb39c4c6d34596e02))
+
 ## [1.14.1](https://github.com/d3p1/dockgento/compare/v1.14.0...v1.14.1) (2024-12-11)
 
 
