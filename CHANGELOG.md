@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/d3p1/dockgento/compare/v1.14.0...v1.14.1) (2024-12-11)
+
+
+### Bug Fixes
+
+* adjust how execute_command_script utility import its dependencies [[#1](https://github.com/d3p1/dockgento/issues/1)] ([31f5dde](https://github.com/d3p1/dockgento/commit/31f5ddea54132b643afa418492d3fb884f475a15))
+
 # [1.14.0](https://github.com/d3p1/dockgento/compare/v1.13.0...v1.14.0) (2024-12-11)
 
 
