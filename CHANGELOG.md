@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/d3p1/dockgento/compare/v1.12.10...v1.13.0) (2024-12-11)
+
+
+### Features
+
+* add SCRIPT_MODE environment variable [[#1](https://github.com/d3p1/dockgento/issues/1)] ([646217f](https://github.com/d3p1/dockgento/commit/646217f60ada9bd6f9bd9513a2aa7f8d1718c3bc))
+
 ## [1.12.10](https://github.com/d3p1/dockgento/compare/v1.12.9...v1.12.10) (2024-12-11)
 
 
