@@ -66,10 +66,15 @@ main() {
     ##
     # @note Change ownership to 1000:1000 account to be able to work 
     #       with source code on the host
+    # @note Change ownership to 1000:1000 account to Composer folder.
+    #       This is required to avoid permission errors
+    #       when using Composer
     # @link https://github.com/magento/magento-cloud-docker/blob/develop/images/php/cli/Dockerfile#L75
     # @link https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
+    # @link https://github.com/magento/magento-cloud-docker/blob/1.4.0/images/php/cli/Dockerfile#L23
     ##
     chown -R www:www .
+    chown -R www:www "$COMPOSER_HOME"
 
     ##
     # @note Return with success
