@@ -37,9 +37,20 @@ main() {
         #       (needed by the `bin/magento` command)
         #       on demand. Then, the `deploy` script will switch
         #       to the defined platform mode
+        # @note To set up an already existing Magento project,
+        #       it is required to manually update
+        #       its `app/etc/env.php` file with the
+        #       new environment database credentials.
+        #       Because of that, it is required to execute
+        #       the `app:config:import` command to avoid errors like
+        #       `This command is unavailable right now.
+        #       To continue working with it please
+        #       run app:config:import or setup:upgrade command before.`
+        # @link https://github.com/d3p1/dockgento/wiki/%5B6%5D-Set-up-an-existing-project
         ##
         composer install
         $MAGENTO_COMMAND_PATH deploy:mode:set developer --skip-compilation
+        $MAGENTO_COMMAND_PATH app:config:import
 
         ##
         # @note Setup Magento
