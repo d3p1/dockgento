@@ -79,7 +79,7 @@ _execute_command() {
 ##
 _print_help() {
     print_message "Usage:" "normal"
-    print_message " - To init a Docker environment: \`dockgento init <env>\`" "normal"
+    print_message " - To init a Docker environment: \`dockgento init\`" "normal"
     print_message " - To install a Magento platform: \`dockgento mage-install\`" "normal"
     print_message " - To setup a Magento platform: \`dockgento mage-setup\`" "normal"
     print_message "Before using this script, remember to configure the \`.dockgento_profile\` file" "notice"

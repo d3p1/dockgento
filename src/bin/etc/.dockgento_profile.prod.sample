@@ -30,6 +30,7 @@
 #              `SCRIPT_COMPOSE_PROFILES` environment variable
 # @link        https://account.magento.com/applications/customer/login
 ##
+export SCRIPT_MODE="production"
 export SCRIPT_USER_EMAIL=""
 export SCRIPT_DOMAIN=""
 export SCRIPT_MARIADB_VERSION="10.6"

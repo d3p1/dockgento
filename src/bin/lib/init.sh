@@ -14,24 +14,23 @@ source $BASE_DIR/lib/utils/execute-script.sh
 ##
 # Main
 #
-# @param  string $1 Environment to initialize
 # @return void
 ##
 main() {
     ##
-    # @note Validate input params
+    # @note Validate environment
     ##
-    _validate "$@"
+    _validate
 
     ##
     # @note Execute script to install required dependencies in host machine
     ##
-    _execute_init_script "install-dependencies" "$1"
+    _execute_init_script "install-dependencies"
 
     ##
     # @note Execute script to implement required configurations in host machine
     ##
-    _execute_init_script "configure-host" "$1"
+    _execute_init_script "configure-host"
 
     ##
     # @note Execute script to configure (Docker Compose) services
@@ -40,7 +39,7 @@ main() {
     #       will be persisted by the `deploy` script
     #       in the respective env files using the `envsubst` command
     ##
-    _execute_init_script "configure-services" "$1"
+    _execute_init_script "configure-services"
 
     ##
     # @note Execute script to deploy environment.
@@ -49,14 +48,13 @@ main() {
     #       so the user can run the environment on demand
     #       with `docker compose up -d` command
     ##
-    _execute_init_script "deploy" "$1"
+    _execute_init_script "deploy"
 }
 
 ##
 # Execute init script
 #
 # @param  string $1 Script name
-# @param  string $2 Environment to initialize
 # @return void
 # @note   It is executed the common init script and a custom one that could
 #         exist for the given environment
@@ -68,7 +66,7 @@ _execute_init_script() {
 
     base_path="$BASE_DIR/lib/init"
     common_script="$base_path/$1.sh"
-    env_script="$base_path/$2/$1.sh"
+    env_script="$base_path/$SCRIPT_MODE/$1.sh"
 
     _process_init_script_execution "$common_script"
     _process_init_script_execution "$env_script"
@@ -91,12 +89,11 @@ _process_init_script_execution() {
 ##
 # Validate
 #
-# @param  string $1 Environment to initialize
 # @return void
 ##
 _validate() {
-    if [ "$1" != "development" ] && [ "$1" != "production" ]; then
-        print_message "You should specify \`\"development\"\` or \`\"production\"\` as an argument to define which type of environment to initialize" "error"
+    if [ "$SCRIPT_MODE" != "development" ] && [ "$SCRIPT_MODE" != "production" ]; then
+        print_message "You should specify \`\"development\"\` or \`\"production\"\` as the \`SCRIPT_MODE\` to define which type of environment to initialize" "error"
         exit 1
     fi
 }

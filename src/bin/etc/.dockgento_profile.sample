@@ -2,6 +2,10 @@
 # @description Profile file to setup environment variables that will be used
 #              by `dockgento` to initialize/setup the Docker environment
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+# @note        If you would like to run the CLI for a production environment,
+#              use `production` value for `SCRIPT_MODE`.
+#              If you would like to run the CLI for a development environment,
+#              use `development` value for `SCRIPT_MODE`
 # @note        If you would like to use a custom SMTP server to be used
 #              by the Magento platform, you should fill the
 #              `SCRIPT_SMTP_HOST` and `SCRIPT_SMTP_PORT`
@@ -28,7 +32,7 @@
 # @note        It is possible to define a Magento admin user and password
 #              using the `SCRIPT_MAGENTO_ADMIN_USER` and
 #              `SCRIPT_MAGENTO_ADMIN_PASSWORD` environment variables,
-#              but if they are keep empty, then the `dockgento init <env>`
+#              but if they are keep empty, then the `dockgento init`
 #              command will generate custom values to them.
 #              Take into consideration that the admin password must have
 #              letters and numbers to avoid
@@ -40,6 +44,7 @@
 #              `cron` value for the `SCRIPT_COMPOSE_PROFILES` environment value
 # @link        https://account.magento.com/applications/customer/login
 ##
+export SCRIPT_MODE=""
 export SCRIPT_USER_EMAIL=""
 export SCRIPT_DOMAIN=""
 export SCRIPT_MARIADB_VERSION="10.6"

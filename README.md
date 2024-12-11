@@ -29,7 +29,7 @@ Using this tool is straightforward:
 
 2. Create a [`.dockgento_profile` file](https://github.com/d3p1/dockgento/blob/v1.11.4/src/bin/etc/.dockgento_profile.sample). This file lets you configure environment variables that define how the project environment should be generated.
 
-3. Execute `dockgento init <environment>` to generate the necessary [Docker Compose](https://docs.docker.com/compose/) files for the project.
+3. Execute `dockgento init` to generate the necessary [Docker Compose](https://docs.docker.com/compose/) files for the project.
 
 4. Execute `dockgento mage-install` if you want to install a new Magento platform to work with the current generated environment. Or execute `dockgento mage-setup` if you want to configure an existing Magento project to work with the current environment.
 
@@ -69,6 +69,7 @@ Assuming `dockgento` is already installed, and I want to create a development si
 In the folder where I want to host the environment files, I need to create a [`.dockgento_profile`](https://github.com/d3p1/dockgento/blob/v1.11.4/src/bin/etc/.dockgento_profile.dev.sample):
 
 ```shell
+export SCRIPT_MODE="development"
 export SCRIPT_USER_EMAIL="d3p1@d3p1.dev"
 export SCRIPT_DOMAIN="magento.test"
 export SCRIPT_MARIADB_VERSION="10.6"
@@ -90,7 +91,7 @@ export SCRIPT_COMPOSE_PROFILES=""
 Then, I can initialize the environment using the command:
 
 ```shell
-dockgento init development
+dockgento init
 ```
 
 Finally, to install a new Magento platform, I can run the following command:
@@ -111,6 +112,7 @@ Assuming `dockgento` is already installed and the `DNS` records are pointing to 
 In the folder where I want to host the environment files, I need to create a [`.dockgento_profile`](https://github.com/d3p1/dockgento/blob/v1.11.4/src/bin/etc/.dockgento_profile.prod.sample):
 
 ```shell
+export SCRIPT_MODE="production"
 export SCRIPT_USER_EMAIL="d3p1@d3p1.dev"
 export SCRIPT_DOMAIN="magento.live"
 export SCRIPT_MARIADB_VERSION="10.6"
@@ -132,7 +134,7 @@ export SCRIPT_COMPOSE_PROFILES="cron"
 Then, I can initialize the environment using the command:
 
 ```shell
-dockgento init production
+dockgento init
 ```
 
 Finally, to install a new Magento platform, I can run the following command:
