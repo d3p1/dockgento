@@ -90,6 +90,7 @@ services:
       - 9000
     volumes:
       - ${BASE_DEV_DOC_ROOT_DIR}:/app
+      - composer:${BASE_COMPOSER_HOME}
     env_file:
       - services/magento/.env
     labels:

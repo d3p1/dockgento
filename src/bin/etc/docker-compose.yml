@@ -97,7 +97,7 @@ services:
       d3p1/magento-php:${BASE_PHP_VERSION}-cli
     volumes:
       - docroot:/app
-      - ~/composer:${BASE_COMPOSER_HOME}
+      - composer:${BASE_COMPOSER_HOME}
     env_file:
       - services/magento/.env
     labels:
@@ -165,5 +165,6 @@ services:
     
 volumes:
   docroot:
+  composer:
   dbdata:
   rabbitmqdata:
