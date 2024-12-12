@@ -1,3 +1,10 @@
+## [1.14.6](https://github.com/d3p1/dockgento/compare/v1.14.5...v1.14.6) (2024-12-12)
+
+
+### Bug Fixes
+
+* adjust Magento setup script for production environments [[#1](https://github.com/d3p1/dockgento/issues/1)] ([c21f7b8](https://github.com/d3p1/dockgento/commit/c21f7b8cc2e18630e4872452f8c0a357b0107e0b))
+
 ## [1.14.5](https://github.com/d3p1/dockgento/compare/v1.14.4...v1.14.5) (2024-12-11)
 
 
