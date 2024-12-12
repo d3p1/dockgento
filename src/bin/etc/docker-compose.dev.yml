@@ -57,13 +57,13 @@ services:
 
   web:
     volumes:
-      - ${BASE_DEV_DOC_ROOT_DIR}:/app
+      - ${BASE_DOC_ROOT_DIR}:/app
     environment:
       - WITH_XDEBUG=1
 
   fpm:
     volumes:
-      - ${BASE_DEV_DOC_ROOT_DIR}:/app
+      - ${BASE_DOC_ROOT_DIR}:/app
     environment:
       - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl
 
@@ -73,7 +73,7 @@ services:
     expose:
       - 9000
     volumes:
-      - ${BASE_DEV_DOC_ROOT_DIR}:/app
+      - ${BASE_DOC_ROOT_DIR}:/app
     env_file:
       - services/magento/.env
     environment:
@@ -89,7 +89,7 @@ services:
     expose:
       - 9000
     volumes:
-      - ${BASE_DEV_DOC_ROOT_DIR}:/app
+      - ${BASE_DOC_ROOT_DIR}:/app
       - composer:${BASE_COMPOSER_HOME}
     env_file:
       - services/magento/.env
@@ -102,13 +102,13 @@ services:
 
   cli:
     volumes:
-      - ${BASE_DEV_DOC_ROOT_DIR}:/app
+      - ${BASE_DOC_ROOT_DIR}:/app
     environment:
       - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
 
   cron:
     volumes:
-      - ${BASE_DEV_DOC_ROOT_DIR}:/app
+      - ${BASE_DOC_ROOT_DIR}:/app
     environment:
       - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
 
