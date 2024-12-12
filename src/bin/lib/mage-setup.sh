@@ -9,7 +9,7 @@
 # @note Import required utilities
 ##
 source $BASE_DIR/lib/utils/log.sh
-source $BASE_DIR/lib/utils/mysql/normalize-dump.sh
+source $BASE_DIR/lib/utils/execute-command-script.sh
 
 ##
 # Main
@@ -17,67 +17,42 @@ source $BASE_DIR/lib/utils/mysql/normalize-dump.sh
 # @return void
 ##
 main() {
-    _setup_magento_platform
-}
-
-##
-# Setup Magento platform
-#
-# @return void
-# @note   It is used `docker compose run cli` instead of `docker compose up cli`
-#         to be able to define command to run (it is not possible to do that
-#         using `docker compose up <service>`)
-##
-_setup_magento_platform() {
     ##
     # @note In order to setup a Magento platform,
     #       the Redis, MariaDB and other resources should be running,
     #       to avoid Magento exceptions
+    ##
+    docker compose up -d
+
+    ##
+    # @note Before executing the script that setup a Magento platform,
+    #       it is required to prepare the environment services to meet
+    #       conditions needed for a Magento setup
+    ##
+    _execute_setup_script "setup-services"
+
+    ##
     # @note The `cli` service uses the project PHP CLI image.
     #       This image has an `init` script that receives as first param
     #       a flag to determine if it is required to execute an installation.
     #       If it is set to `true`, then a Magento platform installation is
     #       executed. If it is set to `false`, then a Magento setup is executed
+    # @note It is used `docker compose run cli` instead of `docker compose up cli`
+    #       to be able to define command to run (it is not possible to do that
+    #       using `docker compose up <service>`)
     # @link https://hub.docker.com/r/d3p1/magento-php
     ##
-    print_message "Start Magento setup" "notice"
-    docker compose up -d
-    _migrate_db "$SCRIPT_DB_DUMP"
     docker compose run --rm cli init 0
-    print_message "End Magento setup" "notice"
 }
 
 ##
-# Migrate DB
+# Execute setup script
 #
-# @param  string $1 DB dump path
+# @param  string $1 Script name
 # @return void
 ##
-_migrate_db() {
-    print_message "Start DB migration" "notice"
-
-    ##
-    # @note The DB dump is normalized to avoid user permission errors
-    # @link https://github.com/markshust/docker-magento?tab=readme-ov-file#database
-    ##
-    print_message "Start DB normalization" "notice"
-    normalize_db_dump "$1"
-    print_message "End DB normalization" "notice"
-
-    ##
-    # @note The DB dump is copied to the DB service to be able to migrate it
-    #       using service commands
-    # @note It is executed the DB dump migration command within a new
-    #       container shell to be able to use container environment variables
-    # @link https://superuser.com/questions/1628497/docker-exec-with-dollar-variable
-    ##
-    print_message "Start DB deploy" "notice"
-    docker compose cp "$1" mariadb:/tmp/db.sql
-    docker compose exec mariadb sh -c \
-    'mariadb -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" < /tmp/db.sql'
-    print_message "End DB deploy" "notice"
-
-    print_message "End DB migration" "notice"
+_execute_setup_script() {
+    execute_command_script "$BASE_DIR/lib/mage-setup" "$1" "$SCRIPT_MODE"
 }
 
 ##
