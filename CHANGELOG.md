@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/d3p1/dockgento/compare/v1.15.0...v1.15.1) (2024-12-13)
+
+
+### Bug Fixes
+
+* adjust user in Varnish v6.6 image that causes permission error [[#1](https://github.com/d3p1/dockgento/issues/1)] ([0ec60f6](https://github.com/d3p1/dockgento/commit/0ec60f6736cf75bef4978308f507b7ba640f9d65))
+
 # [1.15.0](https://github.com/d3p1/dockgento/compare/v1.14.7...v1.15.0) (2024-12-13)
 
 
