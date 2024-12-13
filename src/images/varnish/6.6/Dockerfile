@@ -13,18 +13,11 @@
 ##
 FROM magento/magento-cloud-docker-varnish:6.6-1.4.0
     ##
-    # @note Switch to `root` user 
-    #       to be able to install cURL needed for healtcheck command
+    # @note Install cURL needed for healtcheck command
     ##
-    USER root
     RUN set -e; \
         apt-get update; \
         apt-get -y install curl
-
-    ##
-    # @note Switch to `varnish` user
-    ##
-    USER varnish
 
     ##
     # @note Set default value to Varnish HTTP port environment variable
