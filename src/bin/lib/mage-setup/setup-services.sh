@@ -42,9 +42,12 @@ _setup_magento() {
     #       using service commands
     # @note It is executed the DB dump migration command within a new
     #       container shell to be able to use container environment variables
+    # @todo For now, to make sure that the `mariadb` service and its server is running
+    #       the script sleeps for 5 seconds. Improve this logic
     # @link https://superuser.com/questions/1628497/docker-exec-with-dollar-variable
     ##
     print_message "Start DB deploy" "notice"
+    sleep 5s
     docker compose cp "$SCRIPT_DB_DUMP" mariadb:/tmp/db.sql
     docker compose exec mariadb sh -c \
     'mariadb -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" < /tmp/db.sql'
