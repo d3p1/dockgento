@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/d3p1/dockgento/compare/v1.14.7...v1.15.0) (2024-12-13)
+
+
+### Features
+
+* add Varnish v6.6 image [[#1](https://github.com/d3p1/dockgento/issues/1)] ([d7a3c4c](https://github.com/d3p1/dockgento/commit/d7a3c4c35e03c429327d923af2bfcc46cd2bc4b1))
+
 ## [1.14.7](https://github.com/d3p1/dockgento/compare/v1.14.6...v1.14.7) (2024-12-13)
 
 
