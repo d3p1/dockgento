@@ -1,3 +1,10 @@
+## [1.14.7](https://github.com/d3p1/dockgento/compare/v1.14.6...v1.14.7) (2024-12-13)
+
+
+### Bug Fixes
+
+* adjust database deploy on Magento setup script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([bf528ba](https://github.com/d3p1/dockgento/commit/bf528ba536c58dbca6b1adefd53739e6e12bf721))
+
 ## [1.14.6](https://github.com/d3p1/dockgento/compare/v1.14.5...v1.14.6) (2024-12-12)
 
 
