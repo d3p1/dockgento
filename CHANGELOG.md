@@ -1,3 +1,10 @@
+## [1.15.2](https://github.com/d3p1/dockgento/compare/v1.15.1...v1.15.2) (2024-12-14)
+
+
+### Bug Fixes
+
+* adjust configuration file in Varnish images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([cc885ae](https://github.com/d3p1/dockgento/commit/cc885ae4fe356dad7d3a712e3efdc58284719592))
+
 ## [1.15.1](https://github.com/d3p1/dockgento/compare/v1.15.0...v1.15.1) (2024-12-13)
 
 
