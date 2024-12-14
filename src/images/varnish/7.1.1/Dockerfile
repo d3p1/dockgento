@@ -6,12 +6,21 @@
 
 ##
 # @note Use official Magento Cloud image
+# @note Customize Varnish configuration file
 # @note Add healthcheck
 # @link https://hub.docker.com/r/magento/magento-cloud-docker-varnish
 # @link https://github.com/magento/magento-cloud-docker/blob/develop/images/varnish/7.1.1/Dockerfile
 # @link https://hub.docker.com/_/varnish
 ##
 FROM magento/magento-cloud-docker-varnish:7.1-1.3.7
+    ##
+    # @note It is customized the base image Varnish configuration file
+    # @note It was experienced the error
+    #       `PURGE response code: 400 message: X-Magento-Tags-Pattern header required`
+    #       while trying to clean and clear the cache of a Magento Open Source platform
+    ##
+    COPY etc/default.vcl /etc/varnish/
+
     ##
     # @note Switch to `root` user 
     #       to be able to install cURL needed for healtcheck command
