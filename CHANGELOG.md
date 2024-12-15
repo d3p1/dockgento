@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/d3p1/dockgento/compare/v1.15.2...v1.16.0) (2024-12-15)
+
+
+### Features
+
+* expose MariaDB service port to host for local development [[#1](https://github.com/d3p1/dockgento/issues/1)] ([dc072d0](https://github.com/d3p1/dockgento/commit/dc072d070c522decf5ac4d4a8d02c7a7ee88e402))
+
 ## [1.15.2](https://github.com/d3p1/dockgento/compare/v1.15.1...v1.15.2) (2024-12-14)
 
 
