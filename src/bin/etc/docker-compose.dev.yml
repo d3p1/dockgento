@@ -9,6 +9,8 @@
 #               up -d`
 # @note        Add file provider configuration to Traefik to be able to
 #              use locally generated SSL certificates
+# @note        Export `mariadb` port to host to be able to connect
+#              to it locally from host IDE
 # @note        Add Xdebug feature to `cli` and `cron` services
 # @note        Add an PHP-FPM service called `fpm_xdebug` that
 #              includes Xdebug feature.
@@ -111,6 +113,10 @@ services:
       - ${BASE_DOC_ROOT_DIR}:/app
     environment:
       - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
+
+  mariadb:
+    ports:
+      - 3306:3306
 
   mailhog:
     image:
