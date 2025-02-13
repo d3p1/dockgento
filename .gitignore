@@ -20,3 +20,9 @@ Thumbs.db
 .idea
 .vscode
 *.code-workspace
+
+##
+# @note Avoid ignoring IDE configuration that should be
+#       deployed by script
+##
+!src/bin/etc/.idea

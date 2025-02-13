@@ -34,7 +34,7 @@ export BASE_DIR
 ##
 main() {
     case "$1" in
-        init | mage-install | mage-setup)
+        init | mage-install | mage-setup | ide-setup)
             if [ ! -e ".dockgento_profile" ]; then
                 print_message "You must create a \`.dockgento_profile\` file with the required exports of environment variables that are used during command execution" "error"
                 print_message "Check for reference: https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.sample" "notice"

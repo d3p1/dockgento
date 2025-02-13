@@ -33,6 +33,12 @@
 #              for production environments so the `dockgento mage-setup`
 #              knows the location of the platform code that should be
 #              copy to the service/container
+# @note        The `SCRIPT_IDE_KEY` must be set to one of the
+#              following values: `idea`, `vscode`, or an empty string ("").
+#              If set to `idea` or `vscode`, configuration files related to
+#              the corresponding IDE will be deployed inside
+#              `SCRIPT_DOC_ROOT_DIR` to facilitate the initialization
+#              of the working environment
 # @note        It is possible to define a Magento admin user and password
 #              using the `SCRIPT_MAGENTO_ADMIN_USER` and
 #              `SCRIPT_MAGENTO_ADMIN_PASSWORD` environment variables,
@@ -65,5 +71,6 @@ export SCRIPT_MAGENTO_ADMIN_LASTNAME=""
 export SCRIPT_MAGENTO_ADMIN_USER=""
 export SCRIPT_MAGENTO_ADMIN_PASSWORD=""
 export SCRIPT_DOC_ROOT_DIR="./www"
+export SCRIPT_IDE_KEY=""
 export SCRIPT_DB_DUMP=""
 export SCRIPT_COMPOSE_PROFILES=""
