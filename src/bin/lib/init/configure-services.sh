@@ -13,6 +13,12 @@ source $BASE_DIR/lib/utils/get-resources.sh
 source $BASE_DIR/lib/utils/generate-random-value.sh
 
 ##
+# @note Init required constants
+##
+declare ELASTICSEARCH_SERVICE_KEY="elasticsearch"
+declare OPENSEARCH_SERVICE_KEY="opensearch"
+
+##
 # Main
 # 
 # @return void
@@ -132,17 +138,17 @@ _configure_search_engine() {
     #       to setup the environment
     ##
     case "$SCRIPT_SEARCH_SERVICE" in
-        elasticsearch)
+        "$ELASTICSEARCH_SERVICE_KEY")
             SCRIPT_MAGENTO_SEARCH_ENGINE_HOST="elasticsearch"
             SCRIPT_MAGENTO_SEARCH_ENGINE_PORT="9200"
             SCRIPT_MAGENTO_SEARCH_ENGINE="elasticsearch7"
-        ;;
+            ;;
 
-        opensearch)
+        "$OPENSEARCH_SERVICE_KEY")
             SCRIPT_MAGENTO_SEARCH_ENGINE_HOST="opensearch"
             SCRIPT_MAGENTO_SEARCH_ENGINE_PORT="9200"
             SCRIPT_MAGENTO_SEARCH_ENGINE="opensearch"
-        ;;
+            ;;
     esac
     export SCRIPT_MAGENTO_SEARCH_ENGINE_HOST
     export SCRIPT_MAGENTO_SEARCH_ENGINE_PORT
