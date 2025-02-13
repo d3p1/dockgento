@@ -1,3 +1,10 @@
+## [1.17.1](https://github.com/d3p1/dockgento/compare/v1.17.0...v1.17.1) (2025-02-13)
+
+
+### Bug Fixes
+
+* adjust global variable definitions to avoid undefined errors [[#1](https://github.com/d3p1/dockgento/issues/1)] ([d25fd12](https://github.com/d3p1/dockgento/commit/d25fd121489bbc477db7f0b54790a38c73abfa56))
+
 # [1.17.0](https://github.com/d3p1/dockgento/compare/v1.16.0...v1.17.0) (2025-02-13)
 
 
