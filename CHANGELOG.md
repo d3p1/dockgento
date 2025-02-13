@@ -1,3 +1,10 @@
+## [1.17.2](https://github.com/d3p1/dockgento/compare/v1.17.1...v1.17.2) (2025-02-13)
+
+
+### Bug Fixes
+
+* adjust JetBrains file copy logic [[#10](https://github.com/d3p1/dockgento/issues/10)] ([24fd3d6](https://github.com/d3p1/dockgento/commit/24fd3d6fd31c0c7cbc8e212aeba15964780b0f0b))
+
 ## [1.17.1](https://github.com/d3p1/dockgento/compare/v1.17.0...v1.17.1) (2025-02-13)
 
 
