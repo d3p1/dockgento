@@ -55,7 +55,7 @@ _generate_ide_files() {
     print_message "Start copy IDE files" "notice"
     case "$SCRIPT_IDE_KEY" in
         "$IDEA_IDE_KEY")
-            if [ -z "$SCRIPT_DOC_ROOT_DIR" ]; then
+            if [ -n "$SCRIPT_DOC_ROOT_DIR" ]; then
                 print_message "Start copy JetBrains files" "notice"
                 cp -R "$BASE_DIR/etc/.idea" "$SCRIPT_DOC_ROOT_DIR/.idea"
                 print_message "End copy JetBrains files" "notice"
