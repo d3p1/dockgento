@@ -12,18 +12,18 @@
 set -e
 
 ##
-# @note Init global/environment variables that could be useful 
+# @note Import required utilities
+##
+source $BASE_DIR/lib/utils/log.sh
+source $BASE_DIR/lib/utils/execute-script.sh
+
+##
+# @note Init global/environment variables that could be useful
 #       for called commands/scripts
 ##
 declare BASE_DIR
 BASE_DIR=$(dirname "${BASH_SOURCE[0]}")
 export BASE_DIR
-
-##
-# @note Import required utilities
-##
-source $BASE_DIR/lib/utils/log.sh
-source $BASE_DIR/lib/utils/execute-script.sh
 
 ##
 # Main
