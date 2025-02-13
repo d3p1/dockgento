@@ -12,17 +12,17 @@
 set -eu
 
 ##
-# @note Import required utilities
-##
-source $BASE_DIR/../lib/utils/log.sh
-
-##
 # @note Init global variables
 ##
 declare BASE_DIR
 declare CLI_DIR
 BASE_DIR="$(dirname "${BASH_SOURCE[0]}")"
 CLI_DIR="$HOME/bin/dockgento"
+
+##
+# @note Import required utilities
+##
+source $BASE_DIR/../lib/utils/log.sh
 
 ##
 # Main
