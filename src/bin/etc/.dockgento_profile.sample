@@ -34,8 +34,8 @@
 #              knows the location of the platform code that should be
 #              copy to the service/container
 # @note        The `SCRIPT_IDE_KEY` must be set to one of the
-#              following values: `idea`, `vscode`, or an empty string ("").
-#              If set to `idea` or `vscode`, configuration files related to
+#              following values: `phpstorm`, `vscode`, or an empty string ("").
+#              If set to `phpstorm` or `vscode`, configuration files related to
 #              the corresponding IDE will be deployed inside
 #              `SCRIPT_DOC_ROOT_DIR` to facilitate the initialization
 #              of the working environment

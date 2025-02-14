@@ -31,7 +31,7 @@ source $BASE_DIR/lib/utils/log.sh
 ##
 # @note Declare required constants
 ##
-declare IDEA_IDE_KEY="idea"
+declare IDEA_IDE_KEY="phpstorm"
 declare VSCODE_IDE_KEY="vscode"
 
 ##
