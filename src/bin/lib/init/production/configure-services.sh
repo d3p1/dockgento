@@ -39,7 +39,7 @@ main() {
 # @note   It is used the `DOCKER_PATH` environment variable exposed by the
 #         `docker` rootless mode configuration to define
 #         `docker` daemon socket location. This environment variable
-#         defines the new socket that should be used to comunicate with
+#         defines the new socket that should be used to communicate with
 #         `docker` daemon in rootless mode
 # @note   The `docker` socket is mounted in Traefik service so it can work
 #         with the infrastructure
