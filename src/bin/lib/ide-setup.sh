@@ -31,7 +31,7 @@ source $BASE_DIR/lib/utils/log.sh
 ##
 # @note Declare required constants
 ##
-declare IDEA_IDE_KEY="phpstorm"
+declare JETBRAINS_IDE_KEY="phpstorm"
 declare VSCODE_IDE_KEY="vscode"
 
 ##
@@ -54,7 +54,7 @@ main() {
 _generate_ide_files() {
     print_message "Start copy IDE files" "notice"
     case "$SCRIPT_IDE_KEY" in
-        "$IDEA_IDE_KEY")
+        "$JETBRAINS_IDE_KEY")
             if [ -n "$SCRIPT_DOC_ROOT_DIR" ]; then
                 print_message "Start copy JetBrains files" "notice"
                 cp -R "$BASE_DIR/etc/.idea" "$SCRIPT_DOC_ROOT_DIR/.idea"
