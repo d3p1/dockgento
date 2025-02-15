@@ -1,3 +1,10 @@
+## [1.17.3](https://github.com/d3p1/dockgento/compare/v1.17.2...v1.17.3) (2025-02-15)
+
+
+### Bug Fixes
+
+* add ide-setup command to help message [[#10](https://github.com/d3p1/dockgento/issues/10)] ([6b5c10d](https://github.com/d3p1/dockgento/commit/6b5c10de05183af6db5b6261bf84af40a0dba0eb))
+
 ## [1.17.2](https://github.com/d3p1/dockgento/compare/v1.17.1...v1.17.2) (2025-02-13)
 
 
