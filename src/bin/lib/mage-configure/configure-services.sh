@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##
-# @description Setup services required by `dockgento mage-setup`
+# @description Configure services required by `dockgento mage-configure`
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
 ##
 
@@ -17,17 +17,17 @@ source $BASE_DIR/lib/utils/mysql/normalize-dump.sh
 # @return void
 ##
 main() {
-    _setup_magento
+    _configure_magento
 }
 
 ##
-# Setup Magento
+# Configure Magento
 #
 # @return void
 # @note   Migrate old platform DB
 ##
-_setup_magento() {
-    print_message "Start Magento setup" "notice"
+_configure_magento() {
+    print_message "Start Magento configuration" "notice"
 
     ##
     # @note The DB dump is normalized to avoid user permission errors
@@ -53,7 +53,7 @@ _setup_magento() {
     'mariadb -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" < /tmp/db.sql'
     print_message "End DB deploy" "notice"
 
-    print_message "End Magento setup" "notice"
+    print_message "End Magento configuration" "notice"
 }
 
 ##

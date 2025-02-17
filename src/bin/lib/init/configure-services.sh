@@ -135,7 +135,7 @@ _configure_search_engine() {
     #       required for Docker Compose `web` service (the Magento platform
     #       requires it to set the project search engine). Also,
     #       it is used to define the Docker Compose configuration files used
-    #       to setup the environment
+    #       to configure the environment
     ##
     case "$SCRIPT_SEARCH_SERVICE" in
         "$ELASTICSEARCH_SERVICE_KEY")

@@ -38,7 +38,8 @@ _install_magento_platform() {
     #       This image has an `init` script that receives as first param
     #       a flag to determine if it is required to execute an installation.
     #       If it is set to `true`, then a Magento platform installation is
-    #       executed. If it is set to `false`, then a Magento setup is executed
+    #       executed. If it is set to `false`, then a Magento set up
+    #       action is executed
     # @link https://hub.docker.com/r/d3p1/magento-php
     ##
     print_message "Start Magento installation" "notice"

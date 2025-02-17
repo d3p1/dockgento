@@ -7,7 +7,7 @@
 ##
 # @note Use official Magento Cloud image
 # @note Improve Magento Cloud image permissions of the working directory
-# @note Add custom scripts to init, install, setup and deploy
+# @note Add custom scripts to init, install, set up and deploy
 #       a Magento platform
 # @link https://hub.docker.com/r/magento/magento-cloud-docker-php
 # @link https://github.com/magento/magento-cloud-docker/blob/develop/images/php/cli/Dockerfile
@@ -84,7 +84,7 @@ FROM magento/magento-cloud-docker-php:7.3-cli-1.3.6
     RUN chmod g+s ${MAGENTO_ROOT}
 
     ##
-    # @note Add custom scripts to install, setup and
+    # @note Add custom scripts to install, configure and
     #       deploy a Magento platform
     # @note Add custom script to run Magento cron
     # @note Add custom utility script to configure search engine
@@ -95,7 +95,7 @@ FROM magento/magento-cloud-docker-php:7.3-cli-1.3.6
     ##
     COPY bin/init /usr/local/bin/
     COPY bin/install /usr/local/bin/
-    COPY bin/setup /usr/local/bin/
+    COPY bin/configure /usr/local/bin/
     COPY bin/deploy /usr/local/bin/
     COPY bin/run-cron /usr/local/bin/
     COPY bin/configure-search-engine /usr/local/bin/
@@ -105,7 +105,7 @@ FROM magento/magento-cloud-docker-php:7.3-cli-1.3.6
     COPY bin/reindex /usr/local/bin/
     RUN chmod +x /usr/local/bin/init
     RUN chmod +x /usr/local/bin/install
-    RUN chmod +x /usr/local/bin/setup
+    RUN chmod +x /usr/local/bin/configure
     RUN chmod +x /usr/local/bin/deploy
     RUN chmod +x /usr/local/bin/run-cron
     RUN chmod +x /usr/local/bin/configure-search-engine

@@ -1,18 +1,18 @@
 #!/bin/bash
 
 ##
-# @description Dockgento command to setup an IDE to work with
+# @description Dockgento command to configure an IDE to work with
 #              this Magento environment
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
 # @note        It was considered whether the logic of this command could be
 #              integrated into one of the existing commands (e.g.,
 #              `dockgento init`, `dockgento mage-install`, or
-#              `dockgento mage-setup`), but the best approach was to make it
+#              `dockgento mage-configure`), but the best approach was to make it
 #              an independent command.
 #              Setting up the IDE is necessary for both
 #              new Magento installations (`dockgento mage-install`)
 #              as well as for
-#              already existing installations (`dockgento mage-setup`),
+#              already existing installations (`dockgento mage-configure`),
 #              but the platform's source code must already be present to apply
 #              the required IDE configurations.
 #              Additionally, it's understood that this command will primarily

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ##
-# @description Setup an already installed Magento 2 platform
+# @description Configure an already installed Magento 2 platform
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
 ##
 
@@ -44,7 +44,7 @@ main() {
 
     ##
     # @note Configure SMTP
-    # @note Setup SMTP using custom script
+    # @note Configure SMTP using custom script
     ##
     configure-smtp
 
@@ -91,8 +91,8 @@ _configure_session() {
 # Configure search engine
 #
 # @return void
-# @note   Setup search engine using custom script
-# @note   Search engine setup requires reindex
+# @note   Configure search engine using custom script
+# @note   Search engine configuration requires reindex
 ##
 _configure_search_engine() {
     configure-search-engine
@@ -103,7 +103,7 @@ _configure_search_engine() {
 # Configure cache
 #
 # @return void
-# @note   Setup Varnish using custom script
+# @note   Configure Varnish using custom script
 ##
 _configure_cache() {
     $MAGENTO_COMMAND_PATH setup:config:set \
@@ -128,10 +128,10 @@ _configure_amqp() {
     --amqp-port="$MAGENTO_AMQP_PORT" \
     --amqp-user="$MAGENTO_AMQP_USER" \
     --amqp-password="$MAGENTO_AMQP_PASSWORD" \
-    --amqp-virtualhost="$MAGENTO_AMQP_VIRTUALHOST"   
+    --amqp-virtualhost="$MAGENTO_AMQP_VIRTUALHOST"
 }
 
 ##
-# @note Setup Magento
+# @note Configure Magento
 ##
 main "$@"

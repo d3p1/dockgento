@@ -1,6 +1,6 @@
 ##
-# @description Profile file to setup environment variables that will be used
-#              by `dockgento` to initialize/setup the Docker environment
+# @description Profile file to set up environment variables that will be used
+#              by `dockgento` to initialize/set up the Docker environment
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
 # @note        If you would like to use a custom SMTP server to be used
 #              by the Magento platform, you should fill the
@@ -23,8 +23,8 @@
 #              it is recommended to generate the values of these variables
 #              manually
 # @note        The `SCRIPT_DB_DUMP` should be defined only for
-#              the `dockgento mage-setup` command and must point to the local
-#              DB dump location that should be migrated to setup the platform
+#              the `dockgento mage-configure` command and must point to the local
+#              DB dump location that should be migrated to set up the platform
 # @note        If it is required to run Magento cron, it must be defined the
 #              `cron` value for the
 #              `SCRIPT_COMPOSE_PROFILES` environment variable

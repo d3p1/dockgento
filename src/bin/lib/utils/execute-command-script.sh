@@ -3,7 +3,7 @@
 ##
 # @description An utility to execute scripts related to a
 #              `dockgento` command
-#              like `init`, `mage-install`, `mage-setup`, etc.
+#              like `init`, `mage-install`, `mage-configure`, etc.
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
 ##
 

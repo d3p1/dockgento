@@ -40,9 +40,9 @@ main() {
     fi
 
     ##
-    # @note Setup CLI
+    # @note Configure CLI
     ##
-    _setup_cli
+    _configure_cli
 
     ##
     # @note Install CLI
@@ -63,11 +63,11 @@ main() {
 }
 
 ##
-# Setup `dockgento`
+# Configure `dockgento`
 #
 # @return void
 ##
-_setup_cli() {
+_configure_cli() {
     print_message "Start CLI dir creation: $CLI_DIR" "notice"
     mkdir -p "$CLI_DIR"
     print_message "End CLI dir creation: $CLI_DIR" "notice"

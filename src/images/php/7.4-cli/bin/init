@@ -53,9 +53,9 @@ main() {
         $MAGENTO_COMMAND_PATH app:config:import
 
         ##
-        # @note Setup Magento
+        # @note Configure Magento
         ##
-        setup
+        configure
     fi
 
     ##
@@ -83,6 +83,6 @@ main() {
 }
 
 ##
-# @note Install/Setup and deploy Magento
+# @note Install/Configure and deploy Magento
 ##
 main "$@"

@@ -35,13 +35,13 @@ main() {
     _install
 
     ##
-    # @note Setup Varnish
+    # @note Configure Varnish
     # @note Use custom script
     ##
     configure-varnish
 
     ##
-    # @note Setup SMTP server
+    # @note Configure SMTP server
     # @note Use custom script
     ##
     configure-smtp

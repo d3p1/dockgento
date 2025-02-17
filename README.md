@@ -49,12 +49,12 @@ Using this tool is straightforward:
 
 2. Execute `dockgento init` to generate the necessary [Docker Compose](https://docs.docker.com/compose/) files for the project.
 
-3. Execute `dockgento mage-install` if you want to install a new Magento platform to work with the current generated environment. Or execute `dockgento mage-setup` if you want to configure an existing Magento project to work with the current environment.
+3. Execute `dockgento mage-install` if you want to install a new Magento platform to work with the current generated environment. Or execute `dockgento mage-configure` if you want to configure an existing Magento project to work with the current environment.
 
-4. Execute `dockgento ide-setup` to simplify the configuration of your IDE, allowing you to work with this generated environment efficiently and effectively.
+4. Execute `dockgento ide-configure` to simplify the configuration of your IDE, allowing you to work with this generated environment efficiently and effectively.
 
 > [!IMPORTANT]
-> For now, `dockgento ide-setup` only installs [startup scripts](https://www.jetbrains.com/help/phpstorm/settings-tools-startup-tasks.html) that are very useful for [PHPStorm](https://www.jetbrains.com/phpstorm/). However, automating the configuration of other important aspects and supporting additional IDEs is still pending. [This ticket](https://github.com/d3p1/dockgento/issues/10) and [this ticket](https://github.com/d3p1/dockgento/issues/17) will handle the completion of this requirement.
+> For now, `dockgento ide-configure` only installs [startup scripts](https://www.jetbrains.com/help/phpstorm/settings-tools-startup-tasks.html) that are very useful for [PHPStorm](https://www.jetbrains.com/phpstorm/). However, automating the configuration of other important aspects and supporting additional IDEs is still pending. [This ticket](https://github.com/d3p1/dockgento/issues/10) and [this ticket](https://github.com/d3p1/dockgento/issues/17) will handle the completion of this requirement.
 
 > [!NOTE]
 > To gain a deeper understanding of how this tool works under the hood, visit the [wiki page](https://github.com/d3p1/dockgento/wiki).

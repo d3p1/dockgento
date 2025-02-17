@@ -81,7 +81,7 @@ FROM magento/magento-cloud-docker-php:8.2-cli-1.3.7
     RUN chmod g+s ${MAGENTO_ROOT}
 
     ##
-    # @note Add custom scripts to install, setup and
+    # @note Add custom scripts to install, configure and
     #       deploy a Magento platform
     # @note Add custom script to run Magento cron
     # @note Add custom utility script to configure search engine
@@ -92,7 +92,7 @@ FROM magento/magento-cloud-docker-php:8.2-cli-1.3.7
     ##
     COPY bin/init /usr/local/bin/
     COPY bin/install /usr/local/bin/
-    COPY bin/setup /usr/local/bin/
+    COPY bin/configure /usr/local/bin/
     COPY bin/deploy /usr/local/bin/
     COPY bin/run-cron /usr/local/bin/
     COPY bin/configure-search-engine /usr/local/bin/
@@ -102,7 +102,7 @@ FROM magento/magento-cloud-docker-php:8.2-cli-1.3.7
     COPY bin/reindex /usr/local/bin/
     RUN chmod +x /usr/local/bin/init
     RUN chmod +x /usr/local/bin/install
-    RUN chmod +x /usr/local/bin/setup
+    RUN chmod +x /usr/local/bin/configure
     RUN chmod +x /usr/local/bin/deploy
     RUN chmod +x /usr/local/bin/run-cron
     RUN chmod +x /usr/local/bin/configure-search-engine
