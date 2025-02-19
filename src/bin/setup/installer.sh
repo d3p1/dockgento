@@ -98,28 +98,35 @@ _add_shell_command() {
     print_message "Start add \`dockgento\` to commands" "notice"
 
     ##
-    # @note Get user profile
-    # @note If `.bash_profile` does not exist, get content from `.profile`
-    #       and create `.bash_profile` with this content
-    # @note Remove `PATH` definition from user profile
-    #       to be able to update it in a cleaner way
+    # @note If shell command is already in `PATH`, avoid adding it
     ##
-    current_profile=""
-    if [ ! -e "$HOME/.bash_profile" ]; then
-        touch "$HOME/.bash_profile"
-        current_profile="$(sed '/export PATH/d' "$HOME/.profile")"
+    if [[ "$PATH" =~ $CLI_DIR ]]; then
+        print_message "\`dockgento\` is already in \`PATH\`" "notice"
     else
-        current_profile="$(sed '/export PATH/d' "$HOME/.bash_profile")"
-    fi
+        ##
+        # @note Get user profile
+        # @note If `.bash_profile` does not exist, get content from `.profile`
+        #       and create `.bash_profile` with this content
+        # @note Remove `PATH` definition from user profile
+        #       to be able to update it in a cleaner way
+        ##
+        current_profile=""
+        if [ ! -e "$HOME/.bash_profile" ]; then
+            touch "$HOME/.bash_profile"
+            current_profile="$(sed '/export PATH/d' "$HOME/.profile")"
+        else
+            current_profile="$(sed '/export PATH/d' "$HOME/.bash_profile")"
+        fi
 
-    ##
-    # @note Persist CLI inside `PATH` environment variable to be able to use
-    #       it as a command
-    ##
-    printf \
-    "%s\n" \
-    "$current_profile" \
-    "export PATH=$CLI_DIR:$PATH" > "$HOME/.bash_profile"
+        ##
+        # @note Persist CLI inside `PATH` environment variable to be able to use
+        #       it as a command
+        ##
+        printf \
+        "%s\n" \
+        "$current_profile" \
+        "export PATH=$CLI_DIR:$PATH" > "$HOME/.bash_profile"
+    fi
 
     print_message "End add \`dockgento\` to commands" "notice"
 }
