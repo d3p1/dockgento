@@ -1,3 +1,10 @@
+## [1.17.4](https://github.com/d3p1/dockgento/compare/v1.17.3...v1.17.4) (2025-02-19)
+
+
+### Bug Fixes
+
+* adjust installer to avoid multiple definitions of command in PATH [[#1](https://github.com/d3p1/dockgento/issues/1)] ([cdb577c](https://github.com/d3p1/dockgento/commit/cdb577c50694de52b5cd8c227190729f03c6cc76))
+
 ## [1.17.3](https://github.com/d3p1/dockgento/compare/v1.17.2...v1.17.3) (2025-02-15)
 
 
