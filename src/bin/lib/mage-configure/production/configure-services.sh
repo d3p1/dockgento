@@ -32,7 +32,7 @@ main() {
 ##
 _configure_magento() {
     print_message "Start Magento configuration for prod environment" "notice"
-    docker compose cp "${BASE_DOC_ROOT_DIR}/." web:/app
+    docker compose cp "$SCRIPT_DOC_ROOT_DIR/." web:/app
     print_message "End Magento configuration for prod environment" "notice"
 }
 
