@@ -1,3 +1,10 @@
+## [1.17.5](https://github.com/d3p1/dockgento/compare/v1.17.4...v1.17.5) (2025-02-19)
+
+
+### Bug Fixes
+
+* adjust copy source code to production container command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([3a4c329](https://github.com/d3p1/dockgento/commit/3a4c3295262af2b28996a7c8618044a281b0f459))
+
 ## [1.17.4](https://github.com/d3p1/dockgento/compare/v1.17.3...v1.17.4) (2025-02-19)
 
 
