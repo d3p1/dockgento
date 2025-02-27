@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/d3p1/dockgento/compare/v1.17.5...v1.18.0) (2025-02-27)
+
+
+### Features
+
+* add Traefik redirection from http to https [[#1](https://github.com/d3p1/dockgento/issues/1)] ([fdef7cc](https://github.com/d3p1/dockgento/commit/fdef7cc852722b9b9f211a2b9925e520eec4a67a))
+
 ## [1.17.5](https://github.com/d3p1/dockgento/compare/v1.17.4...v1.17.5) (2025-02-19)
 
 
