@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/d3p1/dockgento/compare/v1.18.0...v1.18.1) (2025-10-31)
+
+
+### Bug Fixes
+
+* improve search service configuration [[#1](https://github.com/d3p1/dockgento/issues/1)] ([55428ae](https://github.com/d3p1/dockgento/commit/55428ae36733317acdeb896a09a1856491ce6a74))
+
 # [1.18.0](https://github.com/d3p1/dockgento/compare/v1.17.5...v1.18.0) (2025-02-27)
 
 
