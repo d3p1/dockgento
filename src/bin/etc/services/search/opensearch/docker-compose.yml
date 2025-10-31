@@ -25,6 +25,7 @@ services:
       - searchdata:/usr/share/opensearch/data
     env_file:
       - services/search/opensearch/.env
+    mem_limit: ${BASE_SEARCH_MEM_LIMIT}
     restart:
       always
 

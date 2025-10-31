@@ -119,18 +119,6 @@ _configure_search_engine() {
     print_message "Start init search engine environment variables" "notice"
 
     ##
-    # @note Export environment variable required for
-    #       Docker Compose `elasticsearch` and `opensearch` services
-    # @note JVM heap sizes should be at least 50% of system RAM
-    # @link https://stackoverflow.com/questions/2441046/how-to-get-the-total-physical-memory-in-bash-to-assign-it-to-a-variable
-    # @link https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.htm
-    ##
-    MEM=$(get_ram_mem)
-    SEARCH_ENGINE_MEM=$(( MEM / 2 ))
-    export SCRIPT_SEARCH_JAVA_OPTS="-Xms${SEARCH_ENGINE_MEM}k -Xmx${SEARCH_ENGINE_MEM}k"
-    print_env_var "SCRIPT_SEARCH_JAVA_OPTS"
-
-    ##
     # @note Evaluate search engine and export environment variables
     #       required for Docker Compose `web` service (the Magento platform
     #       requires it to set the project search engine). Also,

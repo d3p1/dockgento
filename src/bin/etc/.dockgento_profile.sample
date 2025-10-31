@@ -17,6 +17,21 @@
 #              and `SCRIPT_SMTP_PORT` for this job)
 # @note        For `SCRIPT_SEARCH_SERVICE` should be used:
 #              `elasticsearch` or `opensearch`
+# @note        The `SCRIPT_SEARCH_MEM_LIMIT` defines the maximum amount of
+#              RAM memory the search service can use.
+#              Remember that Elasticsearch/OpenSearch are memory intensive
+#              process so it is important to limit this resource.
+#              For the limit configured, it is important that 50% of them
+#              is assigned to the heap size (used for the JVM).
+#              This can be done using the `-Xms` and `-Xmx` options.
+#              These options should use the same value. We are managing
+#              them in `SCRIPT_SEARCH_JAVA_OPTS`.
+#              Then, this variable is used inside the respective
+#              environment variable that tells the search service to
+#              limit the heap size by this value
+#              (`ES_JAVA_OPTS` or `OPENSEARCH_JAVA_OPTS`).
+#              Elasticsearch/OpenSearch uses the other 50% for file system
+#              caching and other features.
 # @note        To get the `SCRIPT_COMPOSER_MAGENTO_USERNAME` and
 #              `SCRIPT_COMPOSER_MAGENTO_PASSWORD` credentials, you should
 #              login into
@@ -53,6 +68,8 @@
 # @note        If it is required to run Magento cron, it must be defined the
 #              `cron` value for the `SCRIPT_COMPOSE_PROFILES` environment value
 # @link        https://account.magento.com/applications/customer/login
+# @link        https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection
+# @link        https://www.elastic.co/search-labs/blog/elasticsearch-memory-usage
 ##
 export SCRIPT_MODE=""
 export SCRIPT_USER_EMAIL=""
@@ -63,6 +80,8 @@ export SCRIPT_SMTP_PORT=""
 export SCRIPT_PHP_SENDMAIL_PATH=""
 export SCRIPT_PHP_VERSION="8.2"
 export SCRIPT_SEARCH_SERVICE="elasticsearch"
+export SCRIPT_SEARCH_MEM_LIMIT="4g"
+export SCRIPT_SEARCH_JAVA_OPTS="-Xms2g -Xmx2g"
 export SCRIPT_COMPOSER_MAGENTO_USERNAME=""
 export SCRIPT_COMPOSER_MAGENTO_PASSWORD=""
 export SCRIPT_MAGENTO_VERSION="2.4.6"

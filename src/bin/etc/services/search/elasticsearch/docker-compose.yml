@@ -25,6 +25,7 @@ services:
       - searchdata:/usr/share/elasticsearch/data
     env_file:
       - services/search/elasticsearch/.env
+    mem_limit: ${BASE_SEARCH_MEM_LIMIT}
     restart:
       always
 
