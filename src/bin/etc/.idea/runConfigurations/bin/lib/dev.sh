@@ -11,7 +11,17 @@
 # @return void
 ##
 main() {
-    docker compose run --rm -it --user=www -v ~/.ssh/:/home/www/.ssh/ -v ~/.gitconfig:/home/www/.gitconfig cli /bin/bash
+    ##
+    # @note It is shared Git configuration (like author information),
+    #       to avoid having to define it again in the container
+    #       while using Git
+    # @note It is mounted the SSH agent socket (`$SSH_AUTH_SOCK`)
+    #       to the container. In that way, we can use it to
+    #       execute SSH connections to our trusted hosts
+    #       without sharing our private keys.
+    #       This is useful to work with SSH repositories
+    ##
+    docker compose run --rm -it --user=www -v ~/.gitconfig:/home/node/.gitconfig -v ${SSH_AUTH_SOCK}:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent cli /bin/bash
 }
 
 ##
