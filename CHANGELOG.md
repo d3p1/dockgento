@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/d3p1/dockgento/compare/v1.18.1...v1.19.0) (2025-11-04)
+
+
+### Features
+
+* improve IDE setup to be able to work with SSH repositories without any configuration [[#1](https://github.com/d3p1/dockgento/issues/1)] ([f205097](https://github.com/d3p1/dockgento/commit/f205097628d8bad4cf112c62103803e2310c0da6))
+
 ## [1.18.1](https://github.com/d3p1/dockgento/compare/v1.18.0...v1.18.1) (2025-10-31)
 
 
