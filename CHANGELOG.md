@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/d3p1/dockgento/compare/v1.19.0...v1.20.0) (2025-11-25)
+
+
+### Features
+
+* add support for Traefik v3.6 [[#1](https://github.com/d3p1/dockgento/issues/1)] ([b466c2b](https://github.com/d3p1/dockgento/commit/b466c2b388eb23fc9faf08c5bb87aee2864b29ac))
+
 # [1.19.0](https://github.com/d3p1/dockgento/compare/v1.18.1...v1.19.0) (2025-11-04)
 
 
