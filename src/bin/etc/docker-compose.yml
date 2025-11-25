@@ -22,7 +22,7 @@
 services:
   traefik:
     image:
-      d3p1/magento-traefik:2.10
+      d3p1/magento-traefik:${BASE_TRAEFIK_VERSION}
     ports:
       - 80:80
       - 443:443
