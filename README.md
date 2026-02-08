@@ -13,14 +13,6 @@ Just another [Docker](https://www.docker.com/) environment generator for [Magent
 
 The main idea behind this tool is to have an automatic way to generate [Magento](https://business.adobe.com/products/magento/open-source.html) environments for development, but also for production. To support this, [Traefik](https://doc.traefik.io/traefik/) has been included to the tech stack, enabling SSL termination and simplifying the generation of SSL certificates for live sites.
 
-It is worth mentioning that this tool was inspired by other excellent tools that achieve similar goals, including:
-
-- [Mark Shust's Docker Magento](https://github.com/markshust/docker-magento)
-- [Warden](https://docs.warden.dev/environments/magento2.html)
-
-> [!NOTE]
-> [Mark Shust's Docker Magento](https://github.com/markshust/docker-magento) also provides great video tutorials on configuring your IDE to work seamlessly with Docker.
-
 ## Prerequisites
 
 Before using this tool, ensure that you have:
