@@ -1,3 +1,12 @@
+# [1.21.0](https://github.com/d3p1/dockgento/compare/v1.20.2...v1.21.0) (2026-02-08)
+
+
+### Features
+
+* add web image build for production services [[#20](https://github.com/d3p1/dockgento/issues/20)] ([7c08f43](https://github.com/d3p1/dockgento/commit/7c08f435246aed7e86a40f53b5089c5dc5584e03))
+* improve mage configure script so it is copied production dockerfile [[#20](https://github.com/d3p1/dockgento/issues/20)] ([29fca55](https://github.com/d3p1/dockgento/commit/29fca55ae7724bff3140d3f49852a228f065aa9f))
+* init production dockerfile [[#20](https://github.com/d3p1/dockgento/issues/20)] ([095c60d](https://github.com/d3p1/dockgento/commit/095c60d5c70cb499184c8280dcec26c5de6ad28a))
+
 ## [1.20.2](https://github.com/d3p1/dockgento/compare/v1.20.1...v1.20.2) (2026-02-08)
 
 
