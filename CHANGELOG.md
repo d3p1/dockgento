@@ -1,3 +1,11 @@
+## [1.20.1](https://github.com/d3p1/dockgento/compare/v1.20.0...v1.20.1) (2026-02-08)
+
+
+### Bug Fixes
+
+* improve IDE startup script [[#1](https://github.com/d3p1/dockgento/issues/1)] ([b1b9c20](https://github.com/d3p1/dockgento/commit/b1b9c2030a89e98bfd560a9a321b34805609a893))
+* improve PhpStorm startup scripts so they look for the environment in parent directory [[#1](https://github.com/d3p1/dockgento/issues/1)] ([2be6649](https://github.com/d3p1/dockgento/commit/2be6649c49fa3eb4321ac657906cc78b396013a0))
+
 # [1.20.0](https://github.com/d3p1/dockgento/compare/v1.19.0...v1.20.0) (2025-11-25)
 
 
