@@ -2,33 +2,6 @@
 # @description Profile file to set up environment variables that will be used
 #              by `dockgento` to initialize/set up the Docker environment
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
-# @note        If you would like to use a custom SMTP server to be used
-#              by the Magento platform, you should fill the
-#              `SCRIPT_SMTP_HOST` and `SCRIPT_SMTP_PORT`
-# @note        To get the `SCRIPT_COMPOSER_MAGENTO_USERNAME` and
-#              `SCRIPT_COMPOSER_MAGENTO_PASSWORD` credentials, you should
-#              login into
-#              `https://account.magento.com/applications/customer/login`,
-#              go to
-#              `Marketplace` -> `My Profile` -> `My Products` -> `Access Keys`,
-#              and create the respective keys
-# @note        The `SCRIPT_MAGENTO_VERSION` is only used when it is required to
-#              install a Magento platform using the `cli` service
-# @note        It is possible to avoid the definition of
-#              `SCRIPT_MAGENTO_ADMIN_USER` and `SCRIPT_MAGENTO_ADMIN_PASSWORD`
-#              so that the script generates random ones. However, currently,
-#              there is an issue that causes the generation of passwords
-#              without the correct number of alphabetic and numeric characters
-#              required by an admin user password. To avoid this issue,
-#              it is recommended to generate the values of these variables
-#              manually
-# @note        The `SCRIPT_DB_DUMP` should be defined only for
-#              the `dockgento mage-configure` command and must point to the local
-#              DB dump location that should be migrated to set up the platform
-# @note        If it is required to run Magento cron, it must be defined the
-#              `cron` value for the
-#              `SCRIPT_COMPOSE_PROFILES` environment variable
-# @link        https://account.magento.com/applications/customer/login
 ##
 export SCRIPT_MODE="production"
 export SCRIPT_USER_EMAIL=""
@@ -48,5 +21,6 @@ export SCRIPT_MAGENTO_ADMIN_FIRSTNAME=""
 export SCRIPT_MAGENTO_ADMIN_LASTNAME=""
 export SCRIPT_MAGENTO_ADMIN_USER="dock"
 export SCRIPT_MAGENTO_ADMIN_PASSWORD="StrongPasswordWithAlphanumericCharacters"
+export SCRIPT_DOC_ROOT_DIR="./www"
 export SCRIPT_DB_DUMP=""
 export SCRIPT_COMPOSE_PROFILES="cron"
