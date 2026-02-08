@@ -24,5 +24,11 @@ services:
       - traefik.http.routers.https-magento.tls.certresolver=le-http
 
   web:
+    image: ${BASE_WEB_IMAGE_NAME}:latest
+    pull_policy: always
+    build:
+      context: ${BASE_DOC_ROOT_DIR}
+      args:
+        - BASE_PHP_VERSION=${BASE_PHP_VERSION}
     environment:
       - WITH_XDEBUG=0

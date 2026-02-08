@@ -48,6 +48,11 @@
 #              work with the platform code locally, and also
 #              for production environments to build the image with
 #              the platform code
+# @note        The `SCRIPT_WEB_IMAGE_NAME` defines the Docker image name
+#              used for the web service in production environments.
+#              It must include the user and the image name: `user/image-name`.
+#              Optionally, it could include
+#              the registry, too: `registry.io/user/image-name`
 # @note        The `SCRIPT_IDE_KEY` must be set to one of the
 #              following values: `phpstorm`, `vscode`, or an empty string ("").
 #              If set to `phpstorm` or `vscode`, configuration files related to
@@ -100,6 +105,7 @@ export SCRIPT_MAGENTO_ADMIN_LASTNAME=""
 export SCRIPT_MAGENTO_ADMIN_USER=""
 export SCRIPT_MAGENTO_ADMIN_PASSWORD=""
 export SCRIPT_DOC_ROOT_DIR="./www"
+export SCRIPT_WEB_IMAGE_NAME=""
 export SCRIPT_IDE_KEY=""
 export SCRIPT_DB_DUMP=""
 export SCRIPT_COMPOSE_PROFILES=""
