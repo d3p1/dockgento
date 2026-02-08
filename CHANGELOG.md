@@ -1,3 +1,10 @@
+## [1.20.2](https://github.com/d3p1/dockgento/compare/v1.20.1...v1.20.2) (2026-02-08)
+
+
+### Bug Fixes
+
+* improve dockgento profile file so it defines source code in child directory [[#1](https://github.com/d3p1/dockgento/issues/1)] ([47df581](https://github.com/d3p1/dockgento/commit/47df58119da9b63534c6954a5b08393680ea04f2))
+
 ## [1.20.1](https://github.com/d3p1/dockgento/compare/v1.20.0...v1.20.1) (2026-02-08)
 
 
