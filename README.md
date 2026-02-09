@@ -41,9 +41,23 @@ Using this tool is straightforward:
 
 2. Execute `dockgento init` to generate the necessary [Docker Compose](https://docs.docker.com/compose/) files for the project.
 
-3. Execute `dockgento mage-install` if you want to install a new Magento platform to work with the current generated environment. Or execute `dockgento mage-configure` if you want to configure an existing Magento project to work with the current environment.
+3. Execute `dockgento mage-install` if you want to install a new Magento platform to work with the current generated environment. 
 
-4. Execute `dockgento ide-configure` to simplify the configuration of your IDE, allowing you to work with this generated environment efficiently and effectively.
+4. Execute `dockgento mage-configure` to configure the Magento project to work with the current environment. This will execute a final setup so the existing Magento project is ready to work with the generated environment.
+
+5. Execute `dockgento ide-configure` to simplify the configuration of your IDE, allowing you to work with this generated environment efficiently and effectively.
+
+6. Finally, execute `docker comopse up -d` to start the generated environment. 
+
+> [!NOTE]
+> A recommended release approach could be:
+> 1. In your local/CI environment, pull latest code from the repository.
+> 2. Build the `web` image.
+> 3. Push `web` image to the registry.
+> 4. In your production environment, execute `docker compose up -d`. Because the [`pull_policy` is set to `always` for the `web` service](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/docker-compose.prod.yml#L28), the latest image will be pulled and used.
+
+> [!NOTE]
+> If you use [GitHub Actions](https://github.com/features/actions) to automate your development and delivery workflow, you can use the [`d3p1/semantic-releasify` action](https://github.com/d3p1/semantic-releasify/) to publish the `web` image on every release.
 
 > [!IMPORTANT]
 > The source code of the project must live in a child directory of the directory where the `dockgento init` is executed. This is because Docker only can access build context from the directory where the `docker-compose.yml` file is located, and the production image must copy the app source code to then build it and start the app.   
