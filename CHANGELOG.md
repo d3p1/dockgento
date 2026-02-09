@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/d3p1/dockgento/compare/v1.21.0...v1.21.1) (2026-02-09)
+
+
+### Bug Fixes
+
+* adjust traefik version not copied correctly into environment [[#1](https://github.com/d3p1/dockgento/issues/1)] ([04c7267](https://github.com/d3p1/dockgento/commit/04c7267ae1db195c7779689c2bd463019c2acf45))
+
 # [1.21.0](https://github.com/d3p1/dockgento/compare/v1.20.2...v1.21.0) (2026-02-08)
 
 
