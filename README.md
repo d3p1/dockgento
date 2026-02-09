@@ -64,7 +64,7 @@ Using this tool is straightforward:
 > Additioanlly, the `dockgento ide-configure` for [PhpStorm](https://www.jetbrains.com/phpstorm/) considers that the source code lives in a child directory to configure the startup scripts ([`Dev`](https://github.com/d3p1/dockgento/blob/2be6649c49fa3eb4321ac657906cc78b396013a0/src/bin/etc/.idea/runConfigurations/Dev.xml#L8) and [`Cache`](https://github.com/d3p1/dockgento/blob/2be6649c49fa3eb4321ac657906cc78b396013a0/src/bin/etc/.idea/runConfigurations/Cache.xml#L8)).
 
 > [!IMPORTANT]
-> For now, `dockgento ide-configure` only installs [startup scripts](https://www.jetbrains.com/help/phpstorm/settings-tools-startup-tasks.html) that are very useful for [PHPStorm](https://www.jetbrains.com/phpstorm/). However, automating the configuration of other important aspects and supporting additional IDEs is still pending. [This ticket](https://github.com/d3p1/dockgento/issues/10) and [this ticket](https://github.com/d3p1/dockgento/issues/17) will handle the completion of this requirement.
+> For now, `dockgento ide-configure` only installs [startup scripts](https://www.jetbrains.com/help/phpstorm/settings-tools-startup-tasks.html) that are very useful for [PhpStorm](https://www.jetbrains.com/phpstorm/). However, automating the configuration of other important aspects and supporting additional IDEs is still pending. [This ticket](https://github.com/d3p1/dockgento/issues/10) and [this ticket](https://github.com/d3p1/dockgento/issues/17) will handle the completion of this requirement.
 
 > [!NOTE]
 > To gain a deeper understanding of how this tool works under the hood, visit the [wiki page](https://github.com/d3p1/dockgento/wiki).
