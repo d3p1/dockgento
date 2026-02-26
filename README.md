@@ -57,7 +57,7 @@ Using this tool is straightforward:
 > 4. In your production environment, execute `docker compose up -d`. Because the [`pull_policy` is set to `always` for the `web` service](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/docker-compose.prod.yml#L28), the latest image will be pulled and used.
 
 > [!NOTE]
-> Please note that the [platform image does not exclude `<doc-root>/app/etc/env.php`](https://docs.docker.com/build/concepts/context/#dockerignore-files). Therefore, you should avoid storing sensitive information in this file. In addition to storing them in the database, you can also [use environment variables to manage sensitive data securely](https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/paths/override-config-settings).
+> Please note that the [platform image does not exclude `<doc-root>/app/etc/env.php`](https://docs.docker.com/build/concepts/context/#dockerignore-files). Therefore, you should avoid storing sensitive information in this file for public images. In addition to storing them in the database, you can also [use environment variables to manage sensitive data securely](https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/paths/override-config-settings).
 
 > [!NOTE]
 > If you use [GitHub Actions](https://github.com/features/actions) to automate your development and delivery workflow, you can use the [`d3p1/semantic-releasify` action](https://github.com/d3p1/semantic-releasify/) to publish the `web` image on every release.
