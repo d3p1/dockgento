@@ -23,7 +23,7 @@
 # @note        The named volume that shares the source code uses a
 #              `RELEASE_ID` so it is created a new one for each release.
 #              This is necessary because the new image content of the `web`
-#              service will be override by old named volume content.
+#              service will be overridden by old named volume content.
 #              This is why we should init this environment with
 #              a command similar to: `RELEASE_ID="<release_id>" docker compose up -d`
 ##
