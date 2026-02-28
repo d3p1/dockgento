@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/d3p1/dockgento/compare/v1.21.1...v1.22.0) (2026-02-28)
+
+
+### Features
+
+* introduce a RELEASE_ID environment var to up the services for production environments [[#1](https://github.com/d3p1/dockgento/issues/1)] ([601b3df](https://github.com/d3p1/dockgento/commit/601b3dff7a0c4aa6ecfd9c557fff4718eee4f75a))
+
 ## [1.21.1](https://github.com/d3p1/dockgento/compare/v1.21.0...v1.21.1) (2026-02-09)
 
 
