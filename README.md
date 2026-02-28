@@ -47,14 +47,17 @@ Using this tool is straightforward:
 
 5. Execute `dockgento ide-configure` to simplify the configuration of your IDE, allowing you to work with this generated environment efficiently and effectively.
 
-6. Finally, execute `docker comopse up -d` to start the generated environment. 
+6. Finally, execute `docker compose up -d` to start the generated environment. 
 
 > [!NOTE]
 > A recommended release approach could be:
 > 1. In your local/CI environment, pull latest code from the repository.
 > 2. Build the `web` image.
 > 3. Push `web` image to the registry.
-> 4. In your production environment, execute `docker compose up -d`. Because the [`pull_policy` is set to `always` for the `web` service](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/docker-compose.prod.yml#L28), the latest image will be pulled and used.
+> 4. In your production environment, execute `RELEASE_ID="<release_id>" docker compose up -d`. Update `<release_id>` with the respective value. Because the [`pull_policy` is set to `always` for the `web` service](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/docker-compose.prod.yml#L28), the latest image will be pulled and used.
+
+> [!NOTE]
+> If you want to know more about why the command for production environments must be `RELEASE_ID="<release_id>" docker compose up -d`, refer to the [wiki page](https://github.com/d3p1/dockgento/wiki/%5B6%5D-Init-a-new-project).
 
 > [!NOTE]
 > Please note that the [platform image does not exclude `<doc-root>/app/etc/env.php`](https://docs.docker.com/build/concepts/context/#dockerignore-files). Therefore, you should avoid storing sensitive information in this file for public images. In addition to storing them in the database, you can also [use environment variables to manage sensitive data securely](https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/paths/override-config-settings).

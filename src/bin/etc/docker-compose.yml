@@ -16,7 +16,7 @@
 #              when `docker compose up` is executed).
 #              In this way, the user can manage when it is required
 #              to execute them
-# @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/varnish/7.1.1/etc/default.vcl#L9 
+# @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/varnish/7.1.1/etc/default.vcl#L9
 # @link        https://docs.docker.com/compose/profiles/
 ##
 services:
@@ -73,8 +73,6 @@ services:
       - mariadb
       - redis
       - rabbitmq
-    volumes:
-      - docroot:/app
     env_file:
       - services/web/.env
     labels:
@@ -87,8 +85,6 @@ services:
       d3p1/magento-php:${BASE_PHP_VERSION}-fpm
     expose:
       - 9000
-    volumes:
-      - docroot:/app
     env_file:
       - services/magento/.env
     labels:
@@ -100,7 +96,6 @@ services:
     image:
       d3p1/magento-php:${BASE_PHP_VERSION}-cli
     volumes:
-      - docroot:/app
       - composer:${BASE_COMPOSER_HOME}
     env_file:
       - services/magento/.env
@@ -112,8 +107,6 @@ services:
   cron:
     image:
       d3p1/magento-php:${BASE_PHP_VERSION}-cli
-    volumes:
-      - docroot:/app
     env_file:
       - services/magento/.env
     labels:
@@ -168,7 +161,6 @@ services:
       always
     
 volumes:
-  docroot:
   composer:
   dbdata:
   rabbitmqdata:
