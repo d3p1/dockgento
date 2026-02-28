@@ -54,7 +54,7 @@ Using this tool is straightforward:
 > 1. In your local/CI environment, pull latest code from the repository.
 > 2. Build the `web` image.
 > 3. Push `web` image to the registry.
->    4. In your production environment, execute `RELEASE_ID="<release-id>" docker compose up -d`. Update `<release-id>` with the respective value. Because the [`pull_policy` is set to `always` for the `web` service](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/docker-compose.prod.yml#L28), the latest image will be pulled and used.
+> 4. In your production environment, execute `RELEASE_ID="<release-id>" docker compose up -d`. Update `<release-id>` with the respective value. Because the [`pull_policy` is set to `always` for the `web` service](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/docker-compose.prod.yml#L28), the latest image will be pulled and used.
 
 > [!NOTE]
 > If you want to know more about why the command for production environments must be `RELEASE_ID="<release-id>" docker compose up -d`, refer to the [wiki page](https://github.com/d3p1/dockgento/wiki/%5B6%5D-Init-a-new-project).

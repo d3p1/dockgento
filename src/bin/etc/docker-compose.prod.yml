@@ -11,7 +11,7 @@
 #              certificates using Let's Encrypt
 # @note        The current approach creates a volume to share source code
 #              between the services `web`, `fpm`, `cli` and `cron`.
-#              This does not follow Docker best practice of being each container
+#              This does not follow the best practice of being each container
 #              a self-contained unit. However, for now, it is considered
 #              that this approach has more advantages than
 #              creating an image for each service (so each
