@@ -25,7 +25,7 @@
 #              This is necessary because the new image content of the `web`
 #              service will be override by old named volume content.
 #              This is why we should init this environment with
-#              a command similar to: `RELEASE_ID="1.0.0" docker compose up -d`
+#              a command similar to: `RELEASE_ID="<release_id>" docker compose up -d`
 ##
 services:
   traefik:
