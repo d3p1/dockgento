@@ -1,3 +1,10 @@
+## [1.23.1](https://github.com/d3p1/dockgento/compare/v1.23.0...v1.23.1) (2026-03-01)
+
+
+### Bug Fixes
+
+* adjust docker compose project name so it does not use not allowed uppercase [[#1](https://github.com/d3p1/dockgento/issues/1)] ([8f2a143](https://github.com/d3p1/dockgento/commit/8f2a143d04cc0c1af7434a4d5edbddc94fb9a98e))
+
 # [1.23.0](https://github.com/d3p1/dockgento/compare/v1.22.0...v1.23.0) (2026-03-01)
 
 
