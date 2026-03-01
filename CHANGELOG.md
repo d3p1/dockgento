@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/d3p1/dockgento/compare/v1.22.0...v1.23.0) (2026-03-01)
+
+
+### Features
+
+* init dockgento up command [[#1](https://github.com/d3p1/dockgento/issues/1)] ([aad4e63](https://github.com/d3p1/dockgento/commit/aad4e637670550757f88ba918a4843ec7e9848eb))
+
 # [1.22.0](https://github.com/d3p1/dockgento/compare/v1.21.1...v1.22.0) (2026-02-28)
 
 
