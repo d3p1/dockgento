@@ -57,7 +57,7 @@ Using this tool is straightforward:
 > 4. In your production environment, execute `dockgento up`. 
 
 > [!NOTE]
-> When starting the production environment, Because the [`pull_policy` is set to `always` for the `web` service](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/docker-compose.prod.yml#L28), the latest image will be pulled and used.
+> When starting the production environment, because the [`pull_policy` is set to `always` for the `web` service](https://github.com/d3p1/dockgento/blob/main/src/bin/etc/docker-compose.prod.yml#L28), the latest image will be pulled and used.
 
 > [!NOTE]
 > Please note that the [platform image does not exclude `<doc-root>/app/etc/env.php`](https://docs.docker.com/build/concepts/context/#dockerignore-files). Therefore, you should avoid storing sensitive information in this file for public images. In addition to storing them in the database, you can also [use environment variables to manage sensitive data securely](https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/paths/override-config-settings).
