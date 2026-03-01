@@ -34,7 +34,7 @@ source $BASE_DIR/lib/utils/execute-script.sh
 ##
 main() {
     case "$1" in
-        init | mage-install | mage-configure | ide-configure)
+        init | mage-install | mage-configure | ide-configure | up)
             if [ ! -e ".dockgento_profile" ]; then
                 print_message "You must create a \`.dockgento_profile\` file with the required exports of environment variables that are used during command execution" "error"
                 print_message "Check for reference: https://github.com/d3p1/dockgento/blob/main/src/bin/etc/.dockgento_profile.sample" "notice"
@@ -83,6 +83,7 @@ _print_help() {
     print_message " - To install a Magento platform: \`dockgento mage-install\`" "normal"
     print_message " - To configure a Magento platform: \`dockgento mage-configure\`" "normal"
     print_message " - To configure an IDE: \`dockgento ide-configure\`" "normal"
+    print_message " - To start the environment: \`dockgento up\`" "normal"
     print_message "Before using this script, remember to configure the \`.dockgento_profile\` file" "notice"
 }
 

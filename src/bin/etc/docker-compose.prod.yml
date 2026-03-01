@@ -14,18 +14,13 @@
 #              This does not follow the best practice of being each container
 #              a self-contained unit. However, for now, it is considered
 #              that this approach has more advantages than
-#              creating an image for each service (so each
-#              container is a self-contained unit). Sharing the source code
+#              creating an image with the respective source code
+#              for each service. Sharing the source code
 #              with a named volume allows us to avoid having
-#              to maintain multiple images for each service. Additionally,
-#              it allows us to have a different volume for each release, which
+#              to maintain these images (or one used for all of them).
+#              Additionally, it allows us to have a different volume
+#              for each release, which
 #              could be useful for rollbacks
-# @note        The named volume that shares the source code uses a
-#              `RELEASE_ID` so it is created a new one for each release.
-#              This is necessary because the new image content of the `web`
-#              service will be overridden by old named volume content.
-#              This is why we should init this environment with
-#              a command similar to: `RELEASE_ID="<release-id>" docker compose up -d`
 ##
 services:
   traefik:
@@ -48,21 +43,21 @@ services:
       args:
         - BASE_PHP_VERSION=${BASE_PHP_VERSION}
     volumes:
-      - docroot_${RELEASE_ID:-0.0.0}:/app
+      - docroot:/app
     environment:
       - WITH_XDEBUG=0
 
   fpm:
     volumes:
-      - docroot_${RELEASE_ID:-0.0.0}:/app
+      - docroot:/app
 
   cli:
     volumes:
-      - docroot_${RELEASE_ID:-0.0.0}:/app
+      - docroot:/app
 
   cron:
     volumes:
-      - docroot_${RELEASE_ID:-0.0.0}:/app
+      - docroot:/app
 
 volumes:
-  docroot_${RELEASE_ID:-0.0.0}:
+  docroot:
