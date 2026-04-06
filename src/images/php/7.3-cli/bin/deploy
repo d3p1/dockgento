@@ -46,6 +46,14 @@ main() {
     $MAGENTO_COMMAND_PATH setup:di:compile
 
     ##
+    # @note Generate improved autoload
+    # @link https://experienceleague.adobe.com/en/docs/commerce-operations/performance-best-practices/deployment-flow
+    ##
+    if [ "$MAGENTO_RUN_MODE" = 'production' ]; then
+        composer dump-autoload -o --apcu
+    fi
+
+    ##
     # @note Deploy static content
     ##
     $MAGENTO_COMMAND_PATH setup:static-content:deploy \
