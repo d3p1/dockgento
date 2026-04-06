@@ -15,6 +15,20 @@
 ##
 FROM magento/magento-cloud-docker-php:8.2-fpm-1.3.7
     ##
+    # @note Install APCu
+    # @link https://experienceleague.adobe.com/en/docs/commerce-operations/performance-best-practices/software
+    ##
+    RUN pecl install apcu
+
+    ##
+    # @note Add APCu to enabled extensions
+    # @link https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/php/cli/docker-entrypoint.sh#L17
+    # @link https://github.com/magento/magento-cloud-docker/blob/688c61cf41503c197530bfaea7f84a7ea133cd91/images/php/8.1-cli/Dockerfile#L32
+    # @link https://experienceleague.adobe.com/en/docs/commerce-operations/performance-best-practices/software
+    ##
+    ENV PHP_EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli opcache pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl apcu"
+
+    ##
     # @note It seems that `ARG` variables like `MAGENTO_ROOT` 
     #       are not inherited from base images, 
     #       so it is necessary to define them again
