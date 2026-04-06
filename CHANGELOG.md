@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/d3p1/dockgento/compare/v1.23.1...v1.24.0) (2026-04-06)
+
+
+### Features
+
+* add performance improvements to PHP 7.3 CLI image [[#4](https://github.com/d3p1/dockgento/issues/4)] ([583fbac](https://github.com/d3p1/dockgento/commit/583fbac064ab6cfbd67bc5befe23edb26ce0257a))
+
 ## [1.23.1](https://github.com/d3p1/dockgento/compare/v1.23.0...v1.23.1) (2026-03-01)
 
 
