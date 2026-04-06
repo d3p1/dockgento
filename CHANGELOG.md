@@ -1,3 +1,16 @@
+# [1.25.0](https://github.com/d3p1/dockgento/compare/v1.24.1...v1.25.0) (2026-04-06)
+
+
+### Features
+
+* add performance improvements to PHP 7.3 FPM image [[#4](https://github.com/d3p1/dockgento/issues/4)] ([fcf671f](https://github.com/d3p1/dockgento/commit/fcf671fc65c349f2f64a43850416ddaf58e4f20b))
+* add performance improvements to PHP 7.4 CLI image [[#4](https://github.com/d3p1/dockgento/issues/4)] ([928cc88](https://github.com/d3p1/dockgento/commit/928cc88f327836eb03f7c298d712c089a3b7e966))
+* add performance improvements to PHP 7.4 FPM image [[#4](https://github.com/d3p1/dockgento/issues/4)] ([8b6671d](https://github.com/d3p1/dockgento/commit/8b6671dc624738c653642d77fad577dd6878ebbd))
+* add performance improvements to PHP 8.1 CLI image [[#4](https://github.com/d3p1/dockgento/issues/4)] ([a75575c](https://github.com/d3p1/dockgento/commit/a75575cdf9441f828726610ded3a9e30d70bb542))
+* add performance improvements to PHP 8.1 FPM image [[#4](https://github.com/d3p1/dockgento/issues/4)] ([0dded44](https://github.com/d3p1/dockgento/commit/0dded44899e7ad5c0f45c32b57f38f6dc52a9b4c))
+* add performance improvements to PHP 8.2 CLI image [[#4](https://github.com/d3p1/dockgento/issues/4)] ([db4a911](https://github.com/d3p1/dockgento/commit/db4a911e29606b0c1825914e325f44dcb071fb97))
+* add performance improvements to PHP 8.2 FPM image [[#4](https://github.com/d3p1/dockgento/issues/4)] ([dad3eff](https://github.com/d3p1/dockgento/commit/dad3eff8287ff8fc1d4906c8ab7f2f78a594466c))
+
 ## [1.24.1](https://github.com/d3p1/dockgento/compare/v1.24.0...v1.24.1) (2026-04-06)
 
 
