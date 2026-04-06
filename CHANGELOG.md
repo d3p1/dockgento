@@ -1,3 +1,10 @@
+## [1.24.1](https://github.com/d3p1/dockgento/compare/v1.24.0...v1.24.1) (2026-04-06)
+
+
+### Bug Fixes
+
+* restore Xdebug setting for PHP-FPM dev image [[#4](https://github.com/d3p1/dockgento/issues/4)] ([55a3118](https://github.com/d3p1/dockgento/commit/55a3118136b9a4abff0c7758b65518c93f49b4af))
+
 # [1.24.0](https://github.com/d3p1/dockgento/compare/v1.23.1...v1.24.0) (2026-04-06)
 
 
