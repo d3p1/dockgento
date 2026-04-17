@@ -1,3 +1,10 @@
+## [1.25.1](https://github.com/d3p1/dockgento/compare/v1.25.0...v1.25.1) (2026-04-17)
+
+
+### Bug Fixes
+
+* adjust JetBrains startup scripts [[#1](https://github.com/d3p1/dockgento/issues/1)] ([7e0b7a1](https://github.com/d3p1/dockgento/commit/7e0b7a19c59a8c8d89be593d8c1559798a25a45f))
+
 # [1.25.0](https://github.com/d3p1/dockgento/compare/v1.24.1...v1.25.0) (2026-04-06)
 
 
