@@ -12,6 +12,9 @@
 ##
 main() {
     ##
+    # @note The home directory for the `www` user is `/app`.
+    #       That is why we mount everything there (because `ssh` and `git`
+    #       will look for user config files there)
     # @note It is shared Git configuration (like author information),
     #       to avoid having to define it again in the container
     #       while using Git
@@ -21,7 +24,7 @@ main() {
     #       without sharing our private keys.
     #       This is useful to work with SSH repositories
     ##
-    docker compose run --rm -it --user=www -v ~/.gitconfig:/home/www/.gitconfig -v ~/.ssh:/home/www/.ssh -v ${SSH_AUTH_SOCK}:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent cli /bin/bash
+    docker compose run --rm -it --user=www -v ~/.gitconfig:/app/.gitconfig -v ~/.ssh:/app/.ssh -v ${SSH_AUTH_SOCK}:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent cli /bin/bash
 }
 
 ##
