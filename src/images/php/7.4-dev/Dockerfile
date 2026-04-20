@@ -2,8 +2,8 @@
 # @description PHP FPM (v7.4) image (with development purpose)
 #              for a Magento 2 environment
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
-# @note        The main porpouse of this image is to implement 
-#              a PHP FPM container for development porpouse.
+# @note        The main goal of this image is to implement
+#              a PHP FPM/CLI container for development porpouse.
 #              The official PHP FPM image already includes PHP CLI,
 #              but Composer has been added as a primary tool for managing
 #              code dependencies. Also, Xdebug has been installed 
