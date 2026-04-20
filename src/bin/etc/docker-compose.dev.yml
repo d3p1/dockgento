@@ -34,8 +34,8 @@
 # @note        The service naming convention uses the 
 #              underlying technology name for easy identification within 
 #              the infrastructure stack. There is an exception for 
-#              the `fpm_dev` and `fpm_xdebug` services.
-#              The `fpm_dev` name was used to describe in a cleaner way
+#              the `dev` and `fpm_xdebug` services.
+#              The `dev` name was used to describe in a cleaner way
 #              the container purpose.
 #              The `fpm_xdebug` name is required because the
 #              `web` service (Nginx) is configured to redirect Xdebug request
@@ -85,9 +85,21 @@ services:
     restart:
       always
 
-  fpm_dev:
+  cli:
+    volumes:
+      - ${BASE_DOC_ROOT_DIR}:/app
+    environment:
+      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
+
+  cron:
+    volumes:
+      - ${BASE_DOC_ROOT_DIR}:/app
+    environment:
+      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
+
+  dev:
     image:
-      d3p1/magento-php:${BASE_PHP_VERSION}-fpm-dev
+      d3p1/magento-php:${BASE_PHP_VERSION}-dev
     expose:
       - 9000
     volumes:
@@ -101,18 +113,6 @@ services:
       - devcontainer
     restart:
       always
-
-  cli:
-    volumes:
-      - ${BASE_DOC_ROOT_DIR}:/app
-    environment:
-      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
-
-  cron:
-    volumes:
-      - ${BASE_DOC_ROOT_DIR}:/app
-    environment:
-      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
 
   mariadb:
     ports:

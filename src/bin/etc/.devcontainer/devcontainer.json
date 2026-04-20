@@ -11,7 +11,7 @@
         "../services/search/${SCRIPT_SEARCH_SERVICE}/docker-compose.yml"
     ],
     "shutdownAction": "stopCompose",
-    "service": "fpm_dev",
+    "service": "dev",
     "workspaceFolder": "/app",
     "remoteUser": "www",
     "customizations": {

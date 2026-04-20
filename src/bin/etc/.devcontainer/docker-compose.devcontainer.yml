@@ -9,12 +9,12 @@
 #               -f docker-compose.dev.yml \
 #               -f docker-compose.devcontainer.yml \
 #               up -d`
-# @note        Customize PHP FPM service, so it is used
+# @note        Customize PHP FPM/CLI service, so it is used
 #              personalized Dev Container image
 ##
 services:
-  fpm_dev:
+  dev:
     image:
-      d3p1/magento-php:${BASE_PHP_VERSION}-fpm-dev
+      d3p1/magento-php:${BASE_PHP_VERSION}-dev
     volumes:
       - ~/composer:${BASE_COMPOSER_HOME}
