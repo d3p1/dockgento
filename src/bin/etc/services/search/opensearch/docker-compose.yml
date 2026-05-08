@@ -12,22 +12,22 @@
 # @link        https://github.com/moby/moby/issues/40942
 ##
 services:
-  web:
-    depends_on:
-      - opensearch
-  
-  opensearch:
-    image:
-      d3p1/magento-opensearch:2.5
-    expose:
-      - 9200
-    volumes:
-      - searchdata:/usr/share/opensearch/data
-    env_file:
-      - services/search/opensearch/.env
-    mem_limit: ${BASE_SEARCH_MEM_LIMIT}
-    restart:
-      always
+    web:
+        depends_on:
+            - opensearch
+
+    opensearch:
+        image:
+            d3p1/magento-opensearch:2.5
+        expose:
+            - 9200
+        volumes:
+            - searchdata:/usr/share/opensearch/data
+        env_file:
+            - services/search/opensearch/.env
+        mem_limit: ${BASE_SEARCH_MEM_LIMIT}
+        restart:
+            always
 
 volumes:
-  searchdata:
+    searchdata:

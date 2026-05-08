@@ -17,7 +17,6 @@ Thumbs.db
 ##
 # @note IDE files
 ##
-.idea
 .vscode
 *.code-workspace
 

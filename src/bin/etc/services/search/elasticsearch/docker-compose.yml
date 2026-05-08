@@ -12,22 +12,22 @@
 # @link        https://github.com/moby/moby/issues/40942
 ##
 services:
-  web:
-    depends_on:
-      - elasticsearch
-  
-  elasticsearch:
-    image:
-      d3p1/magento-elasticsearch:7.11
-    expose:
-      - 9200
-    volumes:
-      - searchdata:/usr/share/elasticsearch/data
-    env_file:
-      - services/search/elasticsearch/.env
-    mem_limit: ${BASE_SEARCH_MEM_LIMIT}
-    restart:
-      always
+    web:
+        depends_on:
+            - elasticsearch
+
+    elasticsearch:
+        image:
+            d3p1/magento-elasticsearch:7.11
+        expose:
+            - 9200
+        volumes:
+            - searchdata:/usr/share/elasticsearch/data
+        env_file:
+            - services/search/elasticsearch/.env
+        mem_limit: ${BASE_SEARCH_MEM_LIMIT}
+        restart:
+            always
 
 volumes:
-  searchdata:
+    searchdata:

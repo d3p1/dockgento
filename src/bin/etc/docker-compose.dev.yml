@@ -46,89 +46,89 @@
 # @link        https://github.com/magento/magento-cloud-docker/blob/develop/images/php/fpm/docker-entrypoint.sh#L16
 ##
 services:
-  traefik:
-    ports:
-      - 8025:8025
-    depends_on:
-      - mailhog
-    volumes:
-      - ./services/traefik/etc:/etc/traefik
-    environment:
-      - TRAEFIK_ENTRYPOINTS_MAIL_ADDRESS=:8025
-      - TRAEFIK_PROVIDERS_FILE_DIRECTORY=/etc/traefik/file-provider
-
-  web:
-    volumes:
-      - ${BASE_DOC_ROOT_DIR}:/app
-    environment:
-      - WITH_XDEBUG=1
-
-  fpm:
-    volumes:
-      - ${BASE_DOC_ROOT_DIR}:/app
-    environment:
-      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl
-
-  fpm_xdebug:
-    image:
-      d3p1/magento-php:${BASE_PHP_VERSION}-fpm
-    expose:
-      - 9000
-    volumes:
-      - ${BASE_DOC_ROOT_DIR}:/app
-    env_file:
-      - services/magento/.env
-    environment:
-      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
-    labels:
-      - traefik.enable=false
-    restart:
-      always
-
-  cli:
-    volumes:
-      - ${BASE_DOC_ROOT_DIR}:/app
-    environment:
-      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
-
-  cron:
-    volumes:
-      - ${BASE_DOC_ROOT_DIR}:/app
-    environment:
-      - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
-
-  dev:
-    image:
-      d3p1/magento-php:${BASE_PHP_VERSION}-dev
-    expose:
-      - 9000
-    volumes:
-      - ${BASE_DOC_ROOT_DIR}:/app
-      - composer:${BASE_COMPOSER_HOME}
-    env_file:
-      - services/magento/.env
-    labels:
-      - traefik.enable=false
-    profiles:
-      - devcontainer
-    restart:
-      always
-
-  mariadb:
-    ports:
-      - 3306:3306
-
-  mailhog:
-    image:
-      d3p1/magento-mailhog:1.0
-    expose:
-      - 1025
-      - 8025
-    labels:
-      - traefik.http.routers.mail.entrypoints=mail
-      - traefik.http.routers.mail.tls=true
-      - traefik.http.routers.mail.rule=Host(`${BASE_DOMAIN}`) || Host(`www.${BASE_DOMAIN}`)
-      - traefik.http.routers.mail.service=mail
-      - traefik.http.services.mail.loadbalancer.server.port=8025
-    restart:
-      always
+    traefik:
+        ports:
+            - 8025:8025
+        depends_on:
+            - mailhog
+        volumes:
+            - ./services/traefik/etc:/etc/traefik
+        environment:
+            - TRAEFIK_ENTRYPOINTS_MAIL_ADDRESS=:8025
+            - TRAEFIK_PROVIDERS_FILE_DIRECTORY=/etc/traefik/file-provider
+    
+    web:
+        volumes:
+            - ${BASE_DOC_ROOT_DIR}:/app
+        environment:
+            - WITH_XDEBUG=1
+    
+    fpm:
+        volumes:
+            - ${BASE_DOC_ROOT_DIR}:/app
+        environment:
+            - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl
+    
+    fpm_xdebug:
+        image:
+            d3p1/magento-php:${BASE_PHP_VERSION}-fpm
+        expose:
+            - 9000
+        volumes:
+            - ${BASE_DOC_ROOT_DIR}:/app
+        env_file:
+            - services/magento/.env
+        environment:
+            - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
+        labels:
+            - traefik.enable=false
+        restart:
+            always
+    
+    cli:
+        volumes:
+            - ${BASE_DOC_ROOT_DIR}:/app
+        environment:
+            - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
+    
+    cron:
+        volumes:
+            - ${BASE_DOC_ROOT_DIR}:/app
+        environment:
+            - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl xdebug
+    
+    dev:
+        image:
+            d3p1/magento-php:${BASE_PHP_VERSION}-dev
+        expose:
+            - 9000
+        volumes:
+            - ${BASE_DOC_ROOT_DIR}:/app
+            - composer:${BASE_COMPOSER_HOME}
+        env_file:
+            - services/magento/.env
+        labels:
+            - traefik.enable=false
+        profiles:
+            - devcontainer
+        restart:
+            always
+    
+    mariadb:
+        ports:
+            - 3306:3306
+    
+    mailhog:
+        image:
+            d3p1/magento-mailhog:1.0
+        expose:
+            - 1025
+            - 8025
+        labels:
+            - traefik.http.routers.mail.entrypoints=mail
+            - traefik.http.routers.mail.tls=true
+            - traefik.http.routers.mail.rule=Host(`${BASE_DOMAIN}`) || Host(`www.${BASE_DOMAIN}`)
+            - traefik.http.routers.mail.service=mail
+            - traefik.http.services.mail.loadbalancer.server.port=8025
+        restart:
+            always

@@ -23,41 +23,41 @@
 #              could be useful for rollbacks
 ##
 services:
-  traefik:
-    volumes:
-      - ./services/traefik/etc/acme.json:/etc/traefik/acme.json
-    environment:
-      - TRAEFIK_CERTIFICATESRESOLVERS_LE-HTTP_ACME_EMAIL=${BASE_USER_EMAIL}
-      - TRAEFIK_CERTIFICATESRESOLVERS_LE-HTTP_ACME_STORAGE=/etc/traefik/acme.json
-      - TRAEFIK_CERTIFICATESRESOLVERS_LE-HTTP_ACME_HTTPCHALLENGE_ENTRYPOINT=web
+    traefik:
+        volumes:
+            - ./services/traefik/etc/acme.json:/etc/traefik/acme.json
+        environment:
+            - TRAEFIK_CERTIFICATESRESOLVERS_LE-HTTP_ACME_EMAIL=${BASE_USER_EMAIL}
+            - TRAEFIK_CERTIFICATESRESOLVERS_LE-HTTP_ACME_STORAGE=/etc/traefik/acme.json
+            - TRAEFIK_CERTIFICATESRESOLVERS_LE-HTTP_ACME_HTTPCHALLENGE_ENTRYPOINT=web
 
-  varnish:
-    labels:
-      - traefik.http.routers.https-magento.tls.certresolver=le-http
+    varnish:
+        labels:
+            - traefik.http.routers.https-magento.tls.certresolver=le-http
 
-  web:
-    image: ${BASE_WEB_IMAGE_NAME}:latest
-    pull_policy: always
-    build:
-      context: ${BASE_DOC_ROOT_DIR}
-      args:
-        - BASE_PHP_VERSION=${BASE_PHP_VERSION}
-    volumes:
-      - docroot:/app
-    environment:
-      - WITH_XDEBUG=0
+    web:
+        image: ${BASE_WEB_IMAGE_NAME}:latest
+        pull_policy: always
+        build:
+            context: ${BASE_DOC_ROOT_DIR}
+            args:
+                - BASE_PHP_VERSION=${BASE_PHP_VERSION}
+        volumes:
+            - docroot:/app
+        environment:
+            - WITH_XDEBUG=0
 
-  fpm:
-    volumes:
-      - docroot:/app
+    fpm:
+        volumes:
+            - docroot:/app
 
-  cli:
-    volumes:
-      - docroot:/app
+    cli:
+        volumes:
+            - docroot:/app
 
-  cron:
-    volumes:
-      - docroot:/app
+    cron:
+        volumes:
+            - docroot:/app
 
 volumes:
-  docroot:
+    docroot:

@@ -24,6 +24,6 @@
 # @link https://github.com/FiloSottile/mkcert/
 ##
 tls:
-  certificates:
-    - certFile: /etc/traefik/certs/magento.crt
-      keyFile : /etc/traefik/certs/magento.key
+    certificates:
+        -   certFile: /etc/traefik/certs/magento.crt
+            keyFile: /etc/traefik/certs/magento.key

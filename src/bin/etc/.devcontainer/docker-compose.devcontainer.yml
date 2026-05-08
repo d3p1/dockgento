@@ -13,8 +13,8 @@
 #              personalized Dev Container image
 ##
 services:
-  dev:
-    image:
-      d3p1/magento-php:${BASE_PHP_VERSION}-dev
-    volumes:
-      - ~/composer:${BASE_COMPOSER_HOME}
+    dev:
+        image:
+            d3p1/magento-php:${BASE_PHP_VERSION}-dev
+        volumes:
+            - ~/composer:${BASE_COMPOSER_HOME}
