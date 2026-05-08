@@ -1,3 +1,10 @@
+## [1.25.2](https://github.com/d3p1/dockgento/compare/v1.25.1...v1.25.2) (2026-05-08)
+
+
+### Bug Fixes
+
+* improve code style [[#1](https://github.com/d3p1/dockgento/issues/1)] ([d238eef](https://github.com/d3p1/dockgento/commit/d238eef3be78d182d14cae7dc85d6723e3844b50))
+
 ## [1.25.1](https://github.com/d3p1/dockgento/compare/v1.25.0...v1.25.1) (2026-04-17)
 
 
