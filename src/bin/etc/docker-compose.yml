@@ -71,7 +71,7 @@ services:
         depends_on:
             - fpm
             - mariadb
-            - redis
+            - valkey
             - rabbitmq
         env_file:
             - services/web/.env
@@ -136,9 +136,9 @@ services:
         restart:
             always
 
-    redis:
+    valkey:
         image:
-            d3p1/magento-redis:7.0
+            d3p1/magento-valkey:8.1
         expose:
             - 6379
         labels:
