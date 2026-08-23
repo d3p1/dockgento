@@ -1,3 +1,10 @@
+## [1.27.1](https://github.com/d3p1/dockgento/compare/v1.27.0...v1.27.1) (2026-08-23)
+
+
+### Bug Fixes
+
+* solve installer to not expand the PATH var [[#1](https://github.com/d3p1/dockgento/issues/1)] ([352253d](https://github.com/d3p1/dockgento/commit/352253d14c94a30ba2c255a6b38429c680b7025a))
+
 # [1.27.0](https://github.com/d3p1/dockgento/compare/v1.26.0...v1.27.0) (2026-08-23)
 
 
