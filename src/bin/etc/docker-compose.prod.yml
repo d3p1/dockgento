@@ -46,18 +46,25 @@ services:
             - docroot:/app
         environment:
             - WITH_XDEBUG=0
+            - MAGENTO_RUN_MODE=${BASE_MAGENTO_RUN_MODE:-production}
 
     fpm:
         volumes:
             - docroot:/app
+        environment:
+            - MAGENTO_RUN_MODE=${BASE_MAGENTO_RUN_MODE:-production}
 
     cli:
         volumes:
             - docroot:/app
+        environment:
+            - MAGENTO_RUN_MODE=${BASE_MAGENTO_RUN_MODE:-production}
 
     cron:
         volumes:
             - docroot:/app
+        environment:
+            - MAGENTO_RUN_MODE=${BASE_MAGENTO_RUN_MODE:-production}
 
 volumes:
     docroot:

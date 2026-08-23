@@ -40,10 +40,17 @@
 #              The `fpm_xdebug` name is required because the
 #              `web` service (Nginx) is configured to redirect Xdebug request
 #              to this hostname
+# @note        To run the development environment in production mode, it is
+#              necessary to execute
+#              `BASE_MAGENTO_RUN_MODE=production docker compose up -d`.
+#              This is required because the `web` service (Nginx) uses this
+#              environment variable to tell the `fpm` service the current
+#              Magento mode
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/nginx/1.24/Dockerfile#L4
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/nginx/1.24/etc/vhost.conf#L41
 # @link        https://github.com/magento/magento-cloud-docker/blob/9998e5615a37cc584ac26b236104ae040aa6e0c5/images/nginx/1.24/etc/xdebug-upstream.conf#L2
 # @link        https://github.com/magento/magento-cloud-docker/blob/develop/images/php/fpm/docker-entrypoint.sh#L16
+# @link        https://github.com/magento/magento-cloud-docker/blob/develop/images/nginx/1.30/etc/vhost.conf#L35
 ##
 services:
     traefik:
@@ -62,12 +69,14 @@ services:
             - ${BASE_DOC_ROOT_DIR}:/app
         environment:
             - WITH_XDEBUG=1
+            - MAGENTO_RUN_MODE=${BASE_MAGENTO_RUN_MODE:-developer}
     
     fpm:
         volumes:
             - ${BASE_DOC_ROOT_DIR}:/app
         environment:
             - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl ftp
+            - MAGENTO_RUN_MODE=${BASE_MAGENTO_RUN_MODE:-developer}
     
     fpm_xdebug:
         image:
@@ -80,6 +89,7 @@ services:
             - services/magento/.env
         environment:
             - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl ftp xdebug
+            - MAGENTO_RUN_MODE=${BASE_MAGENTO_RUN_MODE:-developer}
         labels:
             - traefik.enable=false
         restart:
@@ -90,12 +100,14 @@ services:
             - ${BASE_DOC_ROOT_DIR}:/app
         environment:
             - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl ftp xdebug
+            - MAGENTO_RUN_MODE=${BASE_MAGENTO_RUN_MODE:-developer}
     
     cron:
         volumes:
             - ${BASE_DOC_ROOT_DIR}:/app
         environment:
             - PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl ftp xdebug
+            - MAGENTO_RUN_MODE=${BASE_MAGENTO_RUN_MODE:-developer}
     
     dev:
         image:
@@ -107,6 +119,8 @@ services:
             - composer:${BASE_COMPOSER_HOME}
         env_file:
             - services/magento/.env
+        environment:
+            - MAGENTO_RUN_MODE=${BASE_MAGENTO_RUN_MODE:-developer}
         labels:
             - traefik.enable=false
         profiles:
