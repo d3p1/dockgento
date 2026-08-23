@@ -95,6 +95,17 @@ FROM magento/magento-cloud-docker-php:8.4-cli-1.4.9
     RUN chmod g+s ${MAGENTO_ROOT}
 
     ##
+    # @note Add read permission to the base image entry point.
+    #       It is added to the base image with restrictive permissions
+    #       (`-rwx--x--x`) and it is owned by `root`, so a non-root user
+    #       (like `www`) is not able to read it. Consequently, the shell
+    #       is not able to interpret it (`Permission denied`), and
+    #       the container cannot be executed with a non-root user
+    # @link https://github.com/magento/magento-cloud-docker/blob/1.4.9/images/php/cli/Dockerfile#L79
+    ##
+    RUN chmod a+r /docker-entrypoint.sh
+
+    ##
     # @note Add custom scripts to install, configure and
     #       deploy a Magento platform
     # @note Add custom script to run Magento cron
