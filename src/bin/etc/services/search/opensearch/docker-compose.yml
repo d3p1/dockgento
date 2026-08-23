@@ -18,7 +18,7 @@ services:
 
     opensearch:
         image:
-            d3p1/magento-opensearch:2.5
+            d3p1/magento-opensearch:3.5
         expose:
             - 9200
         volumes:
