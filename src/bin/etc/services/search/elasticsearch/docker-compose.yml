@@ -7,6 +7,11 @@
 # @note        It is removed the `ulimits` setting recommended by the
 #              documentation because it causes problems with 
 #              Docker rootless mode
+# @todo        This service is deprecated and it should be removed
+#              in future versions. Magento Cloud does not create images for
+#              Elasticsearch 8.0, that is the version that should be used
+#              with the new Magento versions, so it is only possible to use
+#              OpenSearch as search engine
 # @link        https://www.elastic.co/guide/en/elasticsearch/reference/8.13/docker.html#_configure_and_start_the_cluster
 # @link        https://github.com/wazuh/wazuh-docker/issues/903#issuecomment-1798120664
 # @link        https://github.com/moby/moby/issues/40942
