@@ -32,7 +32,7 @@ main() {
 _install_magento_platform() {
     ##
     # @note In order to install a Magento platform,
-    #       the Valkey, MariaDB and other resources should be running,
+    #       the system resources should be running,
     #       to avoid Magento exceptions during installation
     # @note The `cli` service uses the project PHP CLI image.
     #       This image has an `init` script that receives as first param
