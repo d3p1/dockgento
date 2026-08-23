@@ -148,7 +148,7 @@ services:
 
     rabbitmq:
         image:
-            d3p1/magento-rabbitmq:3.12
+            d3p1/magento-rabbitmq:4.3
         expose:
             - 5672
         volumes:
