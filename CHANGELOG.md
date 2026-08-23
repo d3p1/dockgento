@@ -1,3 +1,18 @@
+# [1.27.0](https://github.com/d3p1/dockgento/compare/v1.26.0...v1.27.0) (2026-08-23)
+
+
+### Bug Fixes
+
+* adjust dev container docker compose file path [[#1](https://github.com/d3p1/dockgento/issues/1)] ([d723189](https://github.com/d3p1/dockgento/commit/d72318985bfd593f3ea823f37ef71af319186398))
+* adjust Magento mode communicated from web service to fpm service [[#26](https://github.com/d3p1/dockgento/issues/26)] ([63226b0](https://github.com/d3p1/dockgento/commit/63226b0971587d6365147f4d000918e35a91e9f4))
+
+
+### Features
+
+* add MariaDB 11.4 image [[#1](https://github.com/d3p1/dockgento/issues/1)] ([0d429f8](https://github.com/d3p1/dockgento/commit/0d429f817acfecae678084b65a9a0cdaa7e6f36b))
+* add nginx image [[#1](https://github.com/d3p1/dockgento/issues/1)] ([1b51804](https://github.com/d3p1/dockgento/commit/1b51804a9dbd2eb7ff5b6f6e141b69dafb2e914a))
+* add Varnish 8.0 image [[#1](https://github.com/d3p1/dockgento/issues/1)] ([2ee437e](https://github.com/d3p1/dockgento/commit/2ee437ea438184506cd852262bc49765faa7582a))
+
 # [1.26.0](https://github.com/d3p1/dockgento/compare/v1.25.2...v1.26.0) (2026-08-23)
 
 
