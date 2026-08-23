@@ -1,3 +1,22 @@
+# [1.26.0](https://github.com/d3p1/dockgento/compare/v1.25.2...v1.26.0) (2026-08-23)
+
+
+### Bug Fixes
+
+* add ftp extension to PHP services [[#1](https://github.com/d3p1/dockgento/issues/1)] ([60c29d6](https://github.com/d3p1/dockgento/commit/60c29d613a716f7b077d7e7923ff8c0d21abc60f))
+
+
+### Features
+
+* add Magento 2.4.8-p5 as default version [[#1](https://github.com/d3p1/dockgento/issues/1)] ([020b8ad](https://github.com/d3p1/dockgento/commit/020b8ad00e35c06b4cb39fe58a3230e2d505f5d7))
+* add OpenSearch 3.5 image [[#1](https://github.com/d3p1/dockgento/issues/1)] ([f2b23d0](https://github.com/d3p1/dockgento/commit/f2b23d06d57b74b0ec0d6133e49810f04fce7d5f))
+* add PHP 8.3 images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([c81322e](https://github.com/d3p1/dockgento/commit/c81322e4577c983d8f4c991f8cc54299470766b9))
+* add PHP 8.4 images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([41fbc0f](https://github.com/d3p1/dockgento/commit/41fbc0f5ed85b6f03ca66e1f31f3ef70afac8705))
+* add RabbitMQ 4.3 image [[#1](https://github.com/d3p1/dockgento/issues/1)] ([fa95bff](https://github.com/d3p1/dockgento/commit/fa95bff6a1949b220c15bdff3e70202c7ad518b8))
+* add valkey host to the environment [[#1](https://github.com/d3p1/dockgento/issues/1)] ([dacdd09](https://github.com/d3p1/dockgento/commit/dacdd09f4b1dd92916ac9fe2a22df76e99607555))
+* add Valkey image [[#1](https://github.com/d3p1/dockgento/issues/1)] ([c27d881](https://github.com/d3p1/dockgento/commit/c27d8818d4a62dabc9ea519cfa5b0b659425fb04))
+* add Valkey to PHP 8.3 and PHP 8.4 images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([6546995](https://github.com/d3p1/dockgento/commit/65469951035ed5f951dc08fb5264a07891d4a4cb))
+
 ## [1.25.2](https://github.com/d3p1/dockgento/compare/v1.25.1...v1.25.2) (2026-05-08)
 
 
