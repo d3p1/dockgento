@@ -1,3 +1,10 @@
+## [1.27.2](https://github.com/d3p1/dockgento/compare/v1.27.1...v1.27.2) (2026-08-23)
+
+
+### Bug Fixes
+
+* solve entrypoint permission error when using www user in PHP images [[#1](https://github.com/d3p1/dockgento/issues/1)] ([68c4897](https://github.com/d3p1/dockgento/commit/68c48974855e324b7ff3af3279d8aba79f60d23d))
+
 ## [1.27.1](https://github.com/d3p1/dockgento/compare/v1.27.0...v1.27.1) (2026-08-23)
 
 
