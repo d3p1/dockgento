@@ -7,7 +7,7 @@
     "dockerComposeFile": [
         "../docker-compose.yml",
         "../docker-compose.dev.yml",
-        "../docker-compose.devcontainer.yml",
+        "docker-compose.devcontainer.yml",
         "../services/search/${SCRIPT_SEARCH_SERVICE}/docker-compose.yml"
     ],
     "shutdownAction": "stopCompose",
