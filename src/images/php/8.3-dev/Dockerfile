@@ -52,7 +52,7 @@ FROM d3p1/magento-php:8.3-fpm
            nodejs \
            python3 \
            python3-pip \
-           redis-tools && \
+           valkey-tools && \
         rm -rf /var/lib/apt/lists/*
 
     ##
