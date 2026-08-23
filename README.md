@@ -29,7 +29,7 @@ To install this tool, run the following command:
 git clone https://github.com/d3p1/dockgento.git && \
 chmod +x dockgento/src/bin/setup/installer.sh   && \
 ./dockgento/src/bin/setup/installer.sh          && \
-source ~/.bash_profile                          && \
+source ~/.bashrc                                && \
 rm -rf dockgento/
 ```
 

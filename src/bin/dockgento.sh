@@ -14,9 +14,13 @@ set -e
 ##
 # @note Init global/environment variables that could be useful
 #       for called commands/scripts
+# @note It is resolved the real path of this script (`readlink`) because it is
+#       installed in a user data folder, and it is executed through a symbolic
+#       link that lives in a user binary folder. In that way, the required
+#       files of this script are located in the right folder
 ##
 declare BASE_DIR
-BASE_DIR=$(dirname "${BASH_SOURCE[0]}")
+BASE_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
 export BASE_DIR
 
 ##
