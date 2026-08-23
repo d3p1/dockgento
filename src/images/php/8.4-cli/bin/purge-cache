@@ -1,0 +1,27 @@
+#!/bin/sh
+
+##
+# @description Purge Magento 2 cache
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+##
+
+##
+# @note Add flag to exit script if there is an error related to a command
+#       or if it is used an undefined variable
+##
+set -eu
+
+##
+# Main
+#
+# @return void
+##
+main() {
+    $MAGENTO_COMMAND_PATH cache:clean
+    $MAGENTO_COMMAND_PATH cache:flush
+}
+
+##
+# @note Call main
+##
+main "$@"
