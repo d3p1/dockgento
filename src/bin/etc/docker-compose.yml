@@ -44,7 +44,7 @@ services:
 
     varnish:
         image:
-            d3p1/magento-varnish:7.1.1
+            d3p1/magento-varnish:8.0
         expose:
             - 80
         depends_on:
